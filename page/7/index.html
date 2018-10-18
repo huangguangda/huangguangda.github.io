@@ -354,6 +354,200 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/10/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/10/1/" itemprop="url">AndroidStudio项目制作倒计时模块</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-10T15:07:53+08:00">
+                2018-03-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android项目开发实战/" itemprop="url" rel="index">
+                    <span itemprop="name">Android项目开发实战</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  856
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>AndroidStudio项目制作倒计时模块</code>的概述，希望你们喜欢</p>
+<h2 id="项目难度"><a href="#项目难度" class="headerlink" title="项目难度"></a>项目难度</h2><p>AndroidStudio项目制作倒计时模块的难度，不是很大，就是主要用了<code>Timer</code>和<code>TimerTask</code>这两个，接着就是现实界面的一些基础效果。</p>
+<h2 id="设计界面"><a href="#设计界面" class="headerlink" title="设计界面"></a>设计界面</h2><p>做个倒计时的界面就比较好想了，就如下界面控件</p>
+<ul>
+<li>填写倒计时时间</li>
+<li>获取倒计时时间</li>
+<li>显示倒计时</li>
+<li>开始计时</li>
+<li>停止计时<br>就在自动创建的activity_main.xml中写入代码：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    xmlns:tools=&quot;http://schemas.android.com/tools&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;</span><br><span class="line">    tools:context=&quot;cn.edu.gdmec.android.counttime.MainActivity&quot;&gt;</span><br><span class="line">    &lt;!--填写倒计时时间--&gt;</span><br><span class="line">    &lt;EditText</span><br><span class="line">        android:id=&quot;@+id/input&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:ems=&quot;10&quot;/&gt;</span><br><span class="line">    &lt;!--获取倒计时时间--&gt;</span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/get&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;获取倒计时时间&quot;/&gt;</span><br><span class="line">    &lt;!--显示倒计时--&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/time&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        /&gt;</span><br><span class="line">    &lt;!--开始计时--&gt;</span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/starttime&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;开始计时&quot;/&gt;</span><br><span class="line">    &lt;!--停止计时--&gt;</span><br><span class="line">    &lt;Button</span><br><span class="line">        android:id=&quot;@+id/stoptime&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:text=&quot;停止计时&quot;/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="实现功能需求"><a href="#实现功能需求" class="headerlink" title="实现功能需求"></a>实现功能需求</h2><p>接下来我们需要在MainActivity.java中现实功能模块需求，主要来显示界面和获取按钮功能效果，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><span class="line">package cn.edu.gdmec.android.counttime;</span><br><span class="line"></span><br><span class="line">import android.os.Handler;</span><br><span class="line">import android.os.Message;</span><br><span class="line">import android.support.v7.app.AppCompatActivity;</span><br><span class="line">import android.os.Bundle;</span><br><span class="line">import android.view.View;</span><br><span class="line">import android.widget.Button;</span><br><span class="line">import android.widget.EditText;</span><br><span class="line">import android.widget.TextView;</span><br><span class="line">import java.util.Timer;</span><br><span class="line">import java.util.TimerTask;</span><br><span class="line"></span><br><span class="line">public class MainActivity extends AppCompatActivity implements View.OnClickListener &#123;</span><br><span class="line">    private EditText inputet;</span><br><span class="line">    private Button get, startTime, stopTime;</span><br><span class="line">    private TextView time;</span><br><span class="line">    private int i = 0;</span><br><span class="line">    private Timer timer = null;</span><br><span class="line">    private TimerTask task = null;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_main);</span><br><span class="line">        initView();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void initView() &#123;</span><br><span class="line">        inputet = findViewById(R.id.input);</span><br><span class="line">        get = findViewById(R.id.get);</span><br><span class="line">        startTime = findViewById(R.id.starttime);</span><br><span class="line">        stopTime = findViewById(R.id.stoptime);</span><br><span class="line">        time = findViewById(R.id.time);</span><br><span class="line">        get.setOnClickListener(this);</span><br><span class="line">        startTime.setOnClickListener(this);</span><br><span class="line">        stopTime.setOnClickListener(this);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    @Override</span><br><span class="line">    public void onClick(View v) &#123;</span><br><span class="line">        switch (v.getId()) &#123;</span><br><span class="line">            case R.id.get:</span><br><span class="line">                time.setText(inputet.getText().toString());</span><br><span class="line">                i = Integer.parseInt(inputet.getText().toString());</span><br><span class="line">                break;</span><br><span class="line">            case R.id.starttime:</span><br><span class="line">                startTime();</span><br><span class="line">                break;</span><br><span class="line">            case R.id.stoptime:</span><br><span class="line">                stopTime();</span><br><span class="line">                break;</span><br><span class="line">            default:</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private Handler mHandler = new Handler() &#123;</span><br><span class="line">        public void handleMessage(Message msg) &#123;</span><br><span class="line">            time.setText(msg.arg1 + &quot;&quot;);</span><br><span class="line">            startTime();</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    public void startTime() &#123;</span><br><span class="line">        timer = new Timer();</span><br><span class="line">        task = new TimerTask() &#123;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                if (i &gt; 0) &#123;   //加入判断不能小于0</span><br><span class="line">                    i--;</span><br><span class="line">                    Message message = mHandler.obtainMessage();</span><br><span class="line">                    message.arg1 = i;</span><br><span class="line">                    mHandler.sendMessage(message);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        timer.schedule(task, 1000);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    public void stopTime()&#123;</span><br><span class="line">        timer.cancel();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="心得重点"><a href="#心得重点" class="headerlink" title="心得重点"></a>心得重点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//获取的按钮实现：</span><br><span class="line">time.setText(inputet.getText().toString());</span><br><span class="line">i = Integer.parseInt(inputet.getText().toString());</span><br><span class="line">//Handler的加入</span><br><span class="line">private Handler mHandler = new Handler() &#123;</span><br><span class="line">        public void handleMessage(Message msg) &#123;</span><br><span class="line">            time.setText(msg.arg1 + &quot;&quot;);</span><br><span class="line">            startTime();</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;;</span><br><span class="line">//倒计时主要核心</span><br><span class="line">public void startTime() &#123;</span><br><span class="line">        timer = new Timer();</span><br><span class="line">        task = new TimerTask() &#123;</span><br><span class="line"></span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                if (i &gt; 0) &#123;   //加入判断不能小于0</span><br><span class="line">                    i--;</span><br><span class="line">                    Message message = mHandler.obtainMessage();</span><br><span class="line">                    message.arg1 = i;</span><br><span class="line">                    mHandler.sendMessage(message);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        timer.schedule(task, 1000);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了AndroidStudio项目制作倒计时模块，如果您还有更好地理解，欢迎沟通</li>
+<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
+</ul>
+          
+        
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/09/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2061,201 +2255,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2017/04/10/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/10/1/" itemprop="url">第一节：学会Java前提-手把手教你配置JDK环境变量</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-10T15:41:43+08:00">
-                2017-04-10
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/带你学会Java基础课程/" itemprop="url" rel="index">
-                    <span itemprop="name">带你学会Java基础课程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  545
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  2
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>学会Java前提-手把手教你配置JDK环境变量</code>的概述，希望你们喜欢</p>
-<h1 id="下载地址"><a href="#下载地址" class="headerlink" title="下载地址"></a>下载地址</h1><p>下载jdk，和eclipse就比较简单了，提供JDK 9 地址：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html</a><br>提供JDK 8 地址：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
-<h1 id="讲述JDK的配置"><a href="#讲述JDK的配置" class="headerlink" title="讲述JDK的配置"></a>讲述JDK的配置</h1><p>JDK包安装完成后，需要配置环境变量。点击桌面上的“我的电脑”或者“此电脑”，选择“属性”，接着选择“高级”，点击其中的“环境变量”弹出“环境变量”对话框，其中包含“用户变量”和“系统变量”两部分。</p>
-<p>设置系统“变量名”为“JAVA_HOME”,”变量值”为“C:\ProgramFiles\Java\jre1.8.0_112”,即是JDK安装路径，你也可以将地址栏中的路径直接复制过来。</p>
-<p>再次选择”系统变量”列表中找到其”Path”（双击）–&gt;”编辑”,弹出”编辑系统变量”,点击新建；</p>
-<p>然后，单击”系统变量”下面的“新建”按钮，创建名为”classpath“的环境变量，值为”.”,英文的一点，代表当前路径。</p>
-<h1 id="环境变量："><a href="#环境变量：" class="headerlink" title="环境变量："></a>环境变量：</h1><p>JAVA_HOME：D:\Java\jdk1.8.0_25<br>CLASSPATH  ：.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;<br>Path：;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</p>
-<h1 id="验证是否配置成功"><a href="#验证是否配置成功" class="headerlink" title="验证是否配置成功"></a>验证是否配置成功</h1><p>点WIN键-&gt;运行（或者使用win+r)</p>
-<ul>
-<li>输入cmd命令</li>
-<li>输入java -version<br>然后在控制台输入，显示出现版本信息即可代表成功。</li>
-</ul>
-<h1 id="下载ecplise"><a href="#下载ecplise" class="headerlink" title="下载ecplise"></a>下载ecplise</h1><p>下载eclipse链接（官网）：<a href="https://www.eclipse.org/downloads/" target="_blank" rel="noopener">https://www.eclipse.org/downloads/</a><br>接下来我们进入到这个链接：<a href="https://www.eclipse.org/downloads/eclipse-packages/" target="_blank" rel="noopener">https://www.eclipse.org/downloads/eclipse-packages/</a></p>
-<p>你可以看到的是，这么多，你点击Eclipse IDE for Java Developers ，然后自己选32或64旁边点击下载就好，下载的一个压缩包，解压后就可以用了。是不是很简单啊。有人遇到eclipse不兼容JDK 9.0的情况，解决方案就是打开eclipse.ini文件，在文件末尾添加一行：–add-modules=ALL-SYSTEM</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>本文讲了学会Java前提-手把手教你配置JDK环境变量，如果您还有更好地理解，欢迎沟通</li>
-<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
-</ul>
-          
-        
-      
-    </div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2310,7 +2309,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">74</span>
+                  <span class="site-state-item-count">75</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2321,7 +2320,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-count">18</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2332,7 +2331,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">18</span>
+                  <span class="site-state-item-count">19</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2658,7 +2657,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">281.0k</span>
+    <span title="Site words total count">285.6k</span>
   
 </div>
 
@@ -2674,7 +2673,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共281.0k字</span>
+  <span class="post-count">博客全站共285.6k字</span>
 </div>
         
 <div class="busuanzi-count">
