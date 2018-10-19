@@ -354,6 +354,215 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/12/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/12/1/" itemprop="url">AndroidStudio制作底部导航栏以及用Fragment实现切换功能</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-12T14:52:13+08:00">
+                2018-03-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android-Studio实战练习V2/" itemprop="url" rel="index">
+                    <span itemprop="name">Android Studio实战练习V2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,339
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  6
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>AndroidStudio制作底部导航栏以及用Fragment实现切换功能</code>的概述，希望你们喜欢</p>
+<h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><p>AndroidStudio制作底部导航栏以及用Fragment实现切换功能，用户点击底部导航栏可以实现三个模块的跳转。</p>
+<h2 id="图片资源"><a href="#图片资源" class="headerlink" title="图片资源"></a>图片资源</h2><p>需要底部导航栏三个点击按钮的图片资源<br>main_button_1.png,main_button_2.png,main_button_3.png</p>
+<p>以及点击变换的图片资源<br>main_button_1_selected.png,<br>main_button_2_selected.png,<br>main_button_3_selected.png.</p>
+<p>以上图片资源都放进drawable文件夹中</p>
+<h2 id="activity-main-布局"><a href="#activity-main-布局" class="headerlink" title="activity_main 布局"></a>activity_main 布局</h2><p>在 MainActivity 页面中主要有两个区域：</p>
+<ul>
+<li>一个是放 Fragment 的 main_body</li>
+<li>一个是放底部导航栏的 main_bottom_bar</li>
+</ul>
+<p>主要的Fragment代码块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;LinearLayout</span><br><span class="line">        android:orientation=&quot;vertical&quot;</span><br><span class="line">        android:background=&quot;@android:color/white&quot;</span><br><span class="line">        android:layout_width=&quot;match_parent&quot;</span><br><span class="line">        android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line">        &lt;!--标题栏--&gt;</span><br><span class="line">        &lt;include layout=&quot;@layout/main_title_bar&quot; /&gt;</span><br><span class="line">        &lt;!--放置Fragment的main_body--&gt;</span><br><span class="line">        &lt;RelativeLayout</span><br><span class="line">            android:id=&quot;@+id/main_body&quot;</span><br><span class="line">            android:background=&quot;@android:color/white&quot;</span><br><span class="line">            android:layout_width=&quot;match_parent&quot;</span><br><span class="line">            android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line">        &lt;/RelativeLayout&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<p>主要的底部导航栏的代码块：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">&lt;!--实现在底部，水平排列按钮--&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line">     android:id=&quot;@+id/main_bottom_bar&quot;</span><br><span class="line">     android:layout_alignParentBottom=&quot;true&quot;</span><br><span class="line">     android:background=&quot;#F2F2F2&quot;</span><br><span class="line">     android:orientation=&quot;horizontal&quot;</span><br><span class="line">     android:layout_width=&quot;match_parent&quot;</span><br><span class="line">     android:layout_height=&quot;55dp&quot;&gt;</span><br><span class="line">    &lt;RelativeLayout</span><br><span class="line">         android:layout_weight=&quot;1&quot;</span><br><span class="line">         android:id=&quot;@+id/bottom_bar_1_btn&quot;</span><br><span class="line">         android:layout_width=&quot;0dp&quot;</span><br><span class="line">         android:layout_height=&quot;match_parent&quot;&gt;</span><br><span class="line">         &lt;TextView</span><br><span class="line">             android:id=&quot;@+id/bottom_bar_text_1&quot;</span><br><span class="line">             android:layout_width=&quot;match_parent&quot;</span><br><span class="line">             android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">             android:layout_alignParentBottom=&quot;true&quot;</span><br><span class="line">             android:layout_centerHorizontal=&quot;true&quot;</span><br><span class="line">             android:layout_marginBottom=&quot;3dp&quot;</span><br><span class="line">             android:gravity=&quot;center&quot;</span><br><span class="line">             android:singleLine=&quot;true&quot;</span><br><span class="line">             android:text=&quot;button_1&quot;</span><br><span class="line">             android:textColor=&quot;#666666&quot;</span><br><span class="line">             android:textSize=&quot;14sp&quot;/&gt;</span><br><span class="line">         &lt;ImageView</span><br><span class="line">             android:layout_width=&quot;27dp&quot;</span><br><span class="line">             android:layout_height=&quot;27dp&quot;</span><br><span class="line">             android:layout_above=&quot;@+id/bottom_bar_text_1&quot;</span><br><span class="line">             android:layout_alignParentTop=&quot;true&quot;</span><br><span class="line">             android:layout_centerHorizontal=&quot;true&quot;</span><br><span class="line">             android:layout_marginTop=&quot;3dp&quot;</span><br><span class="line">             android:id=&quot;@+id/bottom_bar_image_1&quot;</span><br><span class="line">             android:src=&quot;@drawable/main_button_1&quot;/&gt;</span><br><span class="line">     &lt;/RelativeLayout&gt;</span><br><span class="line">    ....&lt;!--布局的代码总是繁琐又无聊的，记得要自己补全--&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="实例化控件"><a href="#实例化控件" class="headerlink" title="实例化控件"></a>实例化控件</h2><p>实例化控件一些琐碎的代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//先实例化控件，那我给出自己打的实例化代码</span><br><span class="line">//来自main_title_bar.xml</span><br><span class="line">    private TextView tv_main_title;//标题</span><br><span class="line">    private TextView tv_back;//返回按钮</span><br><span class="line">    private RelativeLayout title_bar;</span><br><span class="line">//来自activity_main.xml</span><br><span class="line">    private RelativeLayout main_body;</span><br><span class="line">    private TextView bottom_bar_text_1;</span><br><span class="line">    private ImageView bottom_bar_image_1;</span><br><span class="line">    ...</span><br><span class="line">    private LinearLayout main_bottom_bar;</span><br><span class="line">    private RelativeLayout bottom_bar_1_btn;</span><br><span class="line">    private RelativeLayout ...;</span><br></pre></td></tr></table></figure></p>
+<p>然后<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">initView();</span><br><span class="line">//实例化</span><br><span class="line">private void initView()&#123;</span><br><span class="line">        //标题显示</span><br><span class="line">        tv_back=findViewById(R.id.tv_back);</span><br><span class="line">        tv_main_title=findViewById(R.id.tv_main_title);</span><br><span class="line">        title_bar=findViewById(R.id.title_bar);</span><br><span class="line">        //底部导航栏</span><br><span class="line">        main_body=findViewById(R.id.main_body);</span><br><span class="line">        bottom_bar_text_1=findViewById(R.id.bottom_bar_text_1);</span><br><span class="line">        bottom_bar_image_1=findViewById(R.id.bottom_bar_image_1);</span><br><span class="line">        ...</span><br><span class="line">        //包含底部 android:id=&quot;@+id/main_bottom_bar&quot;</span><br><span class="line">        main_bottom_bar=findViewById(R.id.main_bottom_bar);</span><br><span class="line">        //private RelativeLayout bottom_bar_1_btn;</span><br><span class="line">        bottom_bar_1_btn=findViewById(R.id.bottom_bar_1_btn);</span><br><span class="line">        //添加点击事件</span><br><span class="line">       bottom_bar_1_btn.setOnClickListener(this);</span><br><span class="line">       ...</span><br><span class="line">       //技巧</span><br><span class="line">       //tv_back.setVisibility(View.GONE);</span><br><span class="line">        tv_main_title.setText(&quot;课程&quot;);</span><br><span class="line">        title_bar.setBackgroundColor(Color.parseColor(&quot;#30B4FF&quot;));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="底部导航栏状态的切换方法"><a href="#底部导航栏状态的切换方法" class="headerlink" title="底部导航栏状态的切换方法"></a>底部导航栏状态的切换方法</h2><p>给MainActivity加一个setSelectStatus() 方法，方法里用参数index来判断当前选的按钮</p>
+<p>示例代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">private void setSelectStatus(int index) &#123;</span><br><span class="line">        switch (index)&#123;</span><br><span class="line">            case 0:</span><br><span class="line">              //图片点击选择变换图片，颜色的改变，其他变为原来的颜色，并保持原有的图片</span><br><span class="line">              bottom_bar_image_1.setImageResource(R.drawable.main_button_1_selected);</span><br><span class="line">              bottom_bar_text_1.setTextColor(Color.parseColor(&quot;#0097F7&quot;));</span><br><span class="line">              //其他的文本颜色不变</span><br><span class="line">              bottom_bar_text_2.setTextColor(Color.parseColor(&quot;#666666&quot;));</span><br><span class="line">              bottom_bar_text_3.setTextColor(Color.parseColor(&quot;#666666&quot;));</span><br><span class="line">              //图片也不变</span><br><span class="line">              bottom_bar_image_2.setImageResource(R.drawable.main_button_2);</span><br><span class="line">              bottom_bar_image_3.setImageResource(R.drawable.main_button_3);</span><br><span class="line">             break;</span><br><span class="line">            case 1://同理如上</span><br><span class="line">             ...</span><br><span class="line">             break;</span><br><span class="line">            case 2://同理如上</span><br><span class="line">             ...</span><br><span class="line">             break;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="实现底部导航栏的响应"><a href="#实现底部导航栏的响应" class="headerlink" title="实现底部导航栏的响应"></a>实现底部导航栏的响应</h2><p>导航栏文本颜色和图片切换效果的方法写好了，接下来是点击响应的方法</p>
+<p>给MainActivity加上View.OnClickListener接口</p>
+<p>在生成的 onClick() 方法中加上导航栏区域的响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@Override</span><br><span class="line">    public void onClick(View v) &#123;</span><br><span class="line">        switch (v.getId())&#123;</span><br><span class="line">          case R.id.bottom_bar_1_btn:</span><br><span class="line">                setSelectStatus(0);</span><br><span class="line">                break;</span><br><span class="line">          case R.id.bottom_bar_2_btn:</span><br><span class="line">                setSelectStatus(1);</span><br><span class="line">                break;</span><br><span class="line">          case R.id.bottom_bar_3_btn:</span><br><span class="line">                setSelectStatus(2);</span><br><span class="line">                break;</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>别忘了在initView() 中添加监听器<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bottom_bar_1_btn.setOnClickListener(this);</span><br></pre></td></tr></table></figure></p>
+<h2 id="三个-fragment-的创建"><a href="#三个-fragment-的创建" class="headerlink" title="三个 fragment 的创建"></a>三个 fragment 的创建</h2><p>就是简单的创建三个布局，展现Fragment_1/2/3 即可</p>
+<p>示例代码块<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:background=&quot;@android:color/white&quot;&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:text=&quot;Fragment_1&quot;</span><br><span class="line">        android:textColor=&quot;@android:color/black&quot;</span><br><span class="line">        android:textSize=&quot;50sp&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot; /&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<p>然后通过我之前写的插件自动生成三个Fragemnt ，就可以了不用管生成的Fragement_1/2/3.java文件了，<br>插件文章<br>《 <a href="https://www.jianshu.com/p/9d2bf0513443" target="_blank" rel="noopener">Android开发的插件Code Generator与LayoutCreator的安装与使用，提升你的开发效率</a> 》</p>
+<h2 id="三个fragment的显示和切换"><a href="#三个fragment的显示和切换" class="headerlink" title="三个fragment的显示和切换"></a>三个fragment的显示和切换</h2><p>在MainActivity里把AppCompatActivity改为FragmentActivity</p>
+<p>把Fragment加到Activity里的代码<br>通常用这个来展示，但是代码过长，我们来简化一下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/*</span><br><span class="line">* FragmentManager manager = getSupportFragmentManager();</span><br><span class="line">* FragmentTransaction transaction = manager.beginTransaction();</span><br><span class="line">* transaction.add(R.id.main_body,new CourseFragment()).commit();</span><br><span class="line">* */</span><br></pre></td></tr></table></figure></p>
+<p>我们先来添加一个setMain() 方法，来显示打开界面时，显示的初始页面<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">/用于打开初始页面</span><br><span class="line"> private void setMain() &#123;</span><br><span class="line">      //getSupportFragmentManager() -&gt; beginTransaction() -&gt; add -&gt; (R.id.main_boy,显示课程 new CourseFragment()</span><br><span class="line">      this.getSupportFragmentManager().beginTransaction().add(R.id.main_body,new CourseFragment()).commit();</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码中可以看到相对来说比较少，那我们就用这个，然后我们来实现点击底部导航栏来切换响应的fragment,我们在onClick()中添加即可。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">case R.id.bottom_bar_1_btn:</span><br><span class="line">                //添加</span><br><span class="line">                getSupportFragmentManager().beginTransaction().replace(R.id.main_body,new Button_1Fragment()).commit();</span><br><span class="line">                setSelectStatus(0);</span><br><span class="line">                break;</span><br></pre></td></tr></table></figure></p>
+<p>如果觉得不错，那就点个赞吧！❤️</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了AndroidStudio制作底部导航栏以及用Fragment实现切换功能，界面的布局介绍，如果您还有更好地理解，欢迎沟通</li>
+<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
+</ul>
+          
+        
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/11/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2042,191 +2251,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/02/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/02/1/" itemprop="url">Android2-1</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-02T21:55:43+08:00">
-                2018-03-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android开发工程师文集/" itemprop="url" rel="index">
-                    <span itemprop="name">Android开发工程师文集</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  2,573
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  14
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          <blockquote class="blockquote-center">用一切抱怨的时间去努力</blockquote>
-
-<p><img src="/images/38.jpg" style="width: 100%;height: 100%"></p>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/02/1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2281,7 +2305,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">76</span>
+                  <span class="site-state-item-count">77</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2629,7 +2653,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">289.8k</span>
+    <span title="Site words total count">291.1k</span>
   
 </div>
 
@@ -2645,7 +2669,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共289.8k字</span>
+  <span class="post-count">博客全站共291.1k字</span>
 </div>
         
 <div class="busuanzi-count">
