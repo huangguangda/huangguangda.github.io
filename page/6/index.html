@@ -354,6 +354,240 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/23/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/23/1/" itemprop="url">第二节：Java入门第一行代码</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-23T15:42:11+08:00">
+                2018-03-23
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/带你学会Java基础课程/" itemprop="url" rel="index">
+                    <span itemprop="name">带你学会Java基础课程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1,181
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  5
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>Java入门第一行代码</code>的概述，希望你们喜欢</p>
+<h1 id="第一行代码"><a href="#第一行代码" class="headerlink" title="第一行代码"></a>第一行代码</h1><p>学习Java基础课程，学会使用eclipse，eclipse为Java集成开发坏境IDE，创建第一个Java源文件代码：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloWorld&#123;</span><br><span class="line"> public static void main(String[] args)&#123;</span><br><span class="line">  System.out.println(&quot;hello world&quot;);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<h2 id="要点："><a href="#要点：" class="headerlink" title="要点："></a>要点：</h2><blockquote>
+<ul>
+<li>HelloWorld为类的名字</li>
+<li>public static void main(String[] args) 为主方法</li>
+<li>System.out.println(“hello world”)为打印输出，并在控制台显示 hello world</li>
+<li>public 为访问修饰符，表示公开的访问类</li>
+</ul>
+</blockquote>
+<h1 id="Java为面向对象的语法"><a href="#Java为面向对象的语法" class="headerlink" title="Java为面向对象的语法"></a>Java为面向对象的语法</h1><ul>
+<li>什么是面向对象？<br>答：在Java中一切皆对象；可以理解为现实世界中的人，物，都可以看做为对象。</li>
+</ul>
+<p>在一个Java的类中，该类可以为对象，那么类就是一个对象，一个对象就如人，它有方法和属性，即为动作和状态的特征。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//建立一个人的类</span><br><span class="line">public class Person&#123;</span><br><span class="line"> String name; //人具有姓名的属性</span><br><span class="line"> String age; //人具有年龄的属性</span><br><span class="line"> public void eat()&#123;</span><br><span class="line">  System.out.println(&quot;人具有吃的方法&quot;);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="变量的定义"><a href="#变量的定义" class="headerlink" title="变量的定义"></a>变量的定义</h1><p>什么是变量，即为可以变化的量，示例</p>
+<blockquote>
+<p>int age = 12;</p>
+<ul>
+<li>其中 int 为变量的数据类型，表示整数</li>
+<li>age 为变量</li>
+<li>“=” 为赋值操作符，把右边的值赋值给左边的变量<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">public class Person&#123;</span><br><span class="line"> int age = 12;</span><br><span class="line"> public static void main(String[] args)&#123;</span><br><span class="line">  System.out.println(age);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</blockquote>
+<h1 id="介绍八种基本变量的类型"><a href="#介绍八种基本变量的类型" class="headerlink" title="介绍八种基本变量的类型"></a>介绍八种基本变量的类型</h1><p>八种基本数据类型</p>
+<ul>
+<li>整型 4种：byte(8位)，short(16位)，int(32位)，long(64位)</li>
+<li>字符型 1种：char(16位)</li>
+<li>浮点型 2种：float(32位)，double(64位)</li>
+<li>布尔型 1种：boolean(1位)（true，false）</li>
+</ul>
+<h1 id="String类型（独立来讲，不是基本数据类型，为final修饰的）"><a href="#String类型（独立来讲，不是基本数据类型，为final修饰的）" class="headerlink" title="String类型（独立来讲，不是基本数据类型，为final修饰的）"></a>String类型（独立来讲，不是基本数据类型，为final修饰的）</h1><p>String类型一旦被创建，就不能够被更改。字符串类型的表达效果，示例：<code>String name = &quot;Vic&quot;</code></p>
+<h1 id="强制类型转换和自动类型转换"><a href="#强制类型转换和自动类型转换" class="headerlink" title="强制类型转换和自动类型转换"></a>强制类型转换和自动类型转换</h1><ul>
+<li>数据类型的转换<br>数据类型的理解：规则口诀<br><code>小到大自动，大到小强制</code>，表示小杯子里的水可以倒入大杯子里，而大杯子里的水倒入小杯子里，会出现溢出。</li>
+</ul>
+<blockquote>
+<p>/ <strong>转换的数据类型比较</strong> /<br>byte-&gt;short(char)-&gt;int-&gt;long-&gt;float-&gt;double</p>
+</blockquote>
+<h1 id="Java中的命名规范"><a href="#Java中的命名规范" class="headerlink" title="Java中的命名规范"></a>Java中的命名规范</h1><p>如果有人问Java中的命名规范，你可以简单的说：英，数，$，_ ，（第一位不能为数字），不能为关键字。</p>
+<h1 id="成员变量和局部变量"><a href="#成员变量和局部变量" class="headerlink" title="成员变量和局部变量"></a>成员变量和局部变量</h1><p>声明在方法体外的变量为成员变量，声明在方法体内的变量为局部变量。</p>
+<h1 id="Final修饰符"><a href="#Final修饰符" class="headerlink" title="Final修饰符"></a>Final修饰符</h1><p>上述表达final修饰的，为不可变得值，final可以修饰变量，修饰类，修饰方法。</p>
+<ul>
+<li>被修饰的变量，只能被赋值一次</li>
+<li>被修饰的类，不能被继承</li>
+<li>被修饰的方法，不可被重写</li>
+</ul>
+<h1 id="Static关键字的理解"><a href="#Static关键字的理解" class="headerlink" title="Static关键字的理解"></a>Static关键字的理解</h1><p>答：“ static方法就是没有this的方法。在static方法内部不能调用非静态方法，反过来是可以的。而且可以在没有创建任何对象的前提下，仅仅通过类本身来调用static方法。这实际上正是static方法的主要用途。” —《Java编程思想》</p>
+<p>static代码块，只会在类加载的时候执行一次。static变量不需要创建对象就可以引用。</p>
+<p>静态成员变量可以通过对象访问，只要访问权限足够就可以。</p>
+<p>静态代码块，随着类的加载而执行，只执行一次。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">class StaticDemo&#123;</span><br><span class="line">static&#123;</span><br><span class="line">System.out.println(&quot;静态代码块&quot;);</span><br><span class="line">&#125;</span><br><span class="line">void show()&#123;</span><br><span class="line">System.out.println(&quot;方法&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Test&#123;</span><br><span class="line">public static void main(String[] args)&#123;</span><br><span class="line"> new StaticDemo().show();</span><br><span class="line"> new StaticDemo().show();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">//result</span><br><span class="line">静态代码块</span><br><span class="line">方法</span><br><span class="line">方法</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">static&#123;</span><br><span class="line">System.out.println(&quot;静态&quot;);</span><br><span class="line">&#125;</span><br><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">System.out.println(&quot;静态main&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line">//result 静态代码块优先于main函数执行</span><br><span class="line">静态</span><br><span class="line">静态main</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">class StaticDemo&#123;</span><br><span class="line">static&#123;</span><br><span class="line">System.out.println(&quot;parent静态代码块&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">System.out.println(&quot;parent非静态代码块&quot;);</span><br><span class="line">&#125;</span><br><span class="line">StaticDemo()&#123;</span><br><span class="line">System.out.println(&quot;parent构造方法&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public class Test extends StaticDemo&#123;</span><br><span class="line"> static&#123;</span><br><span class="line"> System.out.println(&quot;child静态&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#123;</span><br><span class="line">System.out.println(&quot;child非静态&quot;);</span><br><span class="line">&#125;</span><br><span class="line">Test()&#123;</span><br><span class="line">System.out.println(&quot;child构造方法&quot;);</span><br><span class="line">&#125;</span><br><span class="line">public static void main(String[] args)&#123;</span><br><span class="line">System.out.println(&quot;main&quot;);</span><br><span class="line">new Test();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//result</span><br><span class="line">parent静态代码块</span><br><span class="line">child静态</span><br><span class="line">main</span><br><span class="line">parent非静态代码块</span><br><span class="line">parent构造方法</span><br><span class="line">child非静态</span><br><span class="line">child构造方法</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了Java入门第一行代码，如果您还有更好地理解，欢迎沟通</li>
+<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
+</ul>
+          
+        
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/22/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2189,193 +2423,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/13/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/13/1/" itemprop="url">AndroidStudio制作欢迎界面与应用图标</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-13T15:30:55+08:00">
-                2018-03-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Android-Studio实战练习V2/" itemprop="url" rel="index">
-                    <span itemprop="name">Android Studio实战练习V2</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  714
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>AndroidStudio制作欢迎界面与应用图标</code>的概述，希望你们喜欢</p>
-<h2 id="欢迎界面与应用图标"><a href="#欢迎界面与应用图标" class="headerlink" title="欢迎界面与应用图标"></a>欢迎界面与应用图标</h2><p>本项目使用Android Studio 3.0.1作为开发工具</p>
-<h2 id="activity-splash-xml"><a href="#activity-splash-xml" class="headerlink" title="activity_splash.xml"></a>activity_splash.xml</h2><p>创建了一个activity_splash.xml布局文件，为欢迎界面布局，首先修改为 RelativeLayout 布局<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;!--添加一张欢迎界面的背景--&gt;</span><br><span class="line">&lt;RelativeLayout</span><br><span class="line">    xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width = &quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:background=&quot;@drawable/launch_bg&quot;&gt;</span><br><span class="line">    &lt;!--显示版本号--&gt;</span><br><span class="line">    &lt;TextView</span><br><span class="line">        android:id=&quot;@+id/tv_version&quot;</span><br><span class="line">        android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">        android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">        android:textColor=&quot;@android:color/white&quot;</span><br><span class="line">        android:textSize=&quot;14sp&quot;</span><br><span class="line">        android:layout_centerInParent=&quot;true&quot;/&gt;</span><br><span class="line">&lt;/RelativeLayout&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="SplashActivity-java"><a href="#SplashActivity-java" class="headerlink" title="SplashActivity.java"></a>SplashActivity.java</h2><p>创建 SplashActivity.java 类，欢迎界面实现类<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">package cn.edu.gdmec.android.androidstudiodemo;</span><br><span class="line"></span><br><span class="line">import android.content.Intent;</span><br><span class="line">import android.content.pm.ActivityInfo;</span><br><span class="line">import android.content.pm.PackageInfo;</span><br><span class="line">import android.content.pm.PackageManager;</span><br><span class="line">import android.os.Bundle;</span><br><span class="line">import android.support.v7.app.AppCompatActivity;</span><br><span class="line">import android.widget.TextView;</span><br><span class="line">import java.util.Timer;</span><br><span class="line">import java.util.TimerTask;</span><br><span class="line"></span><br><span class="line">public class SplashActivity extends AppCompatActivity&#123;</span><br><span class="line">    @Override</span><br><span class="line">    protected void onCreate(Bundle savedInstanceState) &#123;</span><br><span class="line">        super.onCreate(savedInstanceState);</span><br><span class="line">        setContentView(R.layout.activity_splash);</span><br><span class="line">        //设置此界面为</span><br><span class="line">        // 竖屏</span><br><span class="line">        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);</span><br><span class="line">        init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    private void init() &#123;</span><br><span class="line">        TextView tv_version = findViewById(R.id.tv_version);</span><br><span class="line">        try &#123;</span><br><span class="line">            PackageInfo packageInfo = getPackageManager().getPackageInfo(getPackageName(),0);</span><br><span class="line">            tv_version.setText(&quot;version:&quot;+packageInfo.versionName);</span><br><span class="line">        &#125; catch (PackageManager.NameNotFoundException e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            tv_version.setText(&quot;version&quot;);</span><br><span class="line">        &#125;</span><br><span class="line">        //利用timer让此界面延迟3秒后跳转，timer有一个线程，该线程不断执行task</span><br><span class="line">        Timer timer = new Timer();</span><br><span class="line">        TimerTask timerTask = new TimerTask() &#123;</span><br><span class="line">            @Override</span><br><span class="line">            public void run() &#123;</span><br><span class="line">                //发送intent实现页面跳转，第一个参数为当前页面的context，第二个参数为要跳转的主页</span><br><span class="line">                Intent intent = new Intent(SplashActivity.this,MainActivity.class);</span><br><span class="line">                startActivity(intent);</span><br><span class="line">                //跳转后关闭当前欢迎页面</span><br><span class="line">                SplashActivity.this.finish();</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;;</span><br><span class="line">        //调度执行timerTask，第二个参数传入延迟时间（毫秒）</span><br><span class="line">        timer.schedule(timerTask,3000);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<h2 id="AndroidManifest-xml"><a href="#AndroidManifest-xml" class="headerlink" title="AndroidManifest.xml"></a>AndroidManifest.xml</h2><p>在清单文件 AndroidManifest.xml 中配置欢迎界面，将应用入口修改为欢迎界面，再去除 ActionBar 效果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;manifest xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    package=&quot;cn.edu.gdmec.android.androidstudiodemo&quot;&gt;</span><br><span class="line">    &lt;!--原为android:theme=&quot;@style/AppTheme&quot;--&gt;</span><br><span class="line">    &lt;!--去除ActionBar标题栏--&gt;</span><br><span class="line">    &lt;!--添加应用图标，app_icon--&gt;</span><br><span class="line">    &lt;application</span><br><span class="line">        android:allowBackup=&quot;true&quot;</span><br><span class="line">        android:icon=&quot;@drawable/app_icon&quot;</span><br><span class="line">        android:label=&quot;@string/app_name&quot;</span><br><span class="line">        android:roundIcon=&quot;@mipmap/ic_launcher_round&quot;</span><br><span class="line">        android:supportsRtl=&quot;true&quot;</span><br><span class="line">        android:theme=&quot;@style/Theme.AppCompat.NoActionBar&quot;&gt;</span><br><span class="line">        &lt;activity android:name=&quot;.SplashActivity&quot;&gt;</span><br><span class="line">            &lt;intent-filter&gt;</span><br><span class="line">                &lt;action android:name=&quot;android.intent.action.MAIN&quot; /&gt;</span><br><span class="line">                &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;</span><br><span class="line">            &lt;/intent-filter&gt;</span><br><span class="line">        &lt;/activity&gt;</span><br><span class="line">        &lt;!--添加实现类--&gt;</span><br><span class="line">        &lt;activity android:name=&quot;.MainActivity&quot;&gt;&lt;/activity&gt;</span><br><span class="line">    &lt;/application&gt;</span><br><span class="line">&lt;/manifest&gt;</span><br></pre></td></tr></table></figure></p>
-<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>该制作过程中有如背景图片的加入，可以自行找相关图片的加入或者独自DIY。其中MainActivity.java和activity_main.xml未做过任何改变。</p>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>本文讲了AndroidStudio制作欢迎界面与应用图标，如果您还有更好地理解，欢迎沟通</li>
-<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
-</ul>
-          
-        
-      
-    </div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2430,7 +2477,7 @@
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">77</span>
+                  <span class="site-state-item-count">78</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2796,7 +2843,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">291.1k</span>
+    <span title="Site words total count">293.0k</span>
   
 </div>
 
@@ -2812,7 +2859,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共291.1k字</span>
+  <span class="post-count">博客全站共293.0k字</span>
 </div>
         
 <div class="busuanzi-count">
