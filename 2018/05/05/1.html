@@ -1,0 +1,1979 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if('https://huangguangda.github.io/'){
+            if (prompt('请输入文章密码') !== 'https://huangguangda.github.io/'){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/6f697dad.js","daovoice")
+  daovoice('init', {
+      app_id: "6f697dad"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="我的视频,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="达叔小生" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="用一切抱怨的时间去努力">
+<meta name="keywords" content="我的视频">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小码哥JAVA大神班MySql">
+<meta property="og:url" content="https://huangguangda.github.io/2018/05/05/1.html">
+<meta property="og:site_name" content="达叔小生">
+<meta property="og:description" content="用一切抱怨的时间去努力">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://huangguangda.github.io/images/42.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/43.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/44.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/45.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/46.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/47.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/48.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/49.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/50.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/51.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/52.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/53.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/54.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/55.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/56.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/57.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/59.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/60.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/61.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/62.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/63.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/64.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/65.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/66.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/67.png">
+<meta property="og:image" content="https://huangguangda.github.io/images/68.png">
+<meta property="og:updated_time" content="2018-06-06T18:25:47.262Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小码哥JAVA大神班MySql">
+<meta name="twitter:description" content="用一切抱怨的时间去努力">
+<meta name="twitter:image" content="https://huangguangda.github.io/images/42.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huangguangda.github.io/2018/05/05/1.html">
+
+
+
+
+<!-- 网页加载条 -->
+<script src="https://neveryu.github.io/js/src/pace.min.js"></script>
+  <title>小码哥JAVA大神班MySql | 达叔小生</title>
+  
+
+
+
+
+
+
+
+
+
+  <!-- 音频播放 -->
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/huangguangda" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">达叔小生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">爱好分享的码农</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-书籍">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            书籍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-站点">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/05/05/1.html">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">小码哥JAVA大神班MySql</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-05T07:00:49+08:00">
+                2018-05-05
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/我的视频/" itemprop="url" rel="index">
+                    <span itemprop="name">我的视频</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  6,995
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  27
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center">用一切抱怨的时间去努力</blockquote>
+
+<a id="more"></a>
+<p>可联系删除，做复习用，看不懂可以问哦~</p>
+<h2 id="数据库概述"><a href="#数据库概述" class="headerlink" title="数据库概述"></a>数据库概述</h2><p>数据库(DataBase:DB)：数据库是按照数据结构来组织、存储和管理数据的仓库。—-&gt;存储和管理数据的仓库.</p>
+<p>数据库管理系统（Database Management System:DBMS）：是专门用于管理数据库的计算机系统软件。数据库管理系统能够为数据库提供数据的定义、建立、维护、查询和统计等操作功能，并完成对数据完整性、安全性进行控制的功能。</p>
+<p>MIS:管理信息系统.<br>我们一般说的数据库,就是指的DBMS: 数据库服务器.</p>
+<h2 id="数据库技术发展历程："><a href="#数据库技术发展历程：" class="headerlink" title="数据库技术发展历程："></a>数据库技术发展历程：</h2><ol>
+<li>层次数据库和网状数据库技术阶段；<br> 使用指针来表示数据之间的联系。</li>
+<li>关系数据库技术阶段；<br> 经典的里程碑阶段。代表DBMS:Oracle、DB2、MySQL、SQL Server、SyBase等。</li>
+<li>后关系数据库技术阶段；<br> 关系型数据库存在数据模型，性能，拓展伸缩性的缺点，出现了：<br> ORDBMS：面向对象数据库技术。<br> NoSQL ：结构化数据库技术。</li>
+</ol>
+<p>随着大数据的不断发展，非关系型的数据库现在成了一个极其热门的新领域，非关系数据库产品的发展非常迅速，出色的NoSQL数据库：</p>
+<h3 id="常见的NoSQL数据库分为四大类："><a href="#常见的NoSQL数据库分为四大类：" class="headerlink" title="常见的NoSQL数据库分为四大类："></a>常见的NoSQL数据库分为四大类：</h3><p>1):键值存储数据库：Oracle BDB,Redis,BeansDB<br>2):列式储数数据库：HBase,Cassandra,Riak<br>3):文档型数据库：MongoDB,CouchDB<br>4):图形数据库：Neo4J,InfoGrid,Infinite Graph</p>
+<p>常见的关系数据库:</p>
+<h2 id="数据库系统-所属公司"><a href="#数据库系统-所属公司" class="headerlink" title="  数据库系统        所属公司"></a>  数据库系统        所属公司</h2><p>  Oracle            Oracle(甲骨文)<br>  DB2               IBM<br>  SQL Server        MS<br>  MySQL             AB–&gt;SUN–&gt;Oracle</p>
+<p>Oracle:运行稳定，可移植性高，功能齐全，性能超群！适用于大型企业领域。</p>
+<p>DB2：速度快、可靠性好，适于海量数据，恢复性极强。适用于大中型企业领域。</p>
+<p>SQL Server:全面，效率高，界面友好，操作容易，但是不跨平台。适用于于中小型企业领域。</p>
+<p>MySQL:开源，体积小，速度快。适用于中小型企业领域。</p>
+<h2 id="SQL：结构化查询语言-Structured-Query-Language-。"><a href="#SQL：结构化查询语言-Structured-Query-Language-。" class="headerlink" title="SQL：结构化查询语言(Structured Query Language)。"></a>SQL：结构化查询语言(Structured Query Language)。</h2><p>是关系型数据库标准语言。<br>特点：简单，灵活，功能强大。</p>
+<h3 id="SQL包含6个部分："><a href="#SQL包含6个部分：" class="headerlink" title="SQL包含6个部分："></a>SQL包含6个部分：</h3><p>一：数据查询语言（DQL）：<br>其语句，也称为“数据检索语句”，用以从表中获得数据，确定数据怎样在应用程序给出。保留字SELECT是DQL（也是所有SQL）用得最多的动词，其他DQL常用的保留字有WHERE，ORDER BY，GROUP BY和HAVING。这些DQL保留字常与其他类型的SQL语句一起使用。</p>
+<p>二：数据操作语言（DML）：<br>其语句包括动词INSERT，UPDATE和DELETE。它们分别用于添加，修改和删除表中的行。也称为动作查询语言。</p>
+<p>三：事务处理语言（TPL）：<br>它的语句能确保被DML语句影响的表的所有行及时得以更新。TPL语句包括BEGIN TRANSACTION，COMMIT和ROLLBACK。</p>
+<p>四：数据控制语言（DCL）：<br>它的语句通过GRANT或REVOKE获得许可，确定单个用户和用户组对数据库对象的访问。某些RDBMS可用GRANT或REVOKE控制对表单个列的访问。</p>
+<p>五：数据定义语言（DDL）：<br>其语句包括动词CREATE和DROP。在数据库中创建新表或删除表（CREAT TABLE 或 DROP TABLE）；为表加入索引等。DDL包括许多与人数据库目录中获得数据有关的保留字。它也是动作查询的一部分。</p>
+<p>六：指针控制语言（CCL）：<br>它的语句，像DECLARE CURSOR，FETCH INTO和UPDATE WHERE CURRENT用于对一个或多个表单独行的操作。</p>
+<h3 id="书写规则："><a href="#书写规则：" class="headerlink" title="书写规则："></a>书写规则：</h3><p>1.数据库中，SQL语句大小写不敏感<br>2.SQL语句可单行或多行书写<br>3.在SQL语句中，关键字不能跨多行或缩写<br>4.为了提高可读性，一般关键字大写，其他小写<br>5.空格和缩进使程序易读</p>
+<h2 id="什么是表？"><a href="#什么是表？" class="headerlink" title="什么是表？"></a>什么是表？</h2><p>我们说MySQL是一种关系型数据库。关系数据库最重要的概念就是表。 </p>
+<p>表:又称之为二维表.(有行和列)—-&gt;存储数据.<br>表具有固定的列数和任意的行数，在数学上称为“关系”。</p>
+<p>二维表是同类实体的各种属性的集合，每个实体对应于表中的一行，在关系中称为元组，相当于通常的一条记录；</p>
+<p>表中的列表示属性，称为Field，相当于通常记录中的一个数据项，也叫列、字段。</p>
+<p><img src="/images/42.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/43.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/44.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/45.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/46.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/47.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/48.png" style="width: 100%;height: 100%"></p>
+<p>MySQL中的数据用各种不同的技术存储在文件（或者内存）中。这些技术中的每一种技术都使用不同的存储机制、索引技巧、锁定水平并且最终提供不同的功能和能力。<br>通过选择不同的技术，你能够获得额外的速度或者功能，从而改善你的应用的整体功能。</p>
+<p>MyISAM：拥有较高的插入，查询速度，但不支持事务，不支持外键。<br>InnoDB：支持事务，支持外键，支持行级锁定，性能较低。<br>InnoDB 存储引擎提供了具有提交、回滚和崩溃恢复能力的事务安全。但对比MyISAM，处理效率差，且会占用更多的磁盘空间以保留数据和索引。</p>
+<p><img src="/images/49.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/50.png" style="width: 100%;height: 100%"></p>
+<p>最常用的整数类型：<br>MySQL列类型               Java数据类型</p>
+<p>INT:                       int/Integer<br>BIGINT:                    long/Long</p>
+<p>MySQL 以一个可选的显示宽度指示器的形式对 SQL 标准进行扩展，这样当从数据库检索一个值时，可以把这个值加长到指定的长度。</p>
+<p>例如，指定一个字段的类型为 INT(6)，就可以保证所包含数字少于 6 个的值从数据库中检索出来时能够自动地用空格填充。</p>
+<p>需要注意的是，使用一个宽度指示器不会影响字段的大小和它可以存储的值的范围。一般不用指定位宽。</p>
+<p><img src="/images/51.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/52.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/53.png" style="width: 100%;height: 100%"></p>
+<h2 id="表的操作"><a href="#表的操作" class="headerlink" title="表的操作"></a>表的操作</h2><p>创建表:<br>1.先进入某一个数据库.<br>2.输入建表的命令:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE 表名(</span><br><span class="line">   列名1    列的类型   [约束],</span><br><span class="line">   列名2    列的类型   [约束],</span><br><span class="line">   ....</span><br><span class="line">   列名N    列的类型   约束    </span><br><span class="line">);</span><br><span class="line">注意:最后一行没有逗号</span><br></pre></td></tr></table></figure></p>
+<p>使用SQL的时候,不要使用SQL的关键字,如果使用到,怎么办.<br>建立一张表,表用来装订单的信息,订单叫做:ORDER.<br>此时,SQL出错,因为ORDER是SQL中的关键字.</p>
+<p>   解决方案一:使用反引号(<code>)把自定义的标识符引起来:</code>order`.<br>   解决方案二:使用表名的前缀,一般的,习惯t_order.</p>
+<p>需求:在jdbcdemo数据库中,创建一张学生表(包含了id,name,age).<br>第一步:进入jdbcdemo数据库.<br>  USE jdbcdemo;<br>第二步:输入建立表的语句.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `student` (</span><br><span class="line">  `id` bigint(20) DEFAULT NULL,</span><br><span class="line">  `name` varchar(20) DEFAULT NULL,</span><br><span class="line">  `age` int(11) DEFAULT NULL</span><br><span class="line">) ENGINE=InnoDB DEFAULT CHARSET=utf8;</span><br></pre></td></tr></table></figure>
+<p>删除表:<br>DROP TABLE  student;</p>
+<p>查看表结构：<br>DESC table_name;<br>查看表的详细定义：<br>SHOW CREATE TABLE table_name; 其实现实的建立表的SQL语句.</p>
+<p><img src="/images/54.png" style="width: 100%;height: 100%"></p>
+<h2 id="表的约束"><a href="#表的约束" class="headerlink" title="表的约束"></a>表的约束</h2><p>表的约束(针对于某一列):<br>1.非空约束：NOT NULL，不允许某列的内容为空。<br>2.设置列的默认值：DEFAULT。<br>3.唯一约束：UNIQUE，在该表中，该列的内容必须唯一。<br>4.主键约束：PRIMARY KEY， 非空且唯一。<br>5.主键自增长：AUTO_INCREMENT，从1开始，步长为1。<br>6.外键约束：FOREIGN KEY. A表中的外键列的值必须参照于B表中的某一列(B表主键)-明天讲解。</p>
+<p>主键设计：<br>1：单字段主键，单列作为主键，建议使用。<br>   复合主键，使用多列充当主键，不建议。<br>2：主键分为两种:<br>   1）.自然主键:使用有业务含义的列作为主键(不推荐使用);<br>   2）.代理主键:使用没有业务含义的列作为主键(推荐使用);</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">CREATE TABLE `student` (</span><br><span class="line">  `id` bigint(20) PRIMARY KEY AUTO_INCREMENT,</span><br><span class="line">  `name` varchar(20) UNIQUE ,</span><br><span class="line">  `age` int(11) </span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p><img src="/images/55.png" style="width: 100%;height: 100%"></p>
+<h2 id="简单查询"><a href="#简单查询" class="headerlink" title="简单查询"></a>简单查询</h2><p><img src="/images/56.png" style="width: 100%;height: 100%"></p>
+<p>简单查询:<br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT	&#123;*, column [alias],...&#125;</span><br><span class="line">FROM	     table_name;</span><br></pre></td></tr></table></figure></p>
+<p>说明：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT   选择查询列表</span><br><span class="line">FROM 	 提供数据源(表、视图或其他的数据源)</span><br></pre></td></tr></table></figure></p>
+<p>如果为 * 和创建表时的顺序一致。<br>可以自己调整顺序，在select后边加上要查询的列名。</p>
+<p>需求:查询所有货品信息<br>需求:查询所有货品的id,productName,salePrice</p>
+<p>消除结果中重复的数据:<br>需求:查询商品的分类编号。<br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT 	DISTINCT 列名，...</span><br><span class="line"></span><br><span class="line">FROM	table_name;</span><br></pre></td></tr></table></figure></p>
+<p>实现数学运算查询:<br>对NUMBER型数据可以使用算数操作符创建表达式（+  -  *  /）<br>对DATE型数据可以使用部分算数操作符创建表达式 （+  -）</p>
+<h3 id="运算符优先级："><a href="#运算符优先级：" class="headerlink" title="运算符优先级："></a>运算符优先级：</h3><p>1、乘法和除法的优先级高于加法和减法<br>2、同级运算的顺序是从左到右<br>3、表达式中使用”括号”可强行改变优先级的运算顺序</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">需求:查询所有货品的id，名称和批发价(批发价=卖价*折扣)</span><br><span class="line"></span><br><span class="line">需求:查询所有货品的id，名称，和各进50个的成本价(成本=costPirce)</span><br><span class="line"></span><br><span class="line">需求:查询所有货品的id，名称，各进50个，并且每个运费1元的成本</span><br></pre></td></tr></table></figure>
+<p>设置列名的别名。<br>1、改变列的标题头；<br>2、用于表示计算结果的含义；<br>3、作为列的别名；<br>4、如果别名中使用特殊字符，或者是强制大小写敏感，或有空格时，都需加双引号；</p>
+<p>需求:查询所有货品的id，名称，各进50个，并且每个运费1元的成本(使用别名)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT id,productName,(costPrice+1) * 50 AS pf FROM product</span><br><span class="line">SELECT id,productName,(costPrice+1) * 50 pf FROM product</span><br><span class="line">SELECT id,productName,(costPrice+1) * 50 &quot;p f&quot; FROM product</span><br></pre></td></tr></table></figure></p>
+<h2 id="过滤查询"><a href="#过滤查询" class="headerlink" title="过滤查询"></a>过滤查询</h2><p>过滤查询:<br>使用WHERE子句限定返回的记录：<br>语法：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT  &lt;selectList&gt; </span><br><span class="line">FROM 	     table_name</span><br><span class="line">WHERE  	条件;</span><br></pre></td></tr></table></figure></p>
+<p>注意：<br>WHERE子句在 FROM 子句后</p>
+<p>比较运算符:<br>运算符               含义<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">=	               等于</span><br><span class="line">&gt;	               大于</span><br><span class="line">&gt;=	               大于或等于</span><br><span class="line">&lt;	               小于</span><br><span class="line">&lt;=	               小于或等于</span><br><span class="line">!=(&lt;&gt;)	           不等于</span><br></pre></td></tr></table></figure></p>
+<p>需求: 查询货品零售价为119的所有货品信息.<br>需求: 查询货品名为罗技G9X的所有货品信息.<br>需求: 查询货品名 不为 罗技G9X的所有货品信息.<br>需求: 查询分类编号不等于2的货品信息<br>需求: 查询货品名称,零售价小于等于200的货品<br>需求: 查询id，货品名称，批发价大于350的货品<br>思考：使用where后面使用别名不行,总结select和where的执行顺序</p>
+<p>注意：字符串和日期要用单引号扩起来.<br>要让MySQL查询区分大小写，可以：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT * FROM table_name WHERE BINARY productName=&apos;g9x&apos;</span><br><span class="line">SELECT * FROM table_name WHERE BINARY productName=&apos;G9X&apos;</span><br></pre></td></tr></table></figure></p>
+<p>SQL中不同子句执行先后顺序:<br>1):首先执行FROM子句. 明确从哪一张表中做查询.<br>2):其次执行WHERE子句.筛选符合条件的数据.<br>3):接着执行SELECT子句.选择出要显示哪些列的数据.<br>4):最后执行ORDER BY子句.对查询筛选的结果再做排序.</p>
+<p>逻辑运算符:<br>运算符                含义</p>
+<p>AND(&amp;&amp;)            如果组合的条件都是TRUE,返回TRUE<br>OR(||)             如果组合的条件之一是TRUE,返回TRUE<br>NOT(!)             如果下面的条件是FALSE,返回TRUE.</p>
+<p>需求: 选择id，货品名称，批发价在300-400之间的货品<br>需求: 选择id，货品名称，分类编号为2,4的所有货品<br>需求: 选择id，货品名词，分类编号不为2的所有商品<br>需求: 选择id，货品名称，分类编号的货品零售价大于等于250或者是成本大于等于200</p>
+<p>运算符优先级规则:<br>优先级            运算符</p>
+<p>1                所有比较运算符<br>2                NOT<br>3                AND<br>4                OR</p>
+<p>范围查询:<br>使用BETWEEN运算符显示某一值域范围的记录，这个操作符最常见的使用在数字类型数据的范围上，但对于字符类型数据和日期类型数据同样可用。<br>格式：<br>SELECT * FROM 表名 WHERE 列名 BETWEEN minvalue AND maxvalue：闭区间。<br>需求: 选择id，货品名称，批发价在300-400之间的货品<br>需求: 选择id，货品名称，批发价不在300-400之间的货品</p>
+<p>集合查询:<br>使用IN运算符，判断列的值是否在指定的集合中。<br>格式： WHERE 列名 IN (值1，值2….);<br>需求:选择id，货品名称，分类编号为2,4的所有货品<br>需求:选择id，货品名称，分类编号不为2,4的所有货品</p>
+<p>空值判断:<br>IS NULL:判断列的值是否为空。<br>格式：WHERE  列名 IS NULL;<br>需求:查询商品名为NULL的所有商品信息。</p>
+<p>模糊查询:</p>
+<p>使用LIKE运算符执行通配查询，查询条件可包含文字字符或数字：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">%:通配符：可表示零或多个字符。</span><br><span class="line">_:通配符：可表示一个字符。</span><br><span class="line">通配符：用来实现匹配部分值得特殊字符。</span><br></pre></td></tr></table></figure></p>
+<p>需求: 查询id，货品名称，货品名称匹配’%罗技M9_’<br>需求: 查询id，货品名称，分类编号,零售价大于等于200并且货品名称匹配’%罗技M1__’<br>模糊查询不是搜索引擎. Lucene </p>
+<h2 id="对查询结果排序"><a href="#对查询结果排序" class="headerlink" title="对查询结果排序"></a>对查询结果排序</h2><p>使用ORDER BY子句将记录排序</p>
+<p>ASC : 升序，缺省。<br>DESC: 降序。<br>ORDER BY </p>
+<p>子句出现在SELECT语句的最后。<br>格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT &lt;selectList&gt; </span><br><span class="line">FROM table_name</span><br><span class="line">WHERE 条件</span><br><span class="line">ORDER BY 列名1 [ASC/DESC],列名2 [ASC/DESC]...;</span><br></pre></td></tr></table></figure></p>
+<p>按照某一列来排序:<br>需求:选择id，货品名称，分类编号,零售价并且按零售价降序排序<br>按多列排序:<br>需求: 选择id，货品名称，分类编号,零售价先按分类编号排序,再按零售价排序<br>列的别名排序:<br>需求:查询M系列并按照批发价排序(加上别名)<br>需求:查询分类为2并按照批发价排序(加上别名)<br>注意：不能对使用了引号的别名排序。</p>
+<p>SELECT语句执行顺序：<br>先执行FROM—&gt;接着执行WHERE—&gt;再执行SELECT—&gt;最后执行ORDER BY</p>
+<h2 id="MySQL的分页查询"><a href="#MySQL的分页查询" class="headerlink" title="MySQL的分页查询"></a>MySQL的分页查询</h2><p>分页设计:<br>    假分页/逻辑分页/内存  分页:<br>        一次性把数据全部查询出来,存放在内存中,翻页的时候,只需要从内存中去截取指定的条数即可.<br>        优缺点:缺点:若数据过多,可能造成内存溢出;优点:简单,翻页比较快.<br>    真分页/物理分页/数据库分页:<br>        每次翻页的时候,都从数据库中去截取指定条数的数据.<br>        优缺点:缺点:复杂,翻页比较慢;优点:不会造成内存溢出.</p>
+<p>此时,我们讲解MySQL特有的分页方式(LIMIT,在Oracle12C中也提供该语法了).</p>
+<p>此时设置每页最多显示3条数据:<br>Integer pageSize = 3;<br>语法:  LIMIT  ?,?;<br>第一个?:从哪一个索引位置开始截取数据(从0开始的). beginIndex<br>第二个?:每页显示最多的条数.                       pageSize<br>LIMIT  beginIndex, pageSize;<br>beiginIndex = (currentPage - 1) * pageSize;</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">第一页: SELECT * FROM `product` LIMIT 0, 3</span><br><span class="line">第二页: SELECT * FROM `product` LIMIT 3, 3</span><br><span class="line">第三页: SELECT * FROM `product` LIMIT 6, 3</span><br><span class="line">第四页: SELECT * FROM `product` LIMIT 9, 3</span><br><span class="line">第N页:  SELECT * FROM `product` LIMIT (N-1)*3, 3</span><br></pre></td></tr></table></figure>
+<h2 id="聚集函数"><a href="#聚集函数" class="headerlink" title="聚集函数"></a>聚集函数</h2><p>什么是聚集函数(分组函数/统计函数)：<br>聚集函数作用于一组数据，并对一组数据返回一个值。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">COUNT：统计结果记录数  </span><br><span class="line">MAX：  统计计算最大值</span><br><span class="line">MIN：  统计计算最小值</span><br><span class="line">SUM：  统计计算求和</span><br><span class="line">AVG：  统计计算平均值</span><br></pre></td></tr></table></figure>
+<p>需求:查询所有商品平均零售价<br>需求:查询商品总记录数(注意在Java中必须使用long接收)<br>需求:查询分类为2的商品总数<br>需求:查询商品的最小零售价，最高零售价，以及所有商品零售价总和</p>
+<p><img src="/images/57.png" style="width: 100%;height: 100%"></p>
+<h2 id="笛卡尔积"><a href="#笛卡尔积" class="headerlink" title="笛卡尔积"></a>笛卡尔积</h2><p>单表查询:从一张表中查询数据</p>
+<p>多表查询:从多张表中联合查询出数据</p>
+<p>为什么需要多表查询:<br>简单说分别操作:类似于咱们Java中的分类.不同的事物使用不同的类型(类)来表示.<br>                每一张表存储该类型的事物的数据,不同事物咱们采取分表操作.</p>
+<p>单表查询:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">SELECT &lt;selectList&gt;</span><br><span class="line"></span><br><span class="line">FROM  表名</span><br></pre></td></tr></table></figure></p>
+<p>注意:没有连接条件的表关系返回的结果:<br>多表查询会产生笛卡尔积:<br>假设集合A={a,b}，集合B={0,1,2}，则两个集合的笛卡尔积为{(a,0),(a,1),(a,2),(b,0),(b,1),(b,2)}。<br>实际运行环境下，应避免使用全笛卡尔集(笛卡尔积的数据存在大量的不合理)。</p>
+<p>消除笛卡尔积最简单最直接的方式:<br>  使用等值连接.<br>如果是N张表做连接查询,等值连接关系至少是N-1个.<br>需求:查询所有的货品信息+对应的货品分类信息<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">SELECT productName,dirName FROM product,productdir</span><br><span class="line">WHERE dir_id = productdir.id</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/59.png" style="width: 100%;height: 100%"></p>
+<h2 id="外键约束"><a href="#外键约束" class="headerlink" title="外键约束"></a>外键约束</h2><p>主键约束: PRIMARY KEY. 在表中主键列的值,非空且唯一.<br>外键约束：FOREIGN KEY. A表中的外键列的值必须参照于B表中的主键列,外键列允许为NULL.</p>
+<p>在MySQL中,只有InnoDB存储引擎才只能事务和外键,MyISAM不支持事务不支持外键.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">修改表的存储引擎: ALTER TABLE product engine = &apos;InnoDB&apos;;</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/60.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/61.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/62.png" style="width: 100%;height: 100%"></p>
+<h2 id="多表查询"><a href="#多表查询" class="headerlink" title="多表查询"></a>多表查询</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select &lt;select_list&gt; from tablea a left join tableb b on a.key=b.key </span><br><span class="line"></span><br><span class="line">select &lt;select_list&gt; from tablea a left join tableb b on a.key = b.key where b.key is null</span><br><span class="line"></span><br><span class="line">select &lt;select_list&gt; from tablea a right join tableb b on a.key = b.key </span><br><span class="line"></span><br><span class="line">select &lt;select_list&gt; from tablea a on a.key = b.key where a.key is null</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">select &lt;select_list&gt; from tablea a inner join tableb b on a.key = b.key </span><br><span class="line"></span><br><span class="line">select &lt;select_list&gt; from tablea a full outer join tableb b on a.key = b.key </span><br><span class="line"></span><br><span class="line">select &lt;select_list&gt; from tablea a full outer join tableb b on a.key = b.key </span><br><span class="line"></span><br><span class="line">select &lt;select_list&gt; from tablea a full outer join table b on a.key = b.key where a.key is null or b.key is null</span><br></pre></td></tr></table></figure>
+<p><img src="/images/63.png" style="width: 100%;height: 100%"></p>
+<p>内连接查询:<br>   隐式内连接:<br>   显示内连接:<br>外连接查询:<br>   左外连接:<br>   右外连接:<br>   全外连接:<br>子查询:<br>字连接查询:</p>
+<p>内连接查询：是相对于外连接。<br>内连接分为：隐式内连接、显示内连接，其查询效果相同,仅仅是语法不一样而已。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">隐式内连接：</span><br><span class="line">SELECT	 &lt;selectList&gt;</span><br><span class="line">FROM	   A ,B  WHERE A.列 = B.列</span><br><span class="line"></span><br><span class="line">显示内连接(推荐写法)：</span><br><span class="line">SELECT	 &lt;selectList&gt;</span><br><span class="line">FROM	  A [INNER] JOIN B ON A.列 = B.列</span><br></pre></td></tr></table></figure></p>
+<p>需求:查询所有商品的名称和分类名称:<br>隐式内连接: SELECT p.productName,pd.dirName FROM product p,productdir pd WHERE p.dir_id = pd.id<br>显示内连接: SELECT p.productName,pd.dirName FROM product p INNER JOIN productdir pd ON p.dir_id = pd.id<br>显示内连接: SELECT p.productName,pd.dirName FROM product p JOIN productdir pd ON p.dir_id = pd.id</p>
+<p>在做等值连接的时候,若A表中和B表中的列名相同. 则可以简写:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">SELECT	&lt;selectList&gt;</span><br><span class="line">FROM	A [INNER] JOIN B USING(同名的列)</span><br><span class="line">前提:在emp和dept表中都有deptno列. 并且是外键关系。</span><br><span class="line">如: SELECT * FROM emp JOIN dept USING (deptno)</span><br></pre></td></tr></table></figure></p>
+<p>使用表名前缀在多个表中区分相同的列。<br>在不同表中具有相同列名的列可以用表的别名加以区分。<br>使用别名可以简化查询。<br>使用表名前缀可以提高执行效率。<br>如果使用了表的别名，则不能再使用表的真名</p>
+<p>需求: 查询货品id，货品名称，货品所属分类名称<br>需求: 查询零售价大于200的无线鼠标<br>需求: 查询零售价大于200的无线鼠标(使用表的别名)<br>需求: 查询每个货品对应的分类以及对应的库存<br>需求: 如果库存货品都销售完成,按照利润从高到低查询货品名称,零售价,货品分类（三张表）.</p>
+<p>外连接查询:<br>   A LEFT JOIN  B—-&gt; B RINGHT JOIN A<br>  左外连接:查询出JOIN左边表的全部数据查询出来,JOIN右边的表不匹配的数据使用NULL来填充数据.<br>  右外连接:查询出JOIN右边表的全部数据查询出来,JOIN左边的表不匹配的数据使用NULL来填充数据.</p>
+<p>语法格式<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">SELECT	&lt;selectList&gt;</span><br><span class="line">FROM	A LEFT/RIGHT OUTER JOIN B</span><br><span class="line">  ON (A.column_name = B.column_name)];</span><br><span class="line">左连接:</span><br><span class="line">SELECT * FROM product p LEFT JOIN productdir pd ON p.dir_id = pd.id</span><br><span class="line">右连接:</span><br><span class="line">SELECT * FROM product p RIGHT JOIN productdir pd ON p.dir_id = pd.id</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/64.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/65.png" style="width: 100%;height: 100%"></p>
+<p>自连接查询:把一张表看成两张来做查询.</p>
+<p><img src="/images/66.png" style="width: 100%;height: 100%"></p>
+<h2 id="操作数据-DML"><a href="#操作数据-DML" class="headerlink" title="操作数据(DML)"></a>操作数据(DML)</h2><p>DQL:查询语句,查询之后,会返回结果的临时表.<br>DML:增删改语句,操作之后,会返回一个结果,表示受影响的行数(删除3条数据,就返回3).</p>
+<p>插入语句:一次插入操作只插入一行.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO 	table_name (column1,column2,column3...)</span><br></pre></td></tr></table></figure></p>
+<p>1.插入完整数据记录<br>2.插入数据记录一部分<br>3.插入多条数据记录（MySQL特有）<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO	table_name (column1,column2,column3...)</span><br><span class="line">  VALUES (value1,value2,value3...),</span><br><span class="line">         (value1,value2,value3...),</span><br><span class="line">         (value1,value2,value3...)..;</span><br></pre></td></tr></table></figure></p>
+<p>4.插入查询结果<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO	table_name (column1,column2,column3...)</span><br><span class="line">    SELECT (column1,column2,column3...)</span><br><span class="line">    FROM table_name </span><br><span class="line">INSERT INTO productdir (dirName,parent_id)</span><br><span class="line">  SELECT dirName,parent_id FROM productdir</span><br></pre></td></tr></table></figure></p>
+<p>删除操作:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DELETE  FROM 	table_name [WHERE 	condition];</span><br><span class="line">注意:如果省略了where子句，则全表的数据都会被删除.</span><br></pre></td></tr></table></figure>
+<p>更新操作:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">UPDATE 	table_name SET	 columnName = value [, columnName = value] [WHERE	condition];</span><br></pre></td></tr></table></figure>
+<p>如果省略了where子句，则全表的数据都会被修改。注意:没有FROM</p>
+<p>需求:将零售价大于300的货品零售价上调0.2倍<br>需求:将零售价大于300的有线鼠标的货品零售价上调0.1倍</p>
+<h2 id="数据备份和恢复"><a href="#数据备份和恢复" class="headerlink" title="数据备份和恢复"></a>数据备份和恢复</h2><p>备份:很重要,修改之前,都先做备份.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">MySQL自身的数据库维护：</span><br><span class="line">通过cmd命令进入dos窗口：</span><br><span class="line">1.导出：mysqldump -u账户 -p密码 数据库名称&gt;脚本文件存储地址</span><br><span class="line"></span><br><span class="line">   mysqldump -uroot -padmin jdbcdemo&gt; C:/shop_bak.sql</span><br><span class="line"></span><br><span class="line">2.导入：mysql -u账户 -p密码 数据库名称&lt; 脚本文件存储地址</span><br><span class="line">   mysql -uroot -padmin jdbcdemo&lt; C:/shop_bak.sql</span><br><span class="line"></span><br><span class="line">Navicat工具的导入和导出：</span><br></pre></td></tr></table></figure></p>
+<p><img src="/images/67.png" style="width: 100%;height: 100%"></p>
+<p><img src="/images/68.png" style="width: 100%;height: 100%"></p>
+<p>1 、 部门表：DEPT<br>No. 字段名称 类型 描述<br>1 DEPTNO BIGINT 部门编号，由两位数字所组成( 主键)<br>2 DNAME VARCHAR(20) 部门名称，由 14 位字符所组成<br>3 LOC VARCHAR(20) 部门位置</p>
+<p>2 、 雇员表：EMP<br>No. 字段名称 类型 描述<br>1 EMPNO BIGINT 雇员编号，由四位数字所组成( 主键)<br>2 ENAME VARCHAR(20) 雇员姓名<br>3 JOB VARCHAR(20) 职位<br>4 MGR BIGINT 一个雇员对应的领导编号（雇员编号）<br>5 HIREDATE DATE 雇员的雇佣日期<br>6 SAL DOUBLE(7,2) 基本工资，由两位小数和五位整数所组成<br>7 COMM DOUBLE(7,2) 奖金/奖金<br>8 DEPTNO BIGINT 一个雇员所在的部门编号，与 dept 表的对应</p>
+<p>DEPT 表数据:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `DEPT` VALUES (10, &apos;ACCOUNTING&apos;, &apos;NEW YORK&apos;);</span><br><span class="line">INSERT INTO `DEPT` VALUES (20, &apos;RESEARCH&apos;, &apos;DALLAS&apos;);</span><br><span class="line">INSERT INTO `DEPT` VALUES (30, &apos;SALES&apos;, &apos;CHICAGO&apos;);</span><br><span class="line">INSERT INTO `DEPT` VALUES (40, &apos;OPERATIONS&apos;, &apos;BOSTON&apos;);</span><br></pre></td></tr></table></figure></p>
+<p>EMP 表数据:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO `EMP` VALUES (7369, &apos;SMITH&apos;, &apos;CLERK&apos;, 7902, &apos;1980-12-17&apos;, 800, NULL, 20);</span><br><span class="line">INSERT INTO `EMP` VALUES (7499, &apos;ALLEN&apos;, &apos;SALESMAN&apos;, 7698, &apos;1981-02-20&apos;, 1600, 300, 30);</span><br><span class="line">INSERT INTO `EMP` VALUES (7521, &apos;WARD&apos;, &apos;SALESMAN&apos;, 7698, &apos;1981-02-22&apos;, 1250, 500, 30);</span><br><span class="line">INSERT INTO `EMP` VALUES (7566, &apos;JONES&apos;, &apos;MANAGER&apos;, 7839, &apos;1981-04-02&apos;, 2975, NULL, 20);</span><br><span class="line">INSERT INTO `EMP` VALUES (7654, &apos;MARTIN&apos;, &apos;SALESMAN&apos;, 7698, &apos;1981-09-28&apos;, 1250, 1400, 30);</span><br><span class="line">INSERT INTO `EMP` VALUES (7698, &apos;BLAKE&apos;, &apos;MANAGER&apos;, 7839, &apos;1981-05-01&apos;, 2850, NULL, 30);</span><br><span class="line">INSERT INTO `EMP` VALUES (7782, &apos;CLARK&apos;, &apos;MANAGER&apos;, 7839, &apos;1981-06-09&apos;, 2450, NULL, 10);</span><br><span class="line">INSERT INTO `EMP` VALUES (7788, &apos;SCOTT&apos;, &apos;ANALYST&apos;, 7566, &apos;1987-04-19&apos;, 3000, NULL, 20);</span><br><span class="line">INSERT INTO `EMP` VALUES (7839, &apos;KING&apos;, &apos;PRESIDENT&apos;, NULL, &apos;1981-11-17&apos;, 5000, NULL, 10);</span><br><span class="line">INSERT INTO `EMP` VALUES (7844, &apos;TURNER&apos;, &apos;SALESMAN&apos;, 7698, &apos;1981-09-08&apos;, 1500, 0, 30);</span><br><span class="line">INSERT INTO `EMP` VALUES (7876, &apos;ADAMS&apos;, &apos;CLERK&apos;, 7788, &apos;1987-05-23&apos;, 1100, NULL, 20);</span><br><span class="line">INSERT INTO `EMP` VALUES (7900, &apos;JAMES&apos;, &apos;CLERK&apos;, 7698, &apos;1981-12-03&apos;, 950, NULL, 30);</span><br><span class="line">INSERT INTO `EMP` VALUES (7902, &apos;FORD&apos;, &apos;ANALYST&apos;, 7566, &apos;1981-12-03&apos;, 3000, NULL, 20);</span><br><span class="line">INSERT INTO `EMP` VALUES (7934, &apos;MILLER&apos;, &apos;CLERK&apos;, 7782, &apos;1982-01-23&apos;, 1300, NULL, 10);</span><br></pre></td></tr></table></figure></p>
+<h2 id="练习题："><a href="#练习题：" class="headerlink" title="练习题："></a>练习题：</h2><p>01.查询每个雇员的编号、姓名、职位。</p>
+<p>02.查询每个雇员的职位，职位。</p>
+<p>03.查询每个雇员的职位，使用 T DISTINCT 消除掉显示的重复 行记录。</p>
+<p>04.计算出每个雇员的基本年薪，同时查询出雇员的编号、姓名。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">05.每个雇员每个月公司会补贴饭食 200 元，交通补助 300 元，计算年薪（年薪=(工资+奖金)*12）。</span><br></pre></td></tr></table></figure>
+<p>06.查询基本工资高于 2000 的全部雇员信息。</p>
+<p>07.查询出 smith 的信息。</p>
+<p>08.查询出所有不是 CLERK 的详细信息。</p>
+<p>09.查询出所有销售人员(SALESMAN)的基本信息，并且要求销售人员的工资高于 1300。</p>
+<p>10.查询出工资范围在 1500~3000 之间的全部雇员信息（包含 1500 和 3000）。</p>
+<p>11.查询出所有经理或者是销售人员的信息，并且要求这些人的基本工资高于 1500。</p>
+<p>12.要求查询出所有在 1981 年雇佣的雇员信息。</p>
+<p>13.查询所有领取奖金的雇员信息（comm 不为空）。</p>
+<p>14.查询所有领取奖金高于 100 的雇员信息。</p>
+<p>15.查询出雇员编号是 7369、7566、9999 的雇员信息。</p>
+<p>16.查询出所有雇员姓名是以 A 开头的全部雇员信息。</p>
+<p>17.查询出雇员姓名第二个字母是 M 的全部雇员信息。</p>
+<p>18.查询出雇员姓名任意位置上包含字母 A 的全部雇员信息。</p>
+<p>19.查询出所有雇员的信息，要求按照工资排序。</p>
+<p>20.要求查询所有雇员的信息，按照雇佣日期由先后排序。</p>
+<p>21.查询全部雇员信息，按照工资由高到低排序，如果工资相同，则按照雇佣日期由先后排序。</p>
+<p>22.查询部门 30 中的所有员工。</p>
+<p>23.查询出所有办事员（CLERK）的姓名，编号和部门编号。</p>
+<p>24.查询出奖金高于薪金的员工。</p>
+<p>25.查询出奖金高于薪金的 60%的员工。</p>
+<p>26.查询出部门 10 中所有经理（MANAGER）和部门 20 中所有办事员（CLERK）的详细资料。</p>
+<p>27.查询出部门 10 中所有经理，部门 20 中所有办事员，既不是经理又不是办事员但其薪金大于或等于 2000<br>的所有员工的信息。</p>
+<p>28.查询出收取奖金的员工的不同工作。</p>
+<p>29.查询出不收取奖金或收取的奖金低于 100 的员工。</p>
+<p>30.查询出不带有“R”的员工的姓名。</p>
+<p>31.查询出每个雇员的姓名、职位、领导姓名。</p>
+<p>32.查询出所有员工的编号、姓名及其直接上级的编号、姓名，显示的结果按领导年工资的降序排列。</p>
+<p>33.查询出在销售部（SALES）工作的员工姓名、基本工资、雇佣日期、部门名称。（不知道销售部编号）。</p>
+<p>34.查询出所有员工的姓名、部门名称和工资。</p>
+<p>35.查询出所有员工的年工资，所在部门名称，按年薪从低到高排序。</p>
+<p>36.查询出某个员工的上级主管及所在部门名称，并要求出这些主管中的薪水超过 3000。</p>
+<p>37.查询出公司的最高和最低工资。</p>
+<p>38.查询出每个部门的人数、平均工资，只显示部门编号。</p>
+<p>39.查询出每种职位的最高和最低工资。</p>
+<p>40.查询平均工资高于 2000 的职位信息，以及从事此职位的雇员人数、平均工资。</p>
+<p>41 查询出至少有一个员工的所有部门编号、名称，并统计出这些部门的平均工资、最低工资、最高工资。</p>
+<p>42.查询出部门名称和这些部门的员工信息（数量、平均工资），同时列出那些没有员工的部门。</p>
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+
+    
+
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/微信公众号.jpg" alt="达叔小生 wechat" style="width: 200px; max-width: 100%">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="达叔小生 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    达叔小生
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://huangguangda.github.io/2018/05/05/1.html" title="小码哥JAVA大神班MySql">https://huangguangda.github.io/2018/05/05/1.html</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/我的视频/" rel="tag"><i class="fa fa-tag"></i> 我的视频</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/04/1.html" rel="next" title="Android开发教程">
+                <i class="fa fa-chevron-left"></i> Android开发教程
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/06/1.html" rel="prev" title="小码哥的MySQL笔记">
+                小码哥的MySQL笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTU5OC8xMjEzNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="达叔小生">
+            
+              <p class="site-author-name" itemprop="name">达叔小生</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+
+            <div id="days"></div>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("04/23/1997 00:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+                <a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href="javascript:(function() {
+    function c() {
+        var e = document.createElement(&quot;link&quot;);
+        e.setAttribute(&quot;type&quot;, &quot;text/css&quot;);
+        e.setAttribute(&quot;rel&quot;, &quot;stylesheet&quot;);
+        e.setAttribute(&quot;href&quot;, f);
+        e.setAttribute(&quot;class&quot;, l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement(&quot;div&quot;);
+        e.setAttribute(&quot;class&quot;, a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+ 
+    function S() {
+        var e = document.createElement(&quot;audio&quot;);
+        e.setAttribute(&quot;class&quot;, l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener(&quot;canplay&quot;, function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener(&quot;ended&quot;, function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = &quot; <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>&quot;;
+        document.body.appendChild(e);
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += &quot; &quot; + s + &quot; &quot; + o
+    }
+ 
+    function T(e) {
+        e.className += &quot; &quot; + s + &quot; &quot; + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp(&quot;\\b&quot; + s + &quot;\\b&quot;);
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, &quot;&quot;)
+        }
+    }
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = &quot;//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3&quot;;
+    var s = &quot;mw-harlem_shake_me&quot;;
+    var o = &quot;im_first&quot;;
+    var u = [&quot;im_drunk&quot;, &quot;im_baked&quot;, &quot;im_trippin&quot;, &quot;im_blown&quot;];
+    var a = &quot;mw-strobe_light&quot;;
+    var f = &quot;//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css&quot;;
+    var l = &quot;mw_added_css&quot;;
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName(&quot;*&quot;);
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn(&quot;Could not find a node of the right size. Please try a different page.&quot;);
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()"><i class="fa fa-music"></i> High</a>
+
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/huangguangda" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2397923107@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/c785ece603d1" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-android"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_36232611" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-spinner"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/186539024/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-bath"></i>豆瓣</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/da-shu-xiao-sheng/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5a16e1f3f265da43128096cb" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-google"></i>掘金</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/5507262458/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI1NTcxOTQ1Nw==&scene=124#wechat_redirect" target="_blank" title="历史">
+                      
+                        <i class="fa fa-fw fa-apple"></i>历史</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.cnblogs.com/dashucoding/" target="_blank" title="博客园">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>博客园</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gdone.gitee.io/englishpages/index.html" target="_blank" title="英文简历">
+                      
+                        <i class="fa fa-fw fa-globe"></i>英文简历</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gdone.gitee.io/pages/" target="_blank" title="中文简历">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>中文简历</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/GDone/events" target="_blank" title="码云">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>码云</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.oschina.net/xiaomaomi1997/" target="_blank" title="开源中国">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>开源中国</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa fa-fw fa-globe"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.geekbang.org/" title="极客邦科技" target="_blank">极客邦科技</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ilxdh.com/" title="龙轩导航" target="_blank">龙轩导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://code.giffox.com/" title="程序员导航" target="_blank">程序员导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://search.chongbuluo.com/" title="快搜" target="_blank">快搜</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.android-doc.com/training/index.html" title="Android中文API" target="_blank">Android中文API</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.android.google.cn/" title="Android Developers" target="_blank">Android Developers</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.freecodecamp.cn/" title="FreeCodeCamp中文社区" target="_blank">FreeCodeCamp中文社区</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://docs.oracle.com/javase/specs/" title="Java SE规范" target="_blank">Java SE规范</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://liuwangshu.cn/" title="刘望舒" target="_blank">刘望舒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.colabug.com/author/3159ee71c93b3b4a/" title="小楼昨夜又秋风" target="_blank">小楼昨夜又秋风</a>
+                  </li>
+                
+              </ul>
+
+            </div>
+          
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库概述"><span class="nav-number">1.</span> <span class="nav-text">数据库概述</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库技术发展历程："><span class="nav-number">2.</span> <span class="nav-text">数据库技术发展历程：</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常见的NoSQL数据库分为四大类："><span class="nav-number">2.1.</span> <span class="nav-text">常见的NoSQL数据库分为四大类：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据库系统-所属公司"><span class="nav-number">3.</span> <span class="nav-text">  数据库系统        所属公司</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL：结构化查询语言-Structured-Query-Language-。"><span class="nav-number">4.</span> <span class="nav-text">SQL：结构化查询语言(Structured Query Language)。</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SQL包含6个部分："><span class="nav-number">4.1.</span> <span class="nav-text">SQL包含6个部分：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#书写规则："><span class="nav-number">4.2.</span> <span class="nav-text">书写规则：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是表？"><span class="nav-number">5.</span> <span class="nav-text">什么是表？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表的操作"><span class="nav-number">6.</span> <span class="nav-text">表的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表的约束"><span class="nav-number">7.</span> <span class="nav-text">表的约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#简单查询"><span class="nav-number">8.</span> <span class="nav-text">简单查询</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运算符优先级："><span class="nav-number">8.1.</span> <span class="nav-text">运算符优先级：</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过滤查询"><span class="nav-number">9.</span> <span class="nav-text">过滤查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对查询结果排序"><span class="nav-number">10.</span> <span class="nav-text">对查询结果排序</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MySQL的分页查询"><span class="nav-number">11.</span> <span class="nav-text">MySQL的分页查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#聚集函数"><span class="nav-number">12.</span> <span class="nav-text">聚集函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#笛卡尔积"><span class="nav-number">13.</span> <span class="nav-text">笛卡尔积</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#外键约束"><span class="nav-number">14.</span> <span class="nav-text">外键约束</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多表查询"><span class="nav-number">15.</span> <span class="nav-text">多表查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#操作数据-DML"><span class="nav-number">16.</span> <span class="nav-text">操作数据(DML)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据备份和恢复"><span class="nav-number">17.</span> <span class="nav-text">数据备份和恢复</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#练习题："><span class="nav-number">18.</span> <span class="nav-text">练习题：</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">达叔小生</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">293.0k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共293.0k字</span>
+</div>
+
+<div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65809965";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/lib/zclip/clipboard.min.js"></script>	
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+<!-- <script type="text/javascript" src="/js/src/fireworks.js"></script>
+页面点击小红心
+<script type="text/javascript" src="/js/src/love.js"></script> -->
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/hibiki.model.json"},"display":{"position":"right","width":75,"height":150},"mobile":{"show":false},"log":false});</script></body>
+</html>
