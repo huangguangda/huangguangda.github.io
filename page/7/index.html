@@ -401,6 +401,216 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/14/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/14/1/" itemprop="url">Android精通教程-第一节Android入门简介</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T15:06:06+08:00">
+                2018-03-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android精通教程/" itemprop="url" rel="index">
+                    <span itemprop="name">Android精通教程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  869
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  3
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>Android精通教程-第一节Android入门简介</code>的概述，希望你们喜欢</p>
+<h2 id="每日一句"><a href="#每日一句" class="headerlink" title="每日一句"></a>每日一句</h2><p>If life were predictable it would cease to be life, and be without flavor.<br>— Eleanor Roosevelt<br><img src="https://upload-images.jianshu.io/upload_images/11158618-d4e7df48351852d6.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="每日一句"></p>
+<h2 id="入门工具的安装"><a href="#入门工具的安装" class="headerlink" title="入门工具的安装"></a>入门工具的安装</h2><p><strong>第一步：</strong>要下载的朋友注意了，先看完教程了解个大概，下载Android studio前，先安装jdk和IDE，Android SDK</p>
+<p><strong>第二步：</strong>下载jdk，提供JDK 9 地址：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk9-downloads-3848520.html</a><br>提供JDK 8 地址：<br><a href="http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html" target="_blank" rel="noopener">http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html</a></p>
+<p><strong>第三步：</strong>首先登录Android studio 官网地址<br><a href="https://developer.android.google.cn/studio/index.html" target="_blank" rel="noopener">https://developer.android.google.cn/studio/index.html</a><br>接下来我提供中文社区Android studio下载地址：<br><a href="http://tools.android-studio.org/index.php" target="_blank" rel="noopener">http://tools.android-studio.org/index.php</a></p>
+<p>我以windows64位例子下载教程：<br>点击 android-studio-ide-171.4408382-windows.exe 无 Android SDK 进行下载<br>然后进行点击你所下载的软件，进行安装。</p>
+<p><strong>第四步：</strong><br>配置环境变量JAVA_HOME，操作步骤：<br>“计算机（我的电脑）”—-“属性”—-“高级系统设置”—-“环境变量”—-系统变量下<br>的“新建”：</p>
+<p><strong>环境变量：</strong><br><strong>JAVA_HOME：</strong>D:\Java\jdk1.8.0_25<br><strong>CLASSPATH  ：</strong>.;%JAVA_HOME%\lib;%JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;<br><strong>Path：</strong>;%JAVA_HOME%\bin;%JAVA_HOME%\jre\bin</p>
+<h1 id="常用快捷键"><a href="#常用快捷键" class="headerlink" title="常用快捷键"></a>常用快捷键</h1><p>Ctrl+C: 复制<br>Ctrl+V: 粘贴<br>Ctrl+X: 剪切<br>Ctrl+D: 在当前行下方复制一行<br>Ctrl+Y: 删除当前行<br>Ctrl+G: 快捷行数定位<br>Ctrl+E: 查看最近打开的文件<br>Ctrl+N: 查找类名，文件名<br>Ctrl+F: 类内搜索<br>Ctrl+R: 查找替换<br>Ctrl+Alt+L: 格式化代码</p>
+<h2 id="构件"><a href="#构件" class="headerlink" title="构件"></a>构件</h2><p><strong>活动、片段、视图、意图、服务和内容提供者</strong></p>
+<p><strong>活动（Activity）</strong>，是一个用户界面屏幕。应用可以定义一个或多个活动，用于处理应用程序的不同阶段。</p>
+<p><strong>片段（Fragment）</strong>，是活动的一个组成部分，通常显示在屏幕上，但并非必须如此。通过片段，能够使应用轻松适应不同尺寸屏幕。</p>
+<p><strong>视图（View）</strong>，是最小的用户界面单元，可以直接包含在活动中，也可以包含在活动的片段中。视图可以用Java代码创建，但更好的方式是使用XML布局来定义。</p>
+<p><strong>意图（Intent）</strong>，是一种行为描述机制（如选择照片，打电话等）。在Android中，几乎一切都是通过意图来实现的，这给我们提供了大量替换或重用组件的机会。</p>
+<p><strong>服务（Service）</strong>,是运行在后台的任务，无需用户直接与之交互。</p>
+<p><strong>内容提供者</strong>，是一组数据和用于读取它们的自定义API，这是在应用之间共享全局数据的最好方法。</p>
+<blockquote>
+<p>下面重要了，上课学不到的，在这里统统学习一下，学习靠自己</p>
+</blockquote>
+<p><a href="https://link.jianshu.com?t=http://www.open-open.com/lib/view/open1468118887690.html" target="_blank" rel="noopener">Android Studio2.0 教程从入门到精通Windows版 - 安装篇</a></p>
+<p><a href="https://link.jianshu.com?t=http://www.open-open.com/lib/view/open1468121363300.html" target="_blank" rel="noopener">Android Studio2.0 教程从入门到精通Windows版 - 入门篇</a></p>
+<p><a href="https://link.jianshu.com?t=http://www.open-open.com/lib/view/open1468121618489.html" target="_blank" rel="noopener">Android Studio2.0 教程从入门到精通Windows版 - 提高篇</a></p>
+<p><a href="https://link.jianshu.com?t=http://www.open-open.com/lib/view/open1466430392743.html" target="_blank" rel="noopener">Android Studio2.0 教程从入门到精通MAC版 - 安装篇</a></p>
+<p><a href="https://link.jianshu.com?t=http://www.open-open.com/lib/view/open1466732896151.html" target="_blank" rel="noopener">Android Studio2.0 教程从入门到精通MAC版 - 入门篇</a></p>
+<p><a href="https://link.jianshu.com?t=http://www.open-open.com/lib/view/open1466732917214.html" target="_blank" rel="noopener">Android Studio2.0 教程从入门到精通MAC版 - 提高篇</a></p>
+<h2 id="授人以鱼，不如授人以渔"><a href="#授人以鱼，不如授人以渔" class="headerlink" title="授人以鱼，不如授人以渔"></a>授人以鱼，不如授人以渔</h2><p>（1）学习android需要积极的心态</p>
+<p>（2）注重实践</p>
+<p>（3）学以致用</p>
+<p>（4）多敲代码</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了Android精通教程-第一节Android入门简介，如果您还有更好地理解，欢迎沟通</li>
+<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
+</ul>
+          
+        
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/13/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2119,189 +2329,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/04/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/04/1/" itemprop="url">讲解SQL数据库语句</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-04T22:26:58+08:00">
-                2018-03-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  3,308
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  17
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>讲解SQL数据库语句</code>的概述，希望你们喜欢<br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/04/1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2383,7 +2410,7 @@ show_date_time();
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">78</span>
+                  <span class="site-state-item-count">79</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2774,7 +2801,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">293.0k</span>
+    <span title="Site words total count">302.7k</span>
   
 </div>
 
@@ -2790,7 +2817,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共293.0k字</span>
+  <span class="post-count">博客全站共302.7k字</span>
 </div>
 
 <div class="weixin-box">
