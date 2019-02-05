@@ -1,0 +1,1978 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('请输入文章密码') !== ''){
+                alert('密码错误！');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+  <script>
+  (function(i,s,o,g,r,a,m){i["DaoVoiceObject"]=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;a.charset="utf-8";m.parentNode.insertBefore(a,m)})(window,document,"script",('https:' == document.location.protocol ? 'https:' : 'http:') + "//widget.daovoice.io/widget/6f697dad.js","daovoice")
+  daovoice('init', {
+      app_id: "6f697dad"
+    });
+  daovoice('update');
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  
+  
+  
+  
+
+  
+    
+    
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    
+    
+    <link href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+  
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="带你学会Java基础课程,">
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="达叔小生" type="application/atom+xml">
+
+
+
+
+
+
+<meta name="description" content="第81节：Java中的数组">
+<meta name="keywords" content="带你学会Java基础课程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="第81节：Java中的数组">
+<meta property="og:url" content="https://huangguangda.github.io/2019/01/31/1/index.html">
+<meta property="og:site_name" content="达叔小生">
+<meta property="og:description" content="第81节：Java中的数组">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-eeb845c9bbd185d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-fee2b89479fa980b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-6558ddb037de2575.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-884bf08ed23ed7f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-d9844ec479c0096a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-405654a6af9cb35e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-e6da53cea930786a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-91a352da16e4932a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-13aa9af1a2a716c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-eafc96e2d8393d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-6ddf39a9c6e7b8ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-40ebb884952eb2b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-5103831214dc7522.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-bd72ea24b51d8387.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-f61c16cf70e787ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-d68df263d5098bf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-828de291b0982446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-02d1568bfa3da5bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-8df71163c5e85c05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-de944498e136df38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-803aab6417cb1cea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-60af5bab8e08fe20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-2eaf516c48b1b4d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-22458fd52b6974fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11158618-705d2a380c7b03b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:updated_time" content="2019-02-03T05:20:35.888Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="第81节：Java中的数组">
+<meta name="twitter:description" content="第81节：Java中的数组">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11158618-eeb845c9bbd185d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":true,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://huangguangda.github.io/2019/01/31/1/">
+
+
+
+
+<!-- 网页加载条 -->
+<script src="https://neveryu.github.io/js/src/pace.min.js"></script>
+  <title>第81节：Java中的数组 | 达叔小生</title>
+  
+
+
+
+
+
+
+
+
+
+  <!-- 音频播放 -->
+<link rel="stylesheet" href="/dist/APlayer.min.css">
+<div id="aplayer"></div>
+<script type="text/javascript" src="/dist/APlayer.min.js"></script>
+<script type="text/javascript" src="/dist/music.js"></script>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <a href="https://github.com/huangguangda" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#fff; position: absolute; top: 0; border: 0; right: 0" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">达叔小生</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <h1 class="site-subtitle" itemprop="description">爱好分享的码农</h1>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-首页">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-关于">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-标签">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-分类">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-归档">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-书籍">
+          <a href="/books" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            书籍
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-电影">
+          <a href="/movies" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-chrome"></i> <br>
+            
+            电影
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-站点">
+          <a href="/sitemap.xml" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-sitemap"></i> <br>
+            
+            站点
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-公益">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br>
+            
+            公益
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-课本">
+          <a href="/book/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-apple"></i> <br>
+            
+            课本
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2019/01/31/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">第81节：Java中的数组</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-31T13:19:16+08:00">
+                2019-01-31
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/带你学会Java基础课程/" itemprop="url" rel="index">
+                    <span itemprop="name">带你学会Java基础课程</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv">本文总阅读量
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>次
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  7,974
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  35
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="https://upload-images.jianshu.io/upload_images/11158618-eeb845c9bbd185d2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="标题图"></p>
+<blockquote>
+<p>第81节：Java中的数组</p>
+</blockquote>
+<a id="more"></a>
+<p>本节介绍数组的基本概念，数据就是一种数据结构，可以用来存储多个数据，每个数组中可以存放相同类型的数据。比如，在学校，我们是一个班，这里的班级中每个同学都是这个班级数组中的元素，都是同样的类型为学生，对应的学号就是我们的索引，但是在现实中的学号一般都是从1开始的，而在Java中的数组索引是从0开始的。</p>
+<p>定义一个数组为方括([])，通过数组元素的索引(或下标，角标)来访问数组中的元素，同时可以为数组赋值和取出数组的元素值。</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-fee2b89479fa980b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="数组"></p>
+<p>问: 在Java中为什么要有数组呢?<br>答: 数组就是一个容器，是用来存储同种数据类型的多个值。</p>
+<p>数组的概念</p>
+<p>同一种类型的数据的集合，用来装数据的，数组就是一个容器。在Java中数组的好处就是可以用数组中的元素从0开始编号，可以利用下标(索引)，对齐进行操作，即方便又快捷。</p>
+<p>在Java中的数组是用存储同种数组的元素，其指的是数据类型要相同，在数组中存放的数据类型是唯一的，只能存储一种数据类型，不能存储多种数据类型。数组可以存储基本数据类型，也可以存储引用数据类型。</p>
+<p>数组的定义格式：</p>
+<p>一般数组的定义为：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] array; 或 int array[];</span><br></pre></td></tr></table></figure></p>
+<p>这两种定义的语法通常都可以用，但是建议是使用 int[] array 这种语法，因为大多数程序员常用，这种语法定义更具有可读性。</p>
+<p>格式1：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数据类型[] 数组名 = new 数组类型[元素个数或者数组的长度];</span><br></pre></td></tr></table></figure></p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] arr = new int[5];</span><br></pre></td></tr></table></figure></p>
+<p>格式2：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">元素类型[] 数组名 = new 元素类型[]&#123;元素1，元素2，。。。&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int[] arr = new int[]&#123;1，2，3，4&#125;;</span><br><span class="line"></span><br><span class="line">int[] arr = &#123;2，3，4，5&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>数组的定义方式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">数组的表示：[]，通过关键字new来创建数组</span><br></pre></td></tr></table></figure></p>
+<p>一个数组一旦初始化建立，那么数组就会在内存中有一块空间被固定下来，那么这块空间就是这个数组的，不可变，即数组的长度将不可改变。就算把这个数组中的数组清空，在内存中还是这块空间被保存下来。比如，一家酒店我们把它定义一个数组，那么每个房间就是这家就是的长度，这家酒店我们就把它当做是我们在内存中开辟的一块固定下来的空间，每个房间中入住的人就是这块空间，也就是数组的元素，房间号码我们可以当做的数组的索引，通过房间号找到相应的入住者。当这家酒店中的每个元素即是客人都走时，这家酒店中的房间依然保留着，依然还是酒店，所以依然还是数组了。数组中的长度即酒店中的房间还是这个数量（长度）。</p>
+<p>数组代码示例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">package com。dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 数据类型[] 数组名=new 数据类型[数组的长度];</span><br><span class="line">        int[] arr = new int[5];</span><br><span class="line">        /*</span><br><span class="line">         * int: 代表数据类型</span><br><span class="line">         * []: 代表数组</span><br><span class="line">         * arr: 合法的标识符</span><br><span class="line">         * </span><br><span class="line">         * new: 创建新的实体或对象</span><br><span class="line">         * int: 数据类型</span><br><span class="line">         * []: 代表的数组</span><br><span class="line">         * 5: 代表数组的长度</span><br><span class="line">        */</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>数组的索引</p>
+<p>例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] arr = new int[3];</span><br></pre></td></tr></table></figure></p>
+<p>数组可以存储多个数据，并且会对数组进行编号，从0开始操作元素，可以通过编号（索引，角标，下标）找到该元素。代码中会在内存空间中开辟3个空间，如三个房子编号，从0开始，第二个房子为1，第三个房子为2。这只是一种比如，我们把它看作三个空间，对应的三个地址编号而已，通过地址是不是就可以找到房子了呢！</p>
+<p>数组也是一种数据类型，为引用类型，如int为一种基本数据类型，那么int[]这是一种属于int数组的一种引用类型，所以int[]是一种数据类型，创建int[]类型的对象为创建数组。</p>
+<p>什么是数组的初始化？</p>
+<p>就是为数组开辟连续的内存空间，并为每个数据元素赋予值。</p>
+<p>只要数组进行分配，就具有初始化值，数组变量一旦在内存空间分配了区域，就会在每个空间里存储数组的初始化值，就算内存空间为空，也会有一个初始化的值为null，这里的值会根据变量类型来给定初始化值，初始化值可以有系统进行自动分配，如果我们不给定值的话，另一种就是由我们程序员给定初始化值。</p>
+<p>如何对数组进行初始化？</p>
+<p>动态初始化就是程序员指定数组的长度，有系统进行数组元素的分配初始值。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">例如： int[] arr = new int[5];</span><br></pre></td></tr></table></figure></p>
+<p>格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">arrayName = new type[length];</span><br></pre></td></tr></table></figure></p>
+<p>使用动态初始化过程如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] array = new int[5];</span><br></pre></td></tr></table></figure></p>
+<p>静态初始化就是程序员给定初始化值，然后由系统进行决定长度。</p>
+<p>静态初始化的语法格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">array = new type[]&#123;元素1，元素2，元素3，。。。&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>定义一个int数组类型的变量：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] intArray;</span><br></pre></td></tr></table></figure></p>
+<p>静态初始化，给定数组元素的初始化值，不给定数组长度，由系统决定数组长度：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">intArray = new int[]&#123;2，3，4，5，6&#125;; 或 intArray = &#123;2，3，4，5，6&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>在程序员的通常写法中，数组的定义和数组进行初始化都是同时完成如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[] a = &#123;1，2，3，4&#125;;</span><br></pre></td></tr></table></figure></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">package com。dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 数据类型[] 数组名 = new 数据类型[数组长度];</span><br><span class="line">        int[] arr = new int[5]; // 动态初始化，在内存中开辟连续的5块空间</span><br><span class="line">        System。out。println(arr[0]); // 系统会给出默认的初始化值</span><br><span class="line">        // 整数类型都为0</span><br><span class="line">        arr[0] = 12;</span><br><span class="line">        System。out。println(arr[0]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-6558ddb037de2575.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>结果在内存中开辟连续的5块空间，在内存中进行存储，这5块空间有自己的地址，用于方便去找到，可以通过地址先找到该数组，如找一栋楼，需要地址，然后找数组中的元素，如每个房间，通过编号找到每个元素。</p>
+<p>案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">System。out。println(arr);// 打印结果</span><br><span class="line">[I@7852e922// 16进制的表现形式// [ 代表数组// I 代表是int类型// @ 固定的// 7852e922 代表16进制的地址值</span><br></pre></td></tr></table></figure></p>
+<p>在Java中运行程序会进行划分空间进行运行程序：五块内存空间</p>
+<p>1.栈：用来存储局部变量的<br>2.堆：存储new出来的数组或对象<br>3.方法区：面向对象<br>4.本地方法区：和系统相关<br>5.寄存器：供给CPU使用（不需要了解）</p>
+<p>局部变量是定义在方法声明上或方法中的变量，在栈内存中，存储的都是局部变量，只要在方法中定义的变量都是局部变量，一旦变量的生命周期结束该变量就会被释放，用完就会被删掉了。</p>
+<p>堆内存，存储的都是实体，就是对象，凡是用new 创建的都是在堆里面。</p>
+<p>new，一个new指在内存中进行开辟空间，在堆内存中每个实体都是一个首地址值，堆内存的变量都是有默认的初始化值的，不同类型都不一样，当实体不在使用时，堆中的变量不会马上删除，会由Java系统中的垃圾回收机制进行回收（Java中有个垃圾回收机制，自动回收垃圾）</p>
+<p>数组地址，例如：0x0011，可以通过索引找到每个值，系统会给初始化值。</p>
+<p>整数类型：</p>
+<p>byte， short， int， long 的默认初始化值都为0</p>
+<p>浮点类型：</p>
+<p>float， double 的默认初始化值都为0。0</p>
+<p>布尔类型：</p>
+<p>boolean的默认初始化值为false</p>
+<p>字符类型：</p>
+<p>char默认初始化值为 “\u0000”，char在内存中是占两个字节，是16个二进制位。\u0000每个0代表16进制的0，那么四个0就是代表16个二进制位。</p>
+<p>一个字节代表8个二进制位，那么两个字节，就代表16个二进制位。’\u0000’每个0代表16进制的0，那么四个0就是代表16个二进制位。</p>
+<p>char在内存中占两个字节</p>
+<p>代表16个二进制位， 两个字节代表16个二进制位。<br>一个字节代表8个二进制位，那么两个字节就代表16个二进制位。</p>
+<p>\u0000:<br>每个0代表16进制的0，那么四个0就代表16个二进制位。<br>两个字节就代表16个二进制位，那么四个0代表16个二进制位。</p>
+<p>char:就代表16个二进制位。<br>\u0000`:就代表16个二进制位 = 四个0就代表16个二进制位。<br>每个0就代表16个进制的二进制数。1个0就代表4位，16进制是4位代表一位的，4个就代表16个二进制数。</p>
+<p>16个二进制位: 0000<br>一个就代表4个二进制位，那么4个就代表16个二进制位。</p>
+<p>数组元素如果是引用数据类型为类，接口和数组，那么数组元素的初始化值是null。</p>
+<p>注意：静态初始化和动态初始化不能同时用，不要在进行数组初始化值是，既要分配数组元素初始化值，还要给定数组的长度，千万不要，知道吗！</p>
+<p>枪</p>
+<p>枪中的弹夹，子弹是一颗一颗地压进去的，第一颗压进的子弹是最后打出来的，最后一颗的子弹先发射出来。所以java中的方法就想弹夹一样，而主方法，是先进入内存的，虚拟机调用主方法，程序运行起来，首先进入内存的，进入栈的，是主方法。</p>
+<p>主方法就像子弹一样，放入到栈低，压进栈，压栈。主方法直接压入栈底，运行完之后会弹出去，就叫弹栈。栈是先进后出。主方法压进栈。方法里的局部变量，类型为数组类型。</p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package com。dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // int x = 12; // x就是局部变量</span><br><span class="line">        int[] arr = new int=[3]; </span><br><span class="line">        // 动态初始化，创建3块连续的空间</span><br><span class="line">        // 方法里的局部变量</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>在栈中存放主方法，主方法内有局部变量，这个局部变量为数组类型:</p>
+<p>int[] arr;</p>
+<p>然后在堆中是数组类型new出来的值。</p>
+<p>内存分析案例：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-884bf08ed23ed7f1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // int x = 12; // x就是局部变量</span><br><span class="line">        int[] arr = new int[3]; </span><br><span class="line">        // 动态初始化，创建3块连续的空间</span><br><span class="line">        // 方法里的局部变量</span><br><span class="line">        arr[0] = 10;</span><br><span class="line">        arr[1] = 20;</span><br><span class="line">        System.out.println(arr[0]);</span><br><span class="line">        System.out.println(arr[1]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>制作内存图：</p>
+<p>地址值是赋予给arr，只是通过地址找到实体的。<br><img src="https://upload-images.jianshu.io/upload_images/11158618-d9844ec479c0096a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] arr1 = new int[3]; // 创建数组长度为3</span><br><span class="line">        int[] arr2 = new int[3];</span><br><span class="line">        </span><br><span class="line">        System.out.println(arr1); // 打印数组的地址值</span><br><span class="line">        System.out.println(arr2);</span><br><span class="line">        </span><br><span class="line">        arr1[0] = 10; // 给第一个数组中的第一个元素赋值</span><br><span class="line">        arr2[1] = 20; // 给第二个数组中的第二个元素赋值</span><br><span class="line">        </span><br><span class="line">        System.out.println(arr1[0]);</span><br><span class="line">        System.out.println(arr1[1]);</span><br><span class="line">        System.out.println(arr1[2]);</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;-----------&quot;);</span><br><span class="line">        </span><br><span class="line">        System.out.println(arr2[0]);</span><br><span class="line">        System.out.println(arr2[1]);</span><br><span class="line">        System.out.println(arr2[2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-405654a6af9cb35e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>制作内存图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-e6da53cea930786a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] arr1 = new int[3];</span><br><span class="line">        int[] arr2 = new int[5];</span><br><span class="line">        int[] arr3 = arr2;</span><br><span class="line">        </span><br><span class="line">        System.out.println(arr1);</span><br><span class="line">        System.out.println(arr2);</span><br><span class="line">        System.out.println(arr3);</span><br><span class="line">        </span><br><span class="line">        arr1[0] = 10;</span><br><span class="line">        arr1[1] = 20;</span><br><span class="line">        </span><br><span class="line">        arr2[1] = 30;</span><br><span class="line">         </span><br><span class="line">        arr3[1] = 40;</span><br><span class="line">        arr3[2] = 50;</span><br><span class="line">        </span><br><span class="line">        System.out.println(arr1[0]);</span><br><span class="line">        System.out.println(arr1[1]);</span><br><span class="line">        System.out.println(arr1[2]);</span><br><span class="line">        System.out.println(&quot;--------------&quot;);</span><br><span class="line">        System.out.println(arr2[0]);</span><br><span class="line">        System.out.println(arr2[1]);</span><br><span class="line">        System.out.println(arr2[2]);</span><br><span class="line">        System.out.println(arr2[3]);</span><br><span class="line">        System.out.println(arr2[4]);</span><br><span class="line">        System.out.println(&quot;--------------&quot;);</span><br><span class="line">        System.out.println(arr3[0]);</span><br><span class="line">        System.out.println(arr3[1]);</span><br><span class="line">        System.out.println(arr3[2]);</span><br><span class="line">        System.out.println(arr3[3]);</span><br><span class="line">        System.out.println(arr3[4]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-91a352da16e4932a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>制作内存图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-13aa9af1a2a716c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 数据类型[] 数组名=new 数据类型[]&#123;元素1，元素2，...&#125;;</span><br><span class="line">        // int[] arr = new int[] &#123;1，23，45，67，28&#125;;</span><br><span class="line">        // int[] arr2 = &#123;2，35，6，12&#125;; // 静态初始化的简写形式</span><br><span class="line">        </span><br><span class="line">        // int[] arr; //声明数组引用</span><br><span class="line">        // arr = new int[] &#123;11，22，33，44&#125;; // 可以不同行</span><br><span class="line">        </span><br><span class="line">        // int [] arr2;</span><br><span class="line">        // arr2 = &#123;23，43，55&#125;; // 简写形式声明和赋值必须在同一行</span><br><span class="line">        </span><br><span class="line">        // int[] arr = new int[3]&#123;23，22，1&#125;; //会报错，不允许动静结合</span><br><span class="line">        // 应该写成 int[] arr = new int[3]; 为动态初始化</span><br><span class="line">        // int[] arr = new int[]&#123;23，44，2&#125;; 为静态初始化</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 数据类型[] 数组名=new 数据类型[]&#123;元素1，元素2，...&#125;;</span><br><span class="line">        // int[] arr = new int[] &#123;1，23，45，67，28&#125;;</span><br><span class="line">        // int[] arr2 = &#123;2，35，6，12&#125;; // 静态初始化的简写形式</span><br><span class="line">        </span><br><span class="line">        int[] arr = &#123;12，23，34&#125;;</span><br><span class="line">        System.out.println(arr);</span><br><span class="line">        System.out.println(arr[0]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>制作内存图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-eafc96e2d8393d80.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>数组中的异常问题：</p>
+<p>程序员写程序不能保证自己写的代码是正确的，总会出现一些错误，这时我们要学会调式这些代码程序保证可以正常的运行。</p>
+<p>数组索引越界异常<br>ArrayIndexOutOfBoundsException，指你访问的索引不存在。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int arr = &#123;1，34，234&#125;;</span><br><span class="line">System.out.println(arr[23]);</span><br></pre></td></tr></table></figure></p>
+<p>空指针异常<br>NullPointerException，指数组已经不在指向堆内存了，而你还用数组名去访问元素。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">int[] arr = &#123;1，2，3&#125;;</span><br><span class="line">arr = null;</span><br><span class="line">System.out.println(arr[0]);</span><br><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] arr = new int[5];</span><br><span class="line">        System.out.println(arr[5]); // 当访问数组中不存在的索引，就会出现索引越界异常.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图：<br><img src="https://upload-images.jianshu.io/upload_images/11158618-6ddf39a9c6e7b8ad.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>当访问数组中不存在的索引的时候就会导致数组越界异常。</p>
+<p>同理<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">System.out.println(arr[-1]); 同样导致数组越界异常。</span><br></pre></td></tr></table></figure></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] arr = new int[5];</span><br><span class="line">        // System.out.println(arr[5]);</span><br><span class="line">        arr = null;</span><br><span class="line">        System.out.println(arr[0]); // 当数组引用赋值为null，在去调用数组中的元素就会出现空指针异常.</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图片：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-40ebb884952eb2b3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>数组的遍历：</p>
+<p>循环数组中的每个数组元素。</p>
+<p>使用foreach循环，这种循环遍历数组是非常方便的，foreach循环的格式如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for (type variableName : array )&#123;</span><br><span class="line"> // 访问每个元素</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class ForeachTest &#123;</span><br><span class="line"> public static void main(String[] args)&#123;</span><br><span class="line">  String[] names = &#123; “dashu”, “dashucoding”&#125;;</span><br><span class="line">  // 使用foreach循环遍历数组中的每个元素</span><br><span class="line">  for(String name : names)&#123;</span><br><span class="line">   System.out.println(name);</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;/*</span><br><span class="line"> *  数组的遍历：依次输出数组中的每个元素</span><br><span class="line"> *  数组的属性：arr.length数组的长度</span><br><span class="line"> *  数组的最大索引：arr.length-1;</span><br><span class="line"> * */public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] arr = &#123;11，22，33，44，55&#125;;</span><br><span class="line">        /*      System.out.println(arr[0]);</span><br><span class="line">        System.out.println(arr[1]);</span><br><span class="line">        System.out.println(arr[2]);</span><br><span class="line">        System.out.println(arr[3]);</span><br><span class="line">        System.out.println(arr[4]);*/</span><br><span class="line">        </span><br><span class="line">        for(int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;---------&quot;);</span><br><span class="line">        </span><br><span class="line">        // arr.length 代表数组的长度</span><br><span class="line">        System.out.println(arr.length);</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;---------&quot;);</span><br><span class="line">        </span><br><span class="line">        int[] arr2 = &#123;1，2，3&#125;;</span><br><span class="line">        print(arr2);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    /*</span><br><span class="line">     * 遍历数组的方法</span><br><span class="line">     * 返回值类型为void</span><br><span class="line">     * 参数列表int[] arr</span><br><span class="line">     * */</span><br><span class="line">    private static void print(int[] arr) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        for(int i = 0;i&lt;arr.length;i++) &#123;</span><br><span class="line">            System.out.println(arr[i]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图片：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-5103831214dc7522.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>最大值</p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;/*</span><br><span class="line"> * 数组</span><br><span class="line"> * 如何获取数组的最大值</span><br><span class="line"> * */public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] arr = &#123;23，34，12，33&#125;;</span><br><span class="line">        int max = getMax(arr);</span><br><span class="line">        System.out.println(max);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /*</span><br><span class="line">     * 获取数组最大值</span><br><span class="line">     * 返回值类型为int</span><br><span class="line">     * 参数列表为int[] arr</span><br><span class="line">     * */</span><br><span class="line">    public static int getMax(int[] arr) &#123;</span><br><span class="line">        int max = arr[0];</span><br><span class="line">        for (int i = 1; i &lt; arr.length; i++) &#123; // 从数组的第二个元素开始遍历</span><br><span class="line">            if(max &lt; arr[i]) &#123; // 如果max记录的值小于数组中的元素，就max记录记录最大的</span><br><span class="line">                max = arr[i];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        return max;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图：<br><img src="https://upload-images.jianshu.io/upload_images/11158618-bd72ea24b51d8387.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>分析制图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-f61c16cf70e787ae.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>数组的操作反转：</p>
+<p>操作反转，就是前后倒置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;/*</span><br><span class="line"> * 数组</span><br><span class="line"> * 如何获取数组的最大值</span><br><span class="line"> * */public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] arr = &#123;22，33，44，55&#125;;</span><br><span class="line">        reverseArray(arr);</span><br><span class="line">        print(arr);</span><br><span class="line">    &#125;</span><br><span class="line">        /*</span><br><span class="line">         * 数组元素的反转</span><br><span class="line">         * 返回值类型void</span><br><span class="line">         * 明确参数列表int[] arr</span><br><span class="line">         * */</span><br><span class="line">    public static void reverseArray(int[] arr) &#123;</span><br><span class="line">        for(int i=0; i &lt; arr.length / 2; i++) &#123;</span><br><span class="line">            // arr[0] 第一个 和 arr[arr.length-1-0] 最后一个 交换</span><br><span class="line">            // arr[1] 和 arr[arr.length-1-1] 交换</span><br><span class="line">            // arr[2] 和 arr[arr.length-1-2] 交换</span><br><span class="line">            // ...</span><br><span class="line">            </span><br><span class="line">            /*int temp = arr[0];</span><br><span class="line">            arr[0] = arr[arr.length-1];</span><br><span class="line">            arr[arr.length-1] = temp;*/</span><br><span class="line">            </span><br><span class="line">            int temp = arr[i];</span><br><span class="line">            arr[i] = arr[arr.length-1-i];</span><br><span class="line">            arr[arr.length-1-i] = temp;</span><br><span class="line">            </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /*</span><br><span class="line">     * 数组遍历</span><br><span class="line">     * 明确返回值类型void</span><br><span class="line">     * 明确参数列表int[] arr</span><br><span class="line">     * */</span><br><span class="line">    public static void print(int[] arr) &#123;</span><br><span class="line">        for(int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            System.out.print(arr[i] + &quot; &quot;);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图片：<br><img src="https://upload-images.jianshu.io/upload_images/11158618-d68df263d5098bf9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>根据键盘录入索引，查找对应的星期：</p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">/*</span><br><span class="line"> * 数组</span><br><span class="line"> * 如何进行数组查表（根据键盘录入索引，查找对应的星期)</span><br><span class="line"> * */public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        System.out.println(&quot;星期&quot; + getWeek(2));</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;----------&quot;);</span><br><span class="line">        </span><br><span class="line">        // 键盘录入</span><br><span class="line">        Scanner sc = new Scanner(System.in);</span><br><span class="line">        System.out.println(&quot;请输入对应的星期范围，对应1至7&quot;);</span><br><span class="line">        int week = sc.nextInt();</span><br><span class="line">        System.out.println(&quot;星期&quot; + getWeek(week));</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /*</span><br><span class="line">     * 根据索引返回对应的星期</span><br><span class="line">     * 返回值的类型char</span><br><span class="line">     * 能存储中文的char</span><br><span class="line">     * 参数列表int week</span><br><span class="line">     * 通过索引获取数组中的元素</span><br><span class="line">     * */</span><br><span class="line">    public static char getWeek(int week) &#123;</span><br><span class="line">        char[] arr = &#123;&apos; &apos;，&apos;一&apos;，&apos;二&apos;，&apos;三&apos;，&apos;四&apos;，&apos;五&apos;，&apos;六&apos;，&apos;日&apos;&#125;; // 定义一张星期表</span><br><span class="line">        return arr[week]; // 通过索引获取数组中的元素</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>数组元素查找：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">/*</span><br><span class="line"> * 数组</span><br><span class="line"> * 数组元素查找</span><br><span class="line"> * 查找指定元素第一次在数组中出现的索引</span><br><span class="line"> * */public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[] arr = &#123;11，22，33，44，55&#125;;</span><br><span class="line">        int index = getIndex(arr，22);</span><br><span class="line">        System.out.println(index);</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;----------&quot;);</span><br><span class="line">        </span><br><span class="line">        int index2 = getIndex(arr，10);</span><br><span class="line">        System.out.println(index2);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    /*</span><br><span class="line">     * 查找元素索引</span><br><span class="line">     * 返回值类型int</span><br><span class="line">     * 参数列表int[] arr， 要查找的值int value</span><br><span class="line">     * */</span><br><span class="line">    public static int getIndex(int[] arr， int value) &#123;</span><br><span class="line">        for(int i = 0; i &lt; arr.length; i++) &#123; // 数组的遍历</span><br><span class="line">            if(arr[i] == value) &#123; // 如果数组中的元素与查找元素匹配，就是这个元素</span><br><span class="line">                return i; // 返回索引</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        // 如果没有查到，没找到返回给你一个-1，如果返回值为-1，就知道没在数组中找到</span><br><span class="line">        return -1;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图片：<br><img src="https://upload-images.jianshu.io/upload_images/11158618-828de291b0982446.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>二维数组的格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[][] arr = new int[3][2];</span><br></pre></td></tr></table></figure></p>
+<p>表示二维数组的格式:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">数据类型 数组名[][] = new 数据类型[m][n];</span><br><span class="line">数据类型[] 数组名[] = new 数据类型[m][n];</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">// 建议这么写</span><br><span class="line">int[][] arr = new int[3][2];</span><br><span class="line">// 一维数组</span><br><span class="line">int[] x; // 二维数组int[] x，y[];int[] y[];</span><br></pre></td></tr></table></figure>
+<p>二维数组案例:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        /*</span><br><span class="line">         * 二维数组</span><br><span class="line">         * 二维数组中有3个一维数组</span><br><span class="line">         * 每个一维数组中有2个元素</span><br><span class="line">         * */</span><br><span class="line">        int[][] arr = new int[3][2];</span><br><span class="line">        // 打印二维数组</span><br><span class="line">        System.out.println(arr);</span><br><span class="line">        // 打印二维数组中的第一个一维数组</span><br><span class="line">        System.out.println(arr[0]);</span><br><span class="line">        // 打印二维数组中的第一个一维数组的第一个元素</span><br><span class="line">        System.out.println(arr[0][0]);</span><br><span class="line">        </span><br><span class="line">        // 打印结果</span><br><span class="line">        /*</span><br><span class="line">         * [[I@7852e922 // 二维数组的地制值</span><br><span class="line">         * [I@4e25154f // 一维数组的地址值</span><br><span class="line">         * 0 // 元素值</span><br><span class="line">         * */ </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图片：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-02d1568bfa3da5bf.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>二维数组：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">import java.util.Scanner;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        int[][] arr = new int[3][2];</span><br><span class="line">        </span><br><span class="line">        System.out.println(arr);</span><br><span class="line">        System.out.println(arr[0]);</span><br><span class="line">        System.out.println(arr[0][0]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>内存分析：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-8df71163c5e85c05.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 二维数组，二维数组中有3个一维数组，三个一维数组都没有被赋值</span><br><span class="line">        int[][] arr = new int[3][];</span><br><span class="line">        // 打印二维数组中的三个一维数组</span><br><span class="line">        System.out.println(arr[0]);</span><br><span class="line">        System.out.println(arr[1]);</span><br><span class="line">        System.out.println(arr[2]);</span><br><span class="line">        </span><br><span class="line">        arr[0] = new int[3]; // 第一个一维数组中存储三个int值</span><br><span class="line">        arr[1] = new int[5]; // 第二个一维数组中存储五个int值</span><br><span class="line">        </span><br><span class="line">        System.out.println(&quot;-----&quot;);</span><br><span class="line">        </span><br><span class="line">        // 打印二维数组中的三个一维数组</span><br><span class="line">        System.out.println(arr[0]);</span><br><span class="line">        System.out.println(arr[1]);</span><br><span class="line">        System.out.println(arr[2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图片：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-de944498e136df38.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 二维数组，二维数组中有3个一维数组，三个一维数组都没有被赋值</span><br><span class="line">        int[][] arr = new int[3][];</span><br><span class="line">        // 打印二维数组中的三个一维数组</span><br><span class="line">        System.out.println(arr[0]);</span><br><span class="line">        System.out.println(arr[1]);</span><br><span class="line">        System.out.println(arr[2]);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>分析内存图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-803aab6417cb1cea.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>二维数组格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">int[][] arr = &#123; &#123;1，2，3&#125;， &#123;4，5&#125;， &#123;6，7，8，9&#125; &#125;;</span><br></pre></td></tr></table></figure></p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 二维数组</span><br><span class="line">        int[][] arr = &#123; &#123;1，2，3&#125;， &#123;4，5&#125;， &#123;6，7，8，9&#125; &#125;;</span><br><span class="line">        System.out.println(arr); //二维数组的地址值</span><br><span class="line">        System.out.println(arr[0]); //一维数组的地址值</span><br><span class="line">        System.out.println(arr[0][0]); //元素</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图：<br><img src="https://upload-images.jianshu.io/upload_images/11158618-60af5bab8e08fe20.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"><br>内存分析图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-2eaf516c48b1b4d1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"><br>二维数据的遍历：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 二维数组的遍历</span><br><span class="line">        int[][] arr = &#123; &#123;1，2，3&#125;， &#123;4，5&#125;， &#123;6，7，8，9&#125; &#125;;</span><br><span class="line">        for(int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            // 获取每个二维数组中的一维数组</span><br><span class="line">            // 获取一维数组中的元素</span><br><span class="line">            for(int j = 0; j &lt; arr[i].length; j++) &#123;</span><br><span class="line">                System.out.print(arr[i][j] + &quot; &quot;);</span><br><span class="line">            &#125;</span><br><span class="line">            System.out.println();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图：</p>
+<p><img src="https://upload-images.jianshu.io/upload_images/11158618-22458fd52b6974fb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>二维数组的求和：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">package com.dashucoding;</span><br><span class="line">public class DemoArray &#123;</span><br><span class="line"></span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        // TODO Auto-generated method stub</span><br><span class="line">        // 二维数组求和</span><br><span class="line">        int[][] arr = &#123; &#123;1，2，3&#125;， &#123;4，5，6&#125;， &#123;7，8，9&#125; &#125;;</span><br><span class="line">        int sum = 0;</span><br><span class="line">        for(int i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">            // 获取每个一维数组</span><br><span class="line">            for(int j = 0; j &lt; arr[i].length; j++) &#123;</span><br><span class="line">                //获取每个一维数组</span><br><span class="line">                sum = sum + arr[i][j];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(sum);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>结果图：<br><img src="https://upload-images.jianshu.io/upload_images/11158618-705d2a380c7b03b2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="效果"></p>
+<p>基本数据类型的值传递，不会改变原值，因为调用后会弹栈，局部变量就会随之消失，而引用数据类型的值传递，会改变原值，因为使用方法弹栈，但是堆内存数组对象还在，可以通过地址继承访问。</p>
+<p>数组的综合应用</p>
+<p>代码案例：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">// 打印数组public static void printArray(int[] arr)&#123;</span><br><span class="line"> for(int x=0;x&lt;arr.length;x++)</span><br><span class="line"> &#123;</span><br><span class="line">    if(x!=arr.length-1)&#123;</span><br><span class="line">     System.out.print(arr[x]+&quot;,&quot;);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">     System.out.print(arr[x]);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>数组转字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">// 数组转换成为字符串// 结果返还为字符串，参数为数组public static String toString (int[] arr)&#123;</span><br><span class="line"> // 定义字符串变量</span><br><span class="line"> String temp = &quot;[&quot;;</span><br><span class="line"> for(int x = 0; x&lt;arr.length; x++)&#123;</span><br><span class="line">  // 判断是否为最后一位元素</span><br><span class="line">  if(x != arr.length - 1)&#123;</span><br><span class="line">   temp = temp + arr[x] + &quot;,&quot;;</span><br><span class="line">  &#125;else&#123;</span><br><span class="line">    temp = temp + arr[x] + &quot;]&quot;;</span><br><span class="line">   &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">public static String getWeek(int num)&#123;</span><br><span class="line"> String[] weeks = &#123; &quot;1&quot;, &quot;2&quot;, &quot;3&quot;, &quot;4&quot;, &quot;5&quot;, &quot;6&quot;, &quot;7&quot; &#125;;</span><br><span class="line"> if(num&gt;7 || num&lt;1)&#123;</span><br><span class="line">  return num + &quot;没有对应的星期&quot;;</span><br><span class="line"> &#125;</span><br><span class="line"> return weeks[num];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>选择排序</p>
+<p>选择排序是第一个人和后续排序的人进行比较，若第一个人大于第二个人，就进行交换，那么这时第一人就是最小的，然后这时的第一个人和第三个人进行比较，若这时的第一个人大于第三个人，就进行交换位置，这时第一个人又换人了，也变得更小了，就这样，把剩下的人以这种方法进行比较，直到最后，第一轮结束，在第一位的就是最小的值。</p>
+<p>这种就是排序算法，比如有6个人，第一轮要进行5次比较。小的值往前跑嘛。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">//第一轮  for(int index=1;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  if(arr[0]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[0];  </span><br><span class="line">  arr[0] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  //第二轮  for(int index=2;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  if(arr[1]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[1];  </span><br><span class="line">  arr[1] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  //第三轮  for(int index=3;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  if(arr[2]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[2];  </span><br><span class="line">  arr[2] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  //第四轮  for(int index=4;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  if(arr[3]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[3];  </span><br><span class="line">  arr[3] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  //第五轮  for(int index=5;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  if(arr[4]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[4];  </span><br><span class="line">  arr[3] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  //第六轮没有，我们arr.length=6举例  //int index = 6;index&lt;arr.length; false</span><br></pre></td></tr></table></figure></p>
+<p>优化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">public static void selectionSort(int[] arr)  &#123;  </span><br><span class="line"> for(int count=1;count&lt;arr.length;count++)  </span><br><span class="line">&#123;  </span><br><span class="line"> for(int index=count;index&lt;arr.length;index++)  </span><br><span class="line"> &#123;  </span><br><span class="line">  if(arr[count-1]&gt;arr[index])  </span><br><span class="line">  &#123;  </span><br><span class="line">    int temp = arr[count-1];  </span><br><span class="line">    arr[count-1] = arr[index];  </span><br><span class="line">    arr[index] = temp;  </span><br><span class="line">  &#125;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">for(int x = 0;x&lt;arr.length-1;x++)</span><br><span class="line">&#123;</span><br><span class="line"> for(int y=x+1;y&lt;arr.length;y++)&#123;</span><br><span class="line">  if(arr[x]&gt;arr[y])&#123;</span><br><span class="line">    int temp = arr[x];</span><br><span class="line">    arr[x] = arr[y];</span><br><span class="line">    arr[y] = temp;</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>冒泡排序</p>
+<p>为什么这个排序要叫冒泡呢？为什么不叫其他名词呢？</p>
+<p>其实这个取名是根据排序算法的基本思路命名的，见名知意，冒泡排序，就是想泡泡在水里一样，在水里大的泡泡先浮出水面，就是大的先排出来，最小的最慢排出。</p>
+<p>冒泡排序，是对排序的各个元素从头到尾依次进行相邻的大小比较，比如你是队长，在你的面前有一排人，你要将其进行排序，依次按照从小到大排序。</p>
+<p>怎么理解最大的值被排除，你是队长，你对面前的一群人看不惯，进行排序，从左到右开始，第一个和第二个进行比较，大的那个就被挑出来，与第三个进行比较，接下来就是依次按照这个方法比较，就能把那个最大的值，最高的给挑出来不是，这就是第一轮的比较。</p>
+<p>接下来，最大的就不用跟他比较了，上面所述，在排序时，你面前的人，是不能乱动的，一旦比较哪个大，两者就换位，如果第一比第二个小，就是第二个大时，两者不用换位，第二个就与第三个进行比较。</p>
+<p>依照这个方法，两两比较，大的都被排到了最后，那么一旦排完，是不是都依照从小到大，（从低到高）的顺序在你面前排好了。</p>
+<p>代码示例</p>
+<p>我们用索引下标来解释<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">//第一轮  for(int index=0;index &lt; arr.length-1; index++）&#123;  //相邻两个比较  </span><br><span class="line"> if(arr[index] &gt; arr[index+1])&#123;  </span><br><span class="line">   int temp = arr[index];  </span><br><span class="line">   arr[index] = arr[index+1];  </span><br><span class="line">   arr[index+1] = temp;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">print(arr);  </span><br><span class="line">  for(int index=0;index &lt; arr.length-2;index++)&#123;  //这里arr.length-2,为什么比上一次多减了1呢？  //因为第一轮，把最大的排出来了，就不用比较了，少了一个人  </span><br><span class="line"> if(arr[index] &gt; arr[index+1])&#123;  </span><br><span class="line">   int temp = arr[index];  </span><br><span class="line">   arr[index] = arr[index+1];  </span><br><span class="line">   arr[index+1] = temp;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">print(arr);  </span><br><span class="line">  for(int index=0;index &lt; arr.length-3;index++)&#123;  </span><br><span class="line"> if(arr[index]&gt;arr[index+1])&#123;  </span><br><span class="line">   int temp = arr[index];  </span><br><span class="line">   arr[index] = arr[index+1];  </span><br><span class="line">   arr[index+1] = temp;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">  </span><br><span class="line">print(arr);</span><br></pre></td></tr></table></figure></p>
+<p>优化：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">for(int num=1;num&lt;arr.length;num++)&#123;  </span><br><span class="line">  </span><br><span class="line"> for(int index=0;index&lt;arr.length-num;index++)&#123;  </span><br><span class="line">  </span><br><span class="line">   if(arr[index]&gt;arr[index+1])&#123;  </span><br><span class="line">     int temp = arr[index];  </span><br><span class="line">     arr[index] = arr[index+1];  </span><br><span class="line">     arr[index+1] = temp;  </span><br><span class="line">   &#125;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">for(int x=0;x&lt;arr.length-1;x++)&#123;</span><br><span class="line"> for(int y=0;y&lt;arr.length-1-x;y++)&#123;</span><br><span class="line">  if(arr[y]&gt;arr[y+1])&#123;</span><br><span class="line">   int temp = arr[y];</span><br><span class="line">   arr[y] = arrp[y+1];</span><br><span class="line">   arr[y+1] = temp;</span><br><span class="line">   &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二分查找，折半查找</p>
+<p>什么是二分查找，折半查找呢？就是我说一个数，你来猜，你答一个数，我说大了，或小了，直到找到为止。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">public static int searchKey(int[] arr, int key)&#123;</span><br><span class="line"> for(int x=0;x&lt;arr.length;x++)&#123;</span><br><span class="line">   if(arr[x] == key)&#123;</span><br><span class="line">    rerurn x;</span><br><span class="line">   &#125;</span><br><span class="line">  return -1;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二分<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">public static int binarySearch(int[] arr, int key)&#123;</span><br><span class="line"> int max,min,mid;</span><br><span class="line"> min = 0;</span><br><span class="line"> max = arr.length - 1;</span><br><span class="line"> mid = (max+min)&gt;&gt;1;</span><br><span class="line"></span><br><span class="line"> while(arr[mid] != key)&#123;</span><br><span class="line">  if(key&gt;arr[mid])&#123;</span><br><span class="line">    min = mid + 1;</span><br><span class="line">  &#125;else if(key&lt;arr[mid])</span><br><span class="line">    max = mid - 1;</span><br><span class="line"></span><br><span class="line">   mid = (max+min)&gt;&gt;1;</span><br><span class="line">  &#125;</span><br><span class="line"> return mid;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">public static int binarySearch(int[] arr, int key）&#123;</span><br><span class="line"> int max, min , mid;</span><br><span class="line"> min = 0;</span><br><span class="line"> max = arr.length - 1;</span><br><span class="line"></span><br><span class="line"> while(min &lt;= max)&#123;</span><br><span class="line">   mid = (min+max)&gt;&gt;1;</span><br><span class="line">   if(key&gt;arr[mid])&#123;</span><br><span class="line">    min = mid + 1;</span><br><span class="line">   &#125;else if(key &lt; arr[mid])</span><br><span class="line">    max = mid - 1;</span><br><span class="line">   &#125; else &#123;</span><br><span class="line">    return mid;</span><br><span class="line"> &#125;</span><br><span class="line"> return -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>二维数组</p>
+<p>格式：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">int[][] arr = new int[2][3];</span><br><span class="line">int[][] arr = &#123; &#123;3,5,6&#125;, &#123;33,44,66&#125;, &#123;23,21,6&#125; &#125;;</span><br><span class="line">for(int x=0; x&lt;arr.length; x++)&#123;</span><br><span class="line"> for(int y=0; y&lt;arr[x].length; y++)&#123;</span><br><span class="line">   sum += arr[x][y];</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">public static void revese(int[] arr)&#123;</span><br><span class="line"> for(int start=0, end = arr.length-1; start&lt;end; start++,end--)&#123;</span><br><span class="line">  swap(arr,start,end);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">public static void swap(int[] arr, int a, int b)&#123;</span><br><span class="line"> int temp=arr[a];</span><br><span class="line"> arr[a] = arr[b];</span><br><span class="line"> arr[b] = temp;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>本章小结</p>
+<p>本章主要介绍了数组的定义，初始化，使用等基本知识，结合了大量的分析内存图用来分析数组在内存中的运行机制，数组的引用变量和数组直接的关系，大量讲解多维数组的实质性问题，文章中给出了多种代码案例来展示数组的运用扩展。</p>
+<h2 id="结言"><a href="#结言" class="headerlink" title="结言"></a>结言</h2><p>好了，欢迎在留言区留言，与大家分享你的经验和心得。</p>
+<p>感谢你学习今天的内容，如果你觉得这篇文章对你有帮助的话，也欢迎把它分享给更多的朋友，感谢。</p>
+<blockquote>
+<p>达叔小生：往后余生，唯独有你<br>You and me, we are family !<br>90后帅气小伙，良好的开发习惯；独立思考的能力；主动并且善于沟通<br>简书博客： 达叔小生<br><a href="https://www.jianshu.com/u/c785ece603d1" target="_blank" rel="noopener">https://www.jianshu.com/u/c785ece603d1</a></p>
+</blockquote>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><ul>
+<li>下面我将继续对 其他知识 深入讲解 ，有兴趣可以继续关注</li>
+<li>小礼物走一走 or 点赞</li>
+</ul>
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+          <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px">-------------本文结束<i class="fa fa-paw"></i>感谢您的阅读-------------</div>
+    
+</div>
+        
+      </div>
+
+    
+
+      <div>
+        <div id="wechat_subscriber" style="display: block; padding: 10px 0; margin: 20px auto; width: 100%; text-align: center">
+    <img id="wechat_subscriber_qcode" src="/images/微信公众号.jpg" alt="达叔小生 wechat" style="width: 200px; max-width: 100%">
+    <div>欢迎您扫一扫上面的微信公众号，订阅我的博客！</div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center">
+  <div>坚持原创技术分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.png" alt="达叔小生 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    达叔小生
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="https://huangguangda.github.io/2019/01/31/1/" title="第81节：Java中的数组">https://huangguangda.github.io/2019/01/31/1/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/带你学会Java基础课程/" rel="tag"><i class="fa fa-tag"></i> 带你学会Java基础课程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/30/1/" rel="next" title="第80节:Java中的MVC设计模式">
+                <i class="fa fa-chevron-left"></i> 第80节:Java中的MVC设计模式
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/02/01/1/" rel="prev" title="第82节：Java中的学生管理系统">
+                第82节：Java中的学生管理系统 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC8zNTU5OC8xMjEzNA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="达叔小生">
+            
+              <p class="site-author-name" itemprop="name">达叔小生</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+
+            <div id="days"></div>
+<script>
+function show_date_time(){
+window.setTimeout("show_date_time()", 1000);
+BirthDay=new Date("04/23/1997 00:00:00");
+today=new Date();
+timeold=(today.getTime()-BirthDay.getTime());
+sectimeold=timeold/1000
+secondsold=Math.floor(sectimeold);
+msPerDay=24*60*60*1000
+e_daysold=timeold/msPerDay
+daysold=Math.floor(e_daysold);
+e_hrsold=(e_daysold-daysold)*24;
+hrsold=setzero(Math.floor(e_hrsold));
+e_minsold=(e_hrsold-hrsold)*60;
+minsold=setzero(Math.floor((e_hrsold-hrsold)*60));
+seconds=setzero(Math.floor((e_minsold-minsold)*60));
+document.getElementById('days').innerHTML="已运行"+daysold+"天"+hrsold+"小时"+minsold+"分"+seconds+"秒";
+}
+function setzero(i){
+if (i<10)
+{i="0" + i};
+return i;
+}
+show_date_time();
+</script>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives">
+              
+                  <span class="site-state-item-count">84</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+                <a title="收藏到书签，偶尔High一下^_^" rel="alternate" class="mw-harlem_shake_slow wobble shake" href="javascript:(function() {
+    function c() {
+        var e = document.createElement(&quot;link&quot;);
+        e.setAttribute(&quot;type&quot;, &quot;text/css&quot;);
+        e.setAttribute(&quot;rel&quot;, &quot;stylesheet&quot;);
+        e.setAttribute(&quot;href&quot;, f);
+        e.setAttribute(&quot;class&quot;, l);
+        document.body.appendChild(e)
+    }
+ 
+    function h() {
+        var e = document.getElementsByClassName(l);
+        for (var t = 0; t < e.length; t++) {
+            document.body.removeChild(e[t])
+        }
+    }
+ 
+    function p() {
+        var e = document.createElement(&quot;div&quot;);
+        e.setAttribute(&quot;class&quot;, a);
+        document.body.appendChild(e);
+        setTimeout(function() {
+            document.body.removeChild(e)
+        }, 100)
+    }
+ 
+    function d(e) {
+        return {
+            height : e.offsetHeight,
+            width : e.offsetWidth
+        }
+    }
+ 
+    function v(i) {
+        var s = d(i);
+        return s.height > e && s.height < n && s.width > t && s.width < r
+    }
+ 
+    function m(e) {
+        var t = e;
+        var n = 0;
+        while (!!t) {
+            n += t.offsetTop;
+            t = t.offsetParent
+        }
+        return n
+    }
+ 
+    function g() {
+        var e = document.documentElement;
+        if (!!window.innerWidth) {
+            return window.innerHeight
+        } else if (e && !isNaN(e.clientHeight)) {
+            return e.clientHeight
+        }
+        return 0
+    }
+ 
+    function y() {
+        if (window.pageYOffset) {
+            return window.pageYOffset
+        }
+        return Math.max(document.documentElement.scrollTop, document.body.scrollTop)
+    }
+ 
+    function E(e) {
+        var t = m(e);
+        return t >= w && t <= b + w
+    }
+ 
+    function S() {
+        var e = document.createElement(&quot;audio&quot;);
+        e.setAttribute(&quot;class&quot;, l);
+        e.src = i;
+        e.loop = false;
+        e.addEventListener(&quot;canplay&quot;, function() {
+            setTimeout(function() {
+                x(k)
+            }, 500);
+            setTimeout(function() {
+                N();
+                p();
+                for (var e = 0; e < O.length; e++) {
+                    T(O[e])
+                }
+            }, 15500)
+        }, true);
+        e.addEventListener(&quot;ended&quot;, function() {
+            N();
+            h()
+        }, true);
+        e.innerHTML = &quot; <p>If you are reading this, it is because your browser does not support the audio element. We recommend that you get a new browser.</p> <p>&quot;;
+        document.body.appendChild(e);
+        e.play()
+    }
+ 
+    function x(e) {
+        e.className += &quot; &quot; + s + &quot; &quot; + o
+    }
+ 
+    function T(e) {
+        e.className += &quot; &quot; + s + &quot; &quot; + u[Math.floor(Math.random() * u.length)]
+    }
+ 
+    function N() {
+        var e = document.getElementsByClassName(s);
+        var t = new RegExp(&quot;\\b&quot; + s + &quot;\\b&quot;);
+        for (var n = 0; n < e.length; ) {
+            e[n].className = e[n].className.replace(t, &quot;&quot;)
+        }
+    }
+ 
+    var e = 30;
+    var t = 30;
+    var n = 350;
+    var r = 350;
+    var i = &quot;//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake.mp3&quot;;
+    var s = &quot;mw-harlem_shake_me&quot;;
+    var o = &quot;im_first&quot;;
+    var u = [&quot;im_drunk&quot;, &quot;im_baked&quot;, &quot;im_trippin&quot;, &quot;im_blown&quot;];
+    var a = &quot;mw-strobe_light&quot;;
+    var f = &quot;//s3.amazonaws.com/moovweb-marketing/playground/harlem-shake-style.css&quot;;
+    var l = &quot;mw_added_css&quot;;
+    var b = g();
+    var w = y();
+    var C = document.getElementsByTagName(&quot;*&quot;);
+    var k = null;
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            if (E(A)) {
+                k = A;
+                break
+            }
+        }
+    }
+    if (A === null) {
+        console.warn(&quot;Could not find a node of the right size. Please try a different page.&quot;);
+        return
+    }
+    c();
+    S();
+    var O = [];
+    for (var L = 0; L < C.length; L++) {
+        var A = C[L];
+        if (v(A)) {
+            O.push(A)
+        }
+    }
+})()"><i class="fa fa-music"></i> High</a>
+
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/huangguangda" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:2397923107@qq.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.jianshu.com/u/c785ece603d1" target="_blank" title="简书">
+                      
+                        <i class="fa fa-fw fa-android"></i>简书</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://blog.csdn.net/qq_36232611" target="_blank" title="csdn">
+                      
+                        <i class="fa fa-fw fa-spinner"></i>csdn</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.douban.com/people/186539024/" target="_blank" title="豆瓣">
+                      
+                        <i class="fa fa-fw fa-bath"></i>豆瓣</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://www.zhihu.com/people/da-shu-xiao-sheng/activities" target="_blank" title="知乎">
+                      
+                        <i class="fa fa-fw fa-globe"></i>知乎</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://juejin.im/user/5a16e1f3f265da43128096cb" target="_blank" title="掘金">
+                      
+                        <i class="fa fa-fw fa-google"></i>掘金</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://weibo.com/5507262458/profile?topnav=1&wvr=6" target="_blank" title="微博">
+                      
+                        <i class="fa fa-fw fa-weibo"></i>微博</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://mp.weixin.qq.com/mp/profile_ext?action=home&__biz=MzI1NTcxOTQ1Nw==&scene=124#wechat_redirect" target="_blank" title="历史">
+                      
+                        <i class="fa fa-fw fa-apple"></i>历史</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="http://www.cnblogs.com/dashucoding/" target="_blank" title="博客园">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>博客园</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gdone.gitee.io/englishpages/index.html" target="_blank" title="英文简历">
+                      
+                        <i class="fa fa-fw fa-globe"></i>英文简历</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gdone.gitee.io/pages/" target="_blank" title="中文简历">
+                      
+                        <i class="fa fa-fw fa-heartbeat"></i>中文简历</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://gitee.com/GDone/events" target="_blank" title="码云">
+                      
+                        <i class="fa fa-fw fa-twitter"></i>码云</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://my.oschina.net/xiaomaomi1997/" target="_blank" title="开源中国">
+                      
+                        <i class="fa fa-fw fa-facebook"></i>开源中国</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+            <div class="cc-license motion-element" itemprop="license">
+              <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" class="cc-opacity" target="_blank">
+                <img src="/images/cc-by-nc-sa.svg" alt="Creative Commons">
+              </a>
+            </div>
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-inline">
+              <div class="links-of-blogroll-title">
+                <i class="fa fa-fw fa-globe"></i>
+                推荐阅读
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.alloyteam.com/nav/" title="Web前端导航" target="_blank">Web前端导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.36zhen.com/t?id=3448" title="前端书籍资料" target="_blank">前端书籍资料</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ife.baidu.com/" title="百度前端技术学院" target="_blank">百度前端技术学院</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://wf.uisdc.com/cn/" title="google前端开发基础" target="_blank">google前端开发基础</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.geekbang.org/" title="极客邦科技" target="_blank">极客邦科技</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://ilxdh.com/" title="龙轩导航" target="_blank">龙轩导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://code.giffox.com/" title="程序员导航" target="_blank">程序员导航</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://search.chongbuluo.com/" title="快搜" target="_blank">快搜</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.android-doc.com/training/index.html" title="Android中文API" target="_blank">Android中文API</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://developer.android.google.cn/" title="Android Developers" target="_blank">Android Developers</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.freecodecamp.cn/" title="FreeCodeCamp中文社区" target="_blank">FreeCodeCamp中文社区</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://docs.oracle.com/javase/specs/" title="Java SE规范" target="_blank">Java SE规范</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://liuwangshu.cn/" title="刘望舒" target="_blank">刘望舒</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.colabug.com/author/3159ee71c93b3b4a/" title="小楼昨夜又秋风" target="_blank">小楼昨夜又秋风</a>
+                  </li>
+                
+              </ul>
+
+            </div>
+          
+
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#结言"><span class="nav-number">1.</span> <span class="nav-text">结言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#结语"><span class="nav-number">2.</span> <span class="nav-text">结语</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="heart">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">达叔小生</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">327.3k</span>
+  
+</div>
+
+
+
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Mist</a> v5.1.4</div>
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">博客全站共327.3k字</span>
+</div>
+
+<div class="weixin-box">
+  <div class="weixin-menu">
+    <div class="weixin-hover">
+      <div class="weixin-description">微信扫一扫，订阅本博客</div>
+    </div>
+  </div>
+</div>
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">本站访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">本站总访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      次
+    </span>
+  
+</div>
+
+
+
+
+
+  <script type="text/javascript">
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//tajs.qq.com/stats?sId=65809965";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+          <span id="scrollpercent"><span>0</span>%</span>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three-waves.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+  
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdn.bootcss.com/mathjax/2.7.1/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  
+
+
+  
+
+  
+
+
+  <script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script>
+<script type="text/javascript" src="/js/src/custom.js"></script>
+
+
+   <canvas class="fireworks" style="position: fixed;left: 0;top: 0;z-index: 1; pointer-events: none"></canvas> 
+   <script type="text/javascript" src="//cdn.bootcss.com/animejs/2.2.0/anime.min.js"></script> 
+   <script type="text/javascript" src="/js/src/fireworks.js"></script>
+
+
+  <!-- 代码块复制功能 -->
+  <script type="text/javascript" src="/js/src/clipboard.min.js"></script>  
+  <script type="text/javascript" src="/js/src/clipboard-use.js"></script>
+<script src="/live2dw/lib/L2Dwidget.min.js?0c58a1486de42ac6cc1c59c7d98ae887"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"live2d-widget-model-hibiki"},"display":{"position":"right","width":75,"height":150},"mobile":{"show":false},"log":false});</script></body>
+</html>
