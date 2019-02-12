@@ -401,6 +401,410 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/16/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/16/1/" itemprop="url">Android开发工程师文集-1 小时学会SQLite</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-16T15:03:52+08:00">
+                2018-03-16
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android开发工程师文集/" itemprop="url" rel="index">
+                    <span itemprop="name">Android开发工程师文集</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2,717
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  16
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>Android开发工程师文集-1 小时学会SQLite</code>的概述，希望你们喜欢</p>
+<h2 id="内容"><a href="#内容" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>什么是Sqlite：<br>效率高，开源，小型，程序驱动，支持事务操作，无数据类型，可嵌入的关系型数据库<br>独立的，跨平台的，代码量少，简单易用</li>
+</ul>
+<p><strong>创建表语句</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">create table student(_id Integer primary key, name varchar(10), age Integer not null);</span><br></pre></td></tr></table></figure></p>
+<p><strong>删除表</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">drop table student;</span><br></pre></td></tr></table></figure></p>
+<p><strong>插入数据</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Insert into 表名(字段列表) values (值列表);</span><br><span class="line">insert into student(_id,age) values(1,17);</span><br><span class="line">insert into student values(1,&quot;vic&quot;,17);</span><br></pre></td></tr></table></figure></p>
+<p><strong>修改数据</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update student set name=&quot;vic&quot;,age=17 where _id=1;</span><br></pre></td></tr></table></figure></p>
+<p><strong>更新数据</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Update 表名 set 字段=值 列表 更新的条件</span><br></pre></td></tr></table></figure></p>
+<p><strong>删除数据</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">delete from 表名 [删除条件];</span><br><span class="line">delete from student where _id=1;</span><br></pre></td></tr></table></figure></p>
+<p><strong>查询语句</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">select 字段名 from 表名称 [查询条件];</span><br><span class="line">select 列名称 from 表名称 where 条件;</span><br><span class="line">group by 分组的字段 having 筛选条件 order by 排序字段;</span><br><span class="line">select * from student;</span><br><span class="line">select _id from student;</span><br><span class="line">select * from student where _id=1;</span><br><span class="line">select * from student where _id=1 and age&gt;17;</span><br><span class="line">select * from student where age like &quot;%1%&quot;;</span><br><span class="line">select * from student where age&gt;17 order by _id=1;</span><br></pre></td></tr></table></figure></p>
+<h2 id="内容-1"><a href="#内容-1" class="headerlink" title="内容"></a>内容</h2><ul>
+<li>创建数据库</li>
+<li>实现数据库中的增删改查</li>
+</ul>
+<h2 id="要点"><a href="#要点" class="headerlink" title="要点"></a>要点</h2><p><code>SQLiteOpenHelper</code>,<code>onCreate()</code>,<code>onUpgrade()</code>,<code>onOpen()</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:background=&quot;@drawable/login_bg&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"> &lt;Button</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;创建&quot;</span><br><span class="line">  android:onClick=&quot;create&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">//MainActivity.java</span><br><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line">  private MySqliteHelper helper;</span><br><span class="line"> @Override</span><br><span class="line"> protected void onCreate(Bundle savedInstanceState)&#123;</span><br><span class="line"> super.onCreate(savedInstanceState);</span><br><span class="line"> setContentView(R.layout.activity_main);</span><br><span class="line"> helper = DbManger.getIntance(this);</span><br><span class="line"> &#125;</span><br><span class="line"> public void createdb(View view)&#123;</span><br><span class="line">  SQLiteDatabase db=helper.getWritableDatable();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//创建一个类</span><br><span class="line">//sqliteOpenHelper</span><br><span class="line">//提供了onCreate()和onUpgrade()与onOpen()</span><br><span class="line">public class MySqliteHelper extends SQLiteOpenHelper&#123;</span><br><span class="line"> public MySqliteHelper(Context context, String name, SQLitebase.CursorFactory factory, int version)&#123;</span><br><span class="line"> super(context,name,factory,version);</span><br><span class="line"> &#125;</span><br><span class="line"> public MySqliteHelper(Context context)&#123;</span><br><span class="line">  super(context,Constant.DATABASE_NAME,null,Constant.DATABASE_VERSION);</span><br><span class="line">&#125;</span><br><span class="line"> //数据库创建时回调</span><br><span class="line"> @Override</span><br><span class="line"> public void onCreate(SQLiteDatabase db)&#123;</span><br><span class="line">  Log.i(&quot;tag&quot;,&quot;--onCreate--&quot;);</span><br><span class="line">  //String sql=&quot;create table student(_id Integer primary key,name verchar(10),age Integer)&quot;;</span><br><span class="line">  String sql = &quot;create table &quot;+Constant.TABLE_NAME+&quot;(&quot;+Constant._ID+&quot; Integer primary key,&quot;+Constant.NAME+&quot; varchar(10),&quot;+Constant.AGE+&quot; Integer)&quot;;</span><br><span class="line">  db.execSQL(sql);//执行数据库语句</span><br><span class="line"> &#125;</span><br><span class="line"> //数据库更新</span><br><span class="line"> @Override</span><br><span class="line"> public void onUpgrade(SQLiteDatabase db,int oldVersion, int newVersion)&#123;</span><br><span class="line">  Log.i(&quot;tag&quot;,&quot;--onUpgrade--&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> //数据库打开</span><br><span class="line"> @Override</span><br><span class="line"> public void onOpen(SQLiteDatabase db)&#123;</span><br><span class="line">  super.onOpen(db);</span><br><span class="line">  Log.i(&quot;tag&quot;,&quot;--onOpen--&quot;);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">//创建库表</span><br><span class="line">public class Contant&#123;</span><br><span class="line"> public static final String DATABASE_NAME=“info.db”;//数据库名称</span><br><span class="line"> public static final int DATABASE_VERSION=1;//数据库的版本号</span><br><span class="line"> public static final String TABLE_NAME=&quot;student&quot;;//表名</span><br><span class="line">  //用这里表示</span><br><span class="line"> public static final String _ID=&quot;_id&quot;;</span><br><span class="line"> public static final String _NAME=&quot;name&quot;;</span><br><span class="line"> public static final String AGE=&quot;age&quot;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">public class DbManger&#123;</span><br><span class="line"> private static MySqliteHelper helper;</span><br><span class="line"> public static MySqliteHelper getIntance(Context context)&#123;</span><br><span class="line">   if(helper == null)&#123;</span><br><span class="line">     helper=new MySqliteHelper(content);</span><br><span class="line">   &#125;</span><br><span class="line">   return hepler;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:background=&quot;@drawable/login_bg&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"> &lt;Button</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;创建&quot;</span><br><span class="line">  android:onClick=&quot;create&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_insert&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;插入数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//MainActivity.java</span><br><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line">  private MySqliteHelper helper;</span><br><span class="line"> @Override</span><br><span class="line"> protected void onCreate(Bundle savedInstanceState)&#123;</span><br><span class="line"> super.onCreate(savedInstanceState);</span><br><span class="line"> setContentView(R.layout.activity_main);</span><br><span class="line"> helper = DbManger.getIntance(this);</span><br><span class="line"> &#125;</span><br><span class="line"> public void createdb(View view)&#123;</span><br><span class="line">  SQLiteDatabase db=helper.getWritableDatable();</span><br><span class="line"> &#125;</span><br><span class="line"> public void click(View view)&#123;</span><br><span class="line">  switch(view.getId())&#123;</span><br><span class="line">   case R.id.btn_insert:</span><br><span class="line">    SQLiteDatabase db=helper.getWritableDatabase();</span><br><span class="line">    String sql=&quot;insert into &quot;+Constant.TABLE_NAME+&quot; values(1,&apos;vic&apos;,17)&quot;;</span><br><span class="line">    DbManger.execSQL(db,sql);</span><br><span class="line">    String sql2=&quot;insert into &quot;+Constant.TABLE_NAME+&quot; values(2,&apos;vic&apos;,23)&quot;;</span><br><span class="line">    DbManger.execSQL(db,sql2);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">public class DbManger&#123;</span><br><span class="line"> private static MySqliteHelper helper;</span><br><span class="line"> public static MySqliteHelper getIntance(Context context)&#123;</span><br><span class="line">   if(helper == null)&#123;</span><br><span class="line">     helper=new MySqliteHelper(content);</span><br><span class="line">   &#125;</span><br><span class="line">   return hepler;</span><br><span class="line"> &#125;</span><br><span class="line"> public static void execSQL(SQLiteDatabase db,String sql)&#123;</span><br><span class="line">  if(db!=null)&#123;</span><br><span class="line">   if(sql!=null &amp;&amp; !&quot;&quot;.equals(sql))&#123;</span><br><span class="line">     db.execSQL(sql);</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:background=&quot;@drawable/login_bg&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"> &lt;Button</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;创建&quot;</span><br><span class="line">  android:onClick=&quot;create&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_insert&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;插入数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_update&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;修改数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">//MainActivity.java</span><br><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line">  private MySqliteHelper helper;</span><br><span class="line"> @Override</span><br><span class="line"> protected void onCreate(Bundle savedInstanceState)&#123;</span><br><span class="line"> super.onCreate(savedInstanceState);</span><br><span class="line"> setContentView(R.layout.activity_main);</span><br><span class="line"> helper = DbManger.getIntance(this);</span><br><span class="line"> &#125;</span><br><span class="line"> public void createdb(View view)&#123;</span><br><span class="line">  SQLiteDatabase db=helper.getWritableDatable();</span><br><span class="line"> &#125;</span><br><span class="line"> public void click(View view)&#123;</span><br><span class="line">  switch(view.getId())&#123;</span><br><span class="line">   case R.id.btn_insert:</span><br><span class="line">    SQLiteDatabase db=helper.getWritableDatabase();</span><br><span class="line">    String sql=&quot;insert into &quot;+Constant.TABLE_NAME+&quot; values(1,&apos;vic&apos;,17)&quot;;</span><br><span class="line">    DbManger.execSQL(db,sql);</span><br><span class="line">    String sql2=&quot;insert into &quot;+Constant.TABLE_NAME+&quot; values(2,&apos;vic&apos;,23)&quot;;</span><br><span class="line">    DbManger.execSQL(db,sql2);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   case R.id.btn_update:</span><br><span class="line">    db=helper.getWritableDatabase();</span><br><span class="line">    String updateSql=&quot;update &quot;+Constant.TABLE_NAME&quot;+&quot; set &quot;+Contant.NAME+&quot;=&apos;vic2&apos; where &quot;+Contant._ID+&quot;=1&quot;;</span><br><span class="line">    DbManger.execSQL(db,updateSql);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:background=&quot;@drawable/login_bg&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"> &lt;Button</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;创建&quot;</span><br><span class="line">  android:onClick=&quot;create&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_insert&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;插入数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_update&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;修改数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_delete&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;删除数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">//MainActivity.java</span><br><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line">  private MySqliteHelper helper;</span><br><span class="line"> @Override</span><br><span class="line"> protected void onCreate(Bundle savedInstanceState)&#123;</span><br><span class="line"> super.onCreate(savedInstanceState);</span><br><span class="line"> setContentView(R.layout.activity_main);</span><br><span class="line"> helper = DbManger.getIntance(this);</span><br><span class="line"> &#125;</span><br><span class="line"> public void createdb(View view)&#123;</span><br><span class="line">  SQLiteDatabase db=helper.getWritableDatable();</span><br><span class="line"> &#125;</span><br><span class="line"> public void click(View view)&#123;</span><br><span class="line">  switch(view.getId())&#123;</span><br><span class="line">   case R.id.btn_insert:</span><br><span class="line">    SQLiteDatabase db=helper.getWritableDatabase();</span><br><span class="line">    String sql=&quot;insert into &quot;+Constant.TABLE_NAME+&quot; values(1,&apos;vic&apos;,17)&quot;;</span><br><span class="line">    DbManger.execSQL(db,sql);</span><br><span class="line">    String sql2=&quot;insert into &quot;+Constant.TABLE_NAME+&quot; values(2,&apos;vic&apos;,23)&quot;;</span><br><span class="line">    DbManger.execSQL(db,sql2);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   case R.id.btn_update:</span><br><span class="line">    db=helper.getWritableDatabase();</span><br><span class="line">    String updateSql=&quot;update &quot;+Constant.TABLE_NAME&quot;+&quot; set &quot;+Contant.NAME+&quot;=&apos;vic2&apos; where &quot;+Contant._ID+&quot;=1&quot;;</span><br><span class="line">    DbManger.execSQL(db,updateSql);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   case R.id.btn_delete:</span><br><span class="line">    db=helper.getWritableDatabase();</span><br><span class="line">    String delSql=&quot;delete from &quot;+Constant.TABLE_NAME+&quot; where &quot;+Constant._ID+&quot;=2&quot;;</span><br><span class="line">    DbManger.execSQL(db,delSql);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;LinearLayout</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line">    android:layout_width=&quot;match_parent&quot;</span><br><span class="line">    android:layout_height=&quot;match_parent&quot;</span><br><span class="line">    android:background=&quot;@drawable/login_bg&quot;</span><br><span class="line">    android:orientation=&quot;vertical&quot;&gt;</span><br><span class="line"> &lt;Button</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;创建&quot;</span><br><span class="line">  android:onClick=&quot;create&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_insert&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;插入数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_update&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;修改数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_delete&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;删除数据&quot;</span><br><span class="line">  android:onClick=&quot;click&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_insertApi&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;插入数据&quot;</span><br><span class="line">  android:onClick=&quot;onclick&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;/LinearLayout&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">//MainActivity.java</span><br><span class="line">public class MainActivity extends AppCompatActivity &#123;</span><br><span class="line">  private MySqliteHelper helper;</span><br><span class="line"> @Override</span><br><span class="line"> protected void onCreate(Bundle savedInstanceState)&#123;</span><br><span class="line"> super.onCreate(savedInstanceState);</span><br><span class="line"> setContentView(R.layout.activity_main);</span><br><span class="line"> helper = DbManger.getIntance(this);</span><br><span class="line"> &#125;</span><br><span class="line"> public void createdb(View view)&#123;</span><br><span class="line">  SQLiteDatabase db=helper.getWritableDatable();</span><br><span class="line"> &#125;</span><br><span class="line"> public void onClick(View view)&#123;</span><br><span class="line">  switch(view.getId())&#123;</span><br><span class="line">   case R.id.btn_insertApi:</span><br><span class="line">    SQLiteDatabase db=helper.getWritableDatabase();</span><br><span class="line">    ContentValues values=new ContentValues();</span><br><span class="line">    values.put(Constant._ID,3);</span><br><span class="line">    values.put(Constant.NAME,&quot;vic&quot;);</span><br><span class="line">    values.put(Constant.AGE,17);</span><br><span class="line">    long result=db.insert(Constant.TABLE_NAME,null,values);</span><br><span class="line">    if(result&gt;0)&#123;</span><br><span class="line">     Toast.makeText(MainActivity.this,&quot;插入数据成功!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      Toast.makeText(MainActivity.this,&quot;插入数据失败!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"> public void click(View view)&#123;</span><br><span class="line">  switch(view.getId())&#123;</span><br><span class="line">   case R.id.btn_insert:</span><br><span class="line">    SQLiteDatabase db=helper.getWritableDatabase();</span><br><span class="line">    String sql=&quot;insert into &quot;+Constant.TABLE_NAME+&quot; values(1,&apos;vic&apos;,17)&quot;;</span><br><span class="line">    DbManger.execSQL(db,sql);</span><br><span class="line">    String sql2=&quot;insert into &quot;+Constant.TABLE_NAME+&quot; values(2,&apos;vic&apos;,23)&quot;;</span><br><span class="line">    DbManger.execSQL(db,sql2);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   case R.id.btn_update:</span><br><span class="line">    db=helper.getWritableDatabase();</span><br><span class="line">    String updateSql=&quot;update &quot;+Constant.TABLE_NAME&quot;+&quot; set &quot;+Contant.NAME+&quot;=&apos;vic2&apos; where &quot;+Contant._ID+&quot;=1&quot;;</span><br><span class="line">    DbManger.execSQL(db,updateSql);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   case R.id.btn_delete:</span><br><span class="line">    db=helper.getWritableDatabase();</span><br><span class="line">    String delSql=&quot;delete from &quot;+Constant.TABLE_NAME+&quot; where &quot;+Constant._ID+&quot;=2&quot;;</span><br><span class="line">    DbManger.execSQL(db,delSql);</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_insertApi&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;插入数据&quot;</span><br><span class="line">  android:onClick=&quot;onclick&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_updateApi&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;更新数据&quot;</span><br><span class="line">  android:onClick=&quot;onclick&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">public void onClick(View view)&#123;</span><br><span class="line">  switch(view.getId())&#123;</span><br><span class="line">   case R.id.btn_insertApi:</span><br><span class="line">    SQLiteDatabase db=helper.getWritableDatabase();</span><br><span class="line">    ContentValues values=new ContentValues();</span><br><span class="line">    values.put(Constant._ID,3);</span><br><span class="line">    values.put(Constant.NAME,&quot;vic&quot;);</span><br><span class="line">    values.put(Constant.AGE,17);</span><br><span class="line">    long result=db.insert(Constant.TABLE_NAME,null,values);</span><br><span class="line">    if(result&gt;0)&#123;</span><br><span class="line">     Toast.makeText(MainActivity.this,&quot;插入数据成功!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      Toast.makeText(MainActivity.this,&quot;插入数据失败!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   case R.id.btn_updateApi:</span><br><span class="line">    //String table 修改的数据表的名称,ContentValues values,String whereClause 表示修改条件,String[] whereArgs</span><br><span class="line">    db=helper.getWritableDatabase();</span><br><span class="line">    //db.update(String table,ContentValues values,String whereClause,String[] whereArgs);</span><br><span class="line">    ContentValues cv=new ContentValues();</span><br><span class="line">    cv.put(Contant.NAME,&quot;vic3&quot;);</span><br><span class="line">    int count=db.update(Constant.TABLE_NAME,cv,Contant.TABLE_NAME,cv,Constant._ID+&quot;=?&quot;,new String[]&#123;&quot;3&quot;&#125;);</span><br><span class="line">    if(count&gt;0)&#123;</span><br><span class="line">     Toast.makeText(MainActivity.this,&quot;插入数据成功!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      Toast.makeText(MainActivity.this,&quot;插入数据失败!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;Button</span><br><span class="line">  android:id=&quot;@+id/btn_updateApi&quot;</span><br><span class="line">  android:layout_width=&quot;wrap_content&quot;</span><br><span class="line">  android:layout_height=&quot;wrap_content&quot;</span><br><span class="line">  android:text=&quot;更新数据&quot;</span><br><span class="line">  android:onClick=&quot;onclick&quot;</span><br><span class="line">  android:layout_marginTop=&quot;15dp&quot;</span><br><span class="line">  android:background=&quot;#000000&quot;/&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">public void onClick(View view)&#123;</span><br><span class="line">  switch(view.getId())&#123;</span><br><span class="line">   case R.id.btn_insertApi:</span><br><span class="line">    SQLiteDatabase db=helper.getWritableDatabase();</span><br><span class="line">    ContentValues values=new ContentValues();</span><br><span class="line">    values.put(Constant._ID,3);</span><br><span class="line">    values.put(Constant.NAME,&quot;vic&quot;);</span><br><span class="line">    values.put(Constant.AGE,17);</span><br><span class="line">    long result=db.insert(Constant.TABLE_NAME,null,values);</span><br><span class="line">    if(result&gt;0)&#123;</span><br><span class="line">     Toast.makeText(MainActivity.this,&quot;插入数据成功!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      Toast.makeText(MainActivity.this,&quot;插入数据失败!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">   case R.id.btn_updateApi:</span><br><span class="line">    //String table 修改的数据表的名称,ContentValues values,String whereClause 表示修改条件,String[] whereArgs</span><br><span class="line">    db=helper.getWritableDatabase();</span><br><span class="line">    //db.update(String table,ContentValues values,String whereClause,String[] whereArgs);</span><br><span class="line">    ContentValues cv=new ContentValues();</span><br><span class="line">    cv.put(Contant.NAME,&quot;vic3&quot;);</span><br><span class="line">    int count=db.update(Constant.TABLE_NAME,cv,Contant.TABLE_NAME,cv,Constant._ID+&quot;=?&quot;,new String[]&#123;&quot;3&quot;&#125;);</span><br><span class="line">    if(count&gt;0)&#123;</span><br><span class="line">     Toast.makeText(MainActivity.this,&quot;插入数据成功!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      Toast.makeText(MainActivity.this,&quot;插入数据失败!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">    db.close();</span><br><span class="line">    break;</span><br><span class="line">  case R.id.btn_deleteApi:</span><br><span class="line">  db=helper.getWritableDatabase();</span><br><span class="line"></span><br><span class="line">  //int count2=db.delete(String table,StringwhereClause,String[] whereArgs);</span><br><span class="line">  int count2=db.delete(Constant.TABLE_NAME,Constant._ID+&quot;=?&quot;,new String[]&#123;&quot;1&quot;&#125;);</span><br><span class="line">  if(count2&gt;0)&#123;</span><br><span class="line">     Toast.makeText(MainActivity.this,&quot;插入数据成功!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">      Toast.makeText(MainActivity.this,&quot;插入数据失败!&quot;,Toast.LENGTH_LONG).show();</span><br><span class="line">    &#125;</span><br><span class="line">  db.close();</span><br><span class="line">  break;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> public int delete(String table,String whereClause,String[] whereArgs)&#123;</span><br><span class="line">  acquireReference();</span><br><span class="line">  try&#123;</span><br><span class="line">   SQLiteStatement statement = new SQLiteStatement(this,&quot;DELETE FROM &quot;+table+(!TextUtils.isEmpty(whereClause) ? &quot; WHERE &quot;+whereClause : &quot;&quot;), whereArgs;</span><br><span class="line"> try&#123;</span><br><span class="line">  return statement.executeUpdateDelete();</span><br><span class="line">  &#125;finally&#123;</span><br><span class="line">   statement.close();</span><br><span class="line">  &#125;</span><br><span class="line">  &#125;finally&#123;</span><br><span class="line">  releaseReference();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了Android开发工程师文集-1 小时学会SQLite，如果您还有更好地理解，欢迎沟通</li>
+<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
+</ul>
+          
+        
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/15/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/15/1/" itemprop="url">Android开发的插件Code Generator与LayoutCreator的安装与使用,提升你的开发效率</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-15T15:13:35+08:00">
+                2018-03-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/随笔/" itemprop="url" rel="index">
+                    <span itemprop="name">随笔</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  386
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>Android开发的插件Code Generator与LayoutCreator的安装与使用，提升你的开发效率</code>的概述，希望你们喜欢</p>
+<h2 id="学习目标"><a href="#学习目标" class="headerlink" title="学习目标"></a>学习目标</h2><p>掌握两个插件的安装和使用，能够实现代码生成功能。</p>
+<p>Android Code Generator是一款代码生成的插件，帮助提高app的开发速度，只要打好布局XML文件，就能帮你把Activity/Fragment/Adapter文件生成好。</p>
+<p>而LayoutCreator可以让你在Activity/Fragment中自动生成findViewById等布局相关初始化代码。</p>
+<h2 id="Android-Studio安装插件的方法"><a href="#Android-Studio安装插件的方法" class="headerlink" title="Android Studio安装插件的方法"></a>Android Studio安装插件的方法</h2><p>点击File-&gt;Settings-&gt;plugins，在settings中的Plugins，通过Plugins下载安装，安装完成后要重新启动Android Studio。</p>
+<p>Search in respositories/Browse respositories可以查找到本地没有安装的插件，选择想要安装的插件install，重启Android Studio即可完成安装插件过程，然后如果你还要继续下载就进行查询，最后重新启动Android Studio就行了。</p>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><p>Code Generator只会帮你声明带id的控件，当XML中出现文字符时，会报错，我们可以先把encoding改成gbk格式，等生成activity后再把gbk改回utf-8就好了。</p>
+<p>以上就是比较实用的几个插件，如果大家有更好的解决方法，欢迎讨论。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了Android开发的插件Code Generator与LayoutCreator的安装与使用，提升你的开发效率，如果您还有更好地理解，欢迎沟通</li>
+<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
+</ul>
+          
+        
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/14/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1955,385 +2359,11 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/06/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/06/1/" itemprop="url">第十一节：讲述类的继承，数据库，文件的读写，图形绘制</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-06T16:31:35+08:00">
-                2018-03-06
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/带你学会Java基础课程/" itemprop="url" rel="index">
-                    <span itemprop="name">带你学会Java基础课程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,476
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  7
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<strong>第十一节：讲述类的继承，数据库，文件的读写，图形绘制</strong>的概述，希望你们喜欢</p>
-<h2 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h2><ul>
-<li>类的继承</li>
-<li>类的多态性</li>
-<li>final的使用</li>
-<li>对象类型的转换</li>
-</ul>
-<p><img src="https://upload-images.jianshu.io/upload_images/11158618-254f49a3ad1964ac.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="示意图"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/06/1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/05/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/05/1/" itemprop="url">Java中的读文件，文件的创建，写文件</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-05T21:32:49+08:00">
-                2018-03-05
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/随笔/" itemprop="url" rel="index">
-                    <span itemprop="name">随笔</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  540
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>Java中的读文件，文件的创建，写文件</code>的概述，希望你们喜欢</p>
-<p><img src="https://upload-images.jianshu.io/upload_images/11158618-54d678984ed4f2f9.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="示意图"><br>
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/05/1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </p></div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/7/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/7/">7</a><span class="page-number current">8</span><a class="page-number" href="/page/9/">9</a><a class="page-number" href="/page/10/">10</a><a class="extend next" rel="next" href="/page/9/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2410,7 +2440,7 @@ show_date_time();
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">89</span>
+                  <span class="site-state-item-count">91</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2801,7 +2831,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">346.8k</span>
+    <span title="Site words total count">352.6k</span>
   
 </div>
 
@@ -2817,7 +2847,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共346.8k字</span>
+  <span class="post-count">博客全站共352.6k字</span>
 </div>
 
 <div class="weixin-box">
