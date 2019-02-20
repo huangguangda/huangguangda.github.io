@@ -401,6 +401,206 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/17/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/17/1/" itemprop="url">Android开发工程师文集-1 小时学会各种Drawable</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-17T15:01:46+08:00">
+                2018-03-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android开发工程师文集/" itemprop="url" rel="index">
+                    <span itemprop="name">Android开发工程师文集</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  735
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  4
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>Android开发工程师文集-1 小时学会各种Drawable</code>的概述，希望你们喜欢</p>
+<h2 id="Drawable介绍"><a href="#Drawable介绍" class="headerlink" title="Drawable介绍"></a>Drawable介绍</h2><p>Drawable为抽象类，drawable与view有区别的地方，主要是体现事件和交互性上面。</p>
+<p>view是面向用户的，是可见的控件，能给它添加点击事件。drawable则相反，不能面向，也不可见，也不能添加点击事件。</p>
+<p>drawable有好多子类，drawable为抽象类，所以有很多子类来继承它。</p>
+<h2 id="主要原理方法"><a href="#主要原理方法" class="headerlink" title="主要原理方法"></a>主要原理方法</h2><ul>
+<li>draw()</li>
+<li>setBounds()</li>
+</ul>
+<h2 id="BitmapDrawable-巴特美drawable"><a href="#BitmapDrawable-巴特美drawable" class="headerlink" title="BitmapDrawable 巴特美drawable"></a>BitmapDrawable 巴特美drawable</h2><p>该子类为bitmap的包装，可以保持原图片大小，填充，拉伸。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;bitmap</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line"> android:src=&quot;@drawable/ic_launcher&quot;</span><br><span class="line"> android:tileMode=&quot;mirror&quot;//平铺</span><br><span class="line"> android:antialias=&quot;true&quot;//消除锯齿</span><br><span class="line"> android:dither=&quot;true&quot;&gt;</span><br><span class="line">&lt;/bitmap&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="LayerDrawable-勒儿drawable"><a href="#LayerDrawable-勒儿drawable" class="headerlink" title="LayerDrawable 勒儿drawable"></a>LayerDrawable 勒儿drawable</h2><p>该子类就是来管理一组drawable的，第一张图片的放置，那么第二张图片会在第一张图片上，由此依次放置。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utf-8&quot;?&gt;</span><br><span class="line">&lt;layer-list xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line"> &lt;item</span><br><span class="line"> android:top=&quot;40dp&quot;</span><br><span class="line"> android:left=&quot;40dp&quot;</span><br><span class="line"> android:src=&quot;@drawable/picture_1&quot;</span><br><span class="line"> android:gravity=&quot;center&quot;&gt;</span><br><span class="line"> &lt;/item&gt;</span><br><span class="line"> &lt;item</span><br><span class="line"> android:top=&quot;40dp&quot;</span><br><span class="line"> android:left=&quot;40dp&quot;</span><br><span class="line"> android:src=&quot;@drawable/picture_2&quot;</span><br><span class="line"> android:gravity=&quot;center&quot;&gt;</span><br><span class="line"> &lt;/item&gt;</span><br><span class="line">&lt;/layer-list&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="StateListDrawable"><a href="#StateListDrawable" class="headerlink" title="StateListDrawable"></a>StateListDrawable</h2><p>该类StateListDrawable根据不同状态提供不同图片。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;?xml version=&quot;1.0&quot; encoding=&quot;utr-8&quot;?&gt;</span><br><span class="line">&lt;selector</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line"> &lt;item android:state_focused=&quot;true&quot; android:drawable=&quot;@drawable/botton_1&quot;/&gt;</span><br><span class="line"> &lt;item android:state_pressed=&quot;true&quot; android:drawable=&quot;@drawable/botton_2&quot;/&gt;</span><br><span class="line"> &lt;item android:state_selected=&quot;true&quot; android=&quot;@drawable/botton_3&quot;/&gt;</span><br><span class="line"> &lt;item android:drawable=&quot;@drawable/botton_4&quot;/&gt;</span><br><span class="line">&lt;/selector&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="LevelListDrawable"><a href="#LevelListDrawable" class="headerlink" title="LevelListDrawable"></a>LevelListDrawable</h2><p>该子类有不同的item -setlevel();<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;level-list</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.om/apk/res/android&quot;&gt;</span><br><span class="line"> &lt;item</span><br><span class="line">  android:drawable=&quot;@drawable/off&quot;</span><br><span class="line">  android:minLevel=&quot;5&quot;</span><br><span class="line">  android:maxLevel=&quot;10&quot;&gt;</span><br><span class="line"> &lt;/item&gt;</span><br><span class="line"> &lt;item</span><br><span class="line">  android:drawable=&quot;@drawable/on&quot;</span><br><span class="line">  android:minLevel=&quot;10&quot;</span><br><span class="line">  android:maxLevel=&quot;20&quot;&gt;</span><br><span class="line"> &lt;/item&gt;</span><br><span class="line">&lt;/level-list&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public void On(View v)&#123;</span><br><span class="line"> iv.setImageLevel( //int );</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="TransitionDrawable-—-transi-tion-drawable"><a href="#TransitionDrawable-—-transi-tion-drawable" class="headerlink" title="TransitionDrawable — transi tion drawable"></a>TransitionDrawable — transi tion drawable</h2><p>为LayerDrawable的子类，只有两张图片的变化，没有多个图片，LayerDrawable可以有多个item，而transitiondrawable只有两个item。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;transition</span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;&gt;</span><br><span class="line"> &lt;item android:drawable=&quot;@drawable/off&quot;&gt;</span><br><span class="line"> &lt;/item&gt;</span><br><span class="line"> &lt;item android:drawable=&quot;@drawable/on&quot;&gt;</span><br><span class="line"> &lt;/item&gt;</span><br><span class="line">&lt;/transition&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public void On(View v)&#123;</span><br><span class="line"> TransitionDrawable drawable=iv.getDrawable();</span><br><span class="line"> //开启 startTransition();</span><br><span class="line"> drawable.startTransition(2000);</span><br><span class="line">&#125;</span><br><span class="line">public void Off(View v)&#123;</span><br><span class="line"> TranstionDrawable drawable=iv.getDrawable();</span><br><span class="line"> //关闭 reverseTransition();</span><br><span class="line"> drawable.reverseTransition(2000);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="InsertDrawable"><a href="#InsertDrawable" class="headerlink" title="InsertDrawable"></a>InsertDrawable</h2><p>InsertDrawable表示嵌入图片==padding<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;inset </span><br><span class="line"> xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line"> android:drawable=&quot;@drawable/background&quot;</span><br><span class="line"> android:insetLeft=&quot;50dp&quot;</span><br><span class="line"> android:insetRight=&quot;50dp&quot;</span><br><span class="line"> android:insetTop=&quot;50dp&quot;</span><br><span class="line"> android:insetBottom=&quot;50dp&quot;&gt;</span><br><span class="line">&lt;/inset&gt;</span><br></pre></td></tr></table></figure></p>
+<h2 id="ClipDrawable-可累drawable"><a href="#ClipDrawable-可累drawable" class="headerlink" title="ClipDrawable 可累drawable"></a>ClipDrawable 可累drawable</h2><p>该ClipDrawabel是一种裁剪的形式，如同进度条。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;clip xmlns:android=&quot;http://schemas.android.com/apk/res/android&quot;</span><br><span class="line"> android:drawable=&quot;@drawable/picture&quot;</span><br><span class="line"> android:clipOrientation=&quot;horizontal&quot;</span><br><span class="line"> android:gravity=&quot;left&quot;/&gt;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ClipDrawable drawable=iv.getDrawable();</span><br><span class="line">drawable.setLevel(5000);</span><br><span class="line">//范围0-10000；</span><br></pre></td></tr></table></figure>
+<h2 id="DIY的Drawable"><a href="#DIY的Drawable" class="headerlink" title="DIY的Drawable"></a>DIY的Drawable</h2><p>自己动手试试吧<br>梳理：<br>BitmapDrawable,<br>LayerDrawable,<br>StateListDreawable,<br>LevelListDrawable,<br>TransitionDrawable,<br>InsertDrawable,<br>ClipDrawable.</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了Android开发工程师文集-1 小时学会各种Drawable，如果您还有更好地理解，欢迎沟通</li>
+<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
+</ul>
+          
+        
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/16/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -2172,193 +2372,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/07/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/03/07/1/" itemprop="url">第十节：详细讲解一下Java多线程，随机文件</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-07T22:59:27+08:00">
-                2018-03-07
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/带你学会Java基础课程/" itemprop="url" rel="index">
-                    <span itemprop="name">带你学会Java基础课程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  827
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<strong>第十节：详细讲解一下Java多线程，随机文件</strong>的概述，希望你们喜欢</p>
-<ul>
-<li>多线程的概念</li>
-<li>线程的生命周期</li>
-<li>多线程程序的设计
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/03/07/1/#more" rel="contents">
-              阅读全文 &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </li></ul></div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2440,7 +2453,7 @@ show_date_time();
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">91</span>
+                  <span class="site-state-item-count">92</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2451,7 +2464,7 @@ show_date_time();
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">19</span>
+                  <span class="site-state-item-count">20</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -2462,7 +2475,7 @@ show_date_time();
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">20</span>
+                  <span class="site-state-item-count">21</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -2831,7 +2844,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">352.6k</span>
+    <span title="Site words total count">354.2k</span>
   
 </div>
 
@@ -2847,7 +2860,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共352.6k字</span>
+  <span class="post-count">博客全站共354.2k字</span>
 </div>
 
 <div class="weixin-box">
