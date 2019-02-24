@@ -401,6 +401,375 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/09/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/09/1/" itemprop="url">AndroidStudio环境安装与配置</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-09T15:30:13+08:00">
+                2018-03-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android-Studio实战练习V2/" itemprop="url" rel="index">
+                    <span itemprop="name">Android Studio实战练习V2</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  306
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          
+            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>AndroidStudio环境安装与配置</code>的概述，希望你们喜欢</p>
+<h2 id="AndroidStudio-IDE下载"><a href="#AndroidStudio-IDE下载" class="headerlink" title="AndroidStudio IDE下载"></a>AndroidStudio IDE下载</h2><p>我们选择用Android Studio开发Android的App，Android Studio提供给Windows、MacOS、Linux三个平台<br>官方下载地址：<a href="https://link.jianshu.com/?t=http://www.android-studio.org/" target="_blank" rel="noopener">Android Studio</a><br><img src="https://upload-images.jianshu.io/upload_images/11158618-542fdf53126996c9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="示意图"></p>
+<h2 id="配置Android-Studio"><a href="#配置Android-Studio" class="headerlink" title="配置Android Studio"></a>配置Android Studio</h2><p>下载相关的SDK<br><img src="https://upload-images.jianshu.io/upload_images/11158618-771baff9c4caa278.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="示意图"></p>
+<h2 id="AndroidStudio项目托管平台"><a href="#AndroidStudio项目托管平台" class="headerlink" title="AndroidStudio项目托管平台"></a>AndroidStudio项目托管平台</h2><p>用GitHub进行协作开发，首先去<a href="https://link.jianshu.com/?t=https://github.com/" target="_blank" rel="noopener">GitHub官网</a>注册GitHub帐号<br><img src="https://upload-images.jianshu.io/upload_images/11158618-77d61b5bba429634.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="示意图"><br>GitHub是一个面向开源及私有软件项目的托管平台，方便大家存储和管理自己的项目，拥有自己的Github，那么就赶紧注册吧！</p>
+<h2 id="配置Git"><a href="#配置Git" class="headerlink" title="配置Git"></a>配置Git</h2><p>在Windows下，下载Git进行使用，官方下载地址：<a href="https://link.jianshu.com/?t=https://git-scm.com/downloads" target="_blank" rel="noopener">Git</a><br><img src="https://upload-images.jianshu.io/upload_images/11158618-c1f46577923dbcb9.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="示意图"><br>安装时一般使用默认设置即可，一路next装完即可，安装完成后进入控制面板-系统和安全-系统，然后进行配置高级系统设置，再点击环境变量，在系统变量中点击Path，然后进入编辑，将Git的bin目录添加进去，最后点击确定完成Git配置。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>本文讲了AndroidStudio环境安装与配置，如果您还有更好地理解，欢迎沟通</li>
+<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
+</ul>
+          
+        
+      
+    </div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/08/1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="达叔小生">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="达叔小生">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/03/08/1/" itemprop="url">Android开发进阶从小工到专家第九章开发人员必备的技能单元测试</a></h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-08T20:42:23+08:00">
+                2018-03-08
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Android开发进阶从小工到专家读书笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">Android开发进阶从小工到专家读书笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  386
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  1
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+        
+        
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>点击来看的朋友，这本书很好，可以作为一个秘籍作为保存。<br>笔记记录为了更好的学习。<br>为了方便学习，记录下了重点笔记。<br><img src="/images/3.jpg" alt="3"><br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/08/1/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+
+      <div>
+        
+      </div>
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2018/03/07/1/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1934,425 +2303,6 @@
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2017/04/09/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/04/09/1/" itemprop="url">第五节：详细讲解Java中的接口与继承</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-04-09T15:44:11+08:00">
-                2017-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/带你学会Java基础课程/" itemprop="url" rel="index">
-                    <span itemprop="name">带你学会Java基础课程</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  1,772
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  8
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>详细讲解Java中的接口与继承</code>的概述，希望你们喜欢</p>
-<h2 id="什么是接口（interface）"><a href="#什么是接口（interface）" class="headerlink" title="什么是接口（interface）"></a>什么是接口（interface）</h2><p>接口中的方法都是抽象方法，public权限，全是抽象函数，不能生成对象<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">interface Student&#123;</span><br><span class="line">public void read();</span><br><span class="line">public void write();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class ChineseStudent implements Student&#123;</span><br><span class="line">//复写</span><br><span class="line">public void read()&#123;</span><br><span class="line"> System.out.println(&quot;read&quot;);</span><br><span class="line">&#125;</span><br><span class="line">public void write()&#123;</span><br><span class="line"> System.out.println(&quot;write&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> ChineseStudent chinesestudent = new ChineseStudent();</span><br><span class="line"> Student student = chinesestudent;</span><br><span class="line"> </span><br><span class="line"> student.read();</span><br><span class="line"> student.write();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line">实现接口用implements关键字，</span><br><span class="line">一个接口可以实现多个接口，</span><br><span class="line">一个接口可以继承多个接口</span><br><span class="line">interface Student&#123;</span><br><span class="line">public void read();</span><br><span class="line">public void write();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">interface Teacher&#123;</span><br><span class="line">public void teach();</span><br><span class="line">public void test();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Person implements Student,Teacher&#123;</span><br><span class="line">public void read()&#123;</span><br><span class="line"> System.out.println(&quot;read&quot;):</span><br><span class="line">&#125;</span><br><span class="line">public void write()&#123;</span><br><span class="line"> System.out.println(&quot;write&quot;);</span><br><span class="line">&#125;</span><br><span class="line">public void teach()&#123;</span><br><span class="line"> System.out.println(&quot;teach&quot;):</span><br><span class="line">&#125;</span><br><span class="line">public void test()&#123;</span><br><span class="line"> System.out.println(&quot;test&quot;):</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> Person person = new Person();</span><br><span class="line"></span><br><span class="line"> Student student = person;</span><br><span class="line"> student.read();</span><br><span class="line"> student.write();</span><br><span class="line"></span><br><span class="line"> Teacher teacher = person;</span><br><span class="line"> teacher.teach();</span><br><span class="line"> teacher.close();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="swith-char-byte-short-int-只允许四种类型"><a href="#swith-char-byte-short-int-只允许四种类型" class="headerlink" title="swith( char byte short int)只允许四种类型"></a>swith( char byte short int)只允许四种类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">public class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> int score = 90;</span><br><span class="line"> if(score &gt; 85 &amp;&amp; score &lt;= 100)&#123;</span><br><span class="line">  System.out.println(&quot;成绩为优&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> else if(score &gt; 75 &amp;&amp; score &lt;= 85)&#123;</span><br><span class="line">  System.out.println(&quot;成绩为良&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> else if(score &gt; 60 &amp;&amp; score &lt;= 75)&#123;</span><br><span class="line">  System.out.println(&quot;成绩为中&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> else if(score &lt;= 60 &amp;&amp; score &gt;= 0)&#123;</span><br><span class="line">  System.out.println(&quot;成绩为差&quot;);</span><br><span class="line"> &#125;</span><br><span class="line"> else if(score &gt; 100 || score &lt; 0)&#123;</span><br><span class="line">  System.out.println(&quot;成绩不在正常的范围之内&quot;);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="对象就是引用数据类型"><a href="#对象就是引用数据类型" class="headerlink" title="对象就是引用数据类型"></a>对象就是引用数据类型</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> Dog d = new Dog();</span><br><span class="line"> d.name=&quot;哈哈&quot;;</span><br><span class="line"> d.age=2;</span><br><span class="line"> d.jump();</span><br><span class="line"> System.out.println(&quot;名字是&quot;+d.name);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="重载的表达"><a href="#重载的表达" class="headerlink" title="重载的表达"></a>重载的表达</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class A&#123;</span><br><span class="line">void funA()&#123;</span><br><span class="line"> System.out.println(&quot;没有参数的funA函数&quot;);</span><br><span class="line">&#125;</span><br><span class="line">void funA(int i)&#123;</span><br><span class="line"> System.out.println(&quot;有参数的funA函数&quot;);</span><br><span class="line">&#125;</span><br><span class="line">void funA(int i,double d)&#123;</span><br><span class="line"> System.out.println(&quot;拥有两个参数的funA函数&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="什么是继承"><a href="#什么是继承" class="headerlink" title="什么是继承"></a>什么是继承</h2><p>在现实世界当中，继承就是儿子得到老子的东西，在面向对象的世界当中，继承就是一个类得到了另一个类当中的成员变量和成员方法</p>
-<p>Java只支持单继承，不允许多继承，继承是为了减少重复代码</p>
-<p>使用super调用父类构造函数的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Person&#123;</span><br><span class="line">String name;</span><br><span class="line">int age;</span><br><span class="line">Person()&#123;</span><br><span class="line"> System.out.prinltn(&quot;Person的无参数构造函数&quot;);</span><br><span class="line">&#125;</span><br><span class="line">Person(String name,int age)&#123;</span><br><span class="line"> this.name=name;</span><br><span class="line"> this.age=age;</span><br><span class="line"> System.out.println(&quot;Person有参数的构造函数&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">void eat()&#123;</span><br><span class="line"> System.out.println(&quot;定义吃饭的方法&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Student extends Person&#123;</span><br><span class="line">//子类继承父类</span><br><span class="line">Student()&#123;</span><br><span class="line"> //父类</span><br><span class="line"> super();</span><br><span class="line"> System.out.println(&quot;Student的无参数构造函数&quot;);</span><br><span class="line">&#125;</span><br><span class="line">Student(String name,int age,int id)&#123;</span><br><span class="line"> super(name,age);</span><br><span class="line"> this.id=id;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>在Java中的继承，其实就是继承全部属性和方法(除了构造方法)，除了private修饰的变量或者方法，子类无法进行访问</p>
-</blockquote>
-<h2 id="什么是复写"><a href="#什么是复写" class="headerlink" title="什么是复写"></a>什么是复写</h2><p>具有父子关系的两个类中，父类和子类各有一个函数，这两个函数的定义（返回值类型，函数名，参数列表）完全相同</p>
-<h2 id="对象的转型（多态性地体现）"><a href="#对象的转型（多态性地体现）" class="headerlink" title="对象的转型（多态性地体现）"></a>对象的转型（多态性地体现）</h2><blockquote>
-<p>父类引用指向子类对象，同一个类型，调用同一个方法，却能呈现不同的状态</p>
-<ul>
-<li>什么是向上转型:<br>向上转型就是将子类的对象赋值给父类的引用。</li>
-<li>什么是向下转型:<br>向下转型就是将父类的对象赋值给子类的引用。<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Student s1 = new Student();</span><br><span class="line">Person p = s1;</span><br><span class="line">Student s2 = (Student)p;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-</blockquote>
-<p>##类的多态</p>
-<ul>
-<li>父类引用指向子类对象</li>
-<li>调用的方法有重写</li>
-</ul>
-<h2 id="所谓的转型"><a href="#所谓的转型" class="headerlink" title="所谓的转型"></a>所谓的转型</h2><ul>
-<li>类型转换指:<br>把一个引用所指向的对象的类型，转换为另一个引用的类型</li>
-<li>没有继承关系的类型进行转换,一定会失败<h2 id="了解Object类"><a href="#了解Object类" class="headerlink" title="了解Object类"></a>了解Object类</h2></li>
-<li>Object类是所有类的父类</li>
-<li>Object类提供一个toString方法，返回当前对象的字符串表达</li>
-<li>equals() 判断两个对象的内容是否相同<h2 id="详解final"><a href="#详解final" class="headerlink" title="详解final"></a>详解final</h2></li>
-<li>final可以修饰类（该类不能够被继承），成员变量（修饰基本类型变量，该变量只有一次赋值机会，修饰引用，该引用只有一次指向对象的机会），成员方法（不能够被重写）</li>
-<li>String类是public final class String,不能被继承<h2 id="什么是抽象函数"><a href="#什么是抽象函数" class="headerlink" title="什么是抽象函数"></a>什么是抽象函数</h2>没有函数体的函数被称为抽象函数<h2 id="什么是抽象类"><a href="#什么是抽象类" class="headerlink" title="什么是抽象类"></a>什么是抽象类</h2>使用abstract定义的类称为抽象类</li>
-<li>抽象类不能够生成对象</li>
-<li>抽象类不能实例化，继承抽象类，那么该类必须为抽象类</li>
-<li>一个类被声明为抽象类，不能够被直接实例化<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">abstract class Person&#123;</span><br><span class="line">abstract void eat();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Chinese extends Person&#123;</span><br><span class="line">void eat()&#123;</span><br><span class="line"> System.out.pritln(&quot;hhh&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> Person p = new Chinese();</span><br><span class="line"> p.eat();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">abstract class Person&#123;</span><br><span class="line">Person()&#123;</span><br><span class="line"> System.out.println(&quot;Person没有参数的构造函数&quot;);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Person(String name,String age)&#123;</span><br><span class="line"> this.name=name;</span><br><span class="line"> this.age=age;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">String name;</span><br><span class="line">int age;</span><br><span class="line">void introduce()&#123;</span><br><span class="line"> System.out.println(&quot;我的名字是&quot;+name+&quot;，我的年龄是&quot;+age);</span><br><span class="line">&#125;</span><br><span class="line">abstract void eat();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Chinese extends Person&#123;</span><br><span class="line">String address;</span><br><span class="line">Chinese()&#123;</span><br><span class="line"> super();</span><br><span class="line"> System.out.println(&quot;Chinese的构造函数&quot;); </span><br><span class="line"> &#125;</span><br><span class="line"> </span><br><span class="line"> Chinese(String name,int age,String address)&#123;</span><br><span class="line">  super(name,age);</span><br><span class="line">  this.address=address;</span><br><span class="line"> &#125;</span><br><span class="line"> void eat()&#123;</span><br><span class="line">  //复写</span><br><span class="line">  System.out.println(&quot;吃饭&quot;);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> Person p = new Chinese();</span><br><span class="line"> p.eat();</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="如何生成内部类的对象"><a href="#如何生成内部类的对象" class="headerlink" title="如何生成内部类的对象"></a>如何生成内部类的对象</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> A a = new A();</span><br><span class="line"> </span><br><span class="line"> A.B b = new A().new B();</span><br><span class="line"> //或者A.B b = a.new B();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class A&#123;</span><br><span class="line">int i;</span><br><span class="line">class B&#123;</span><br><span class="line"> int j;</span><br><span class="line"></span><br><span class="line"> int funB()&#123;</span><br><span class="line">  int result = i+j;</span><br><span class="line">  return result;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> A a = new A();</span><br><span class="line"> A.B b = a.new B();</span><br><span class="line"></span><br><span class="line"> a.i=3;</span><br><span class="line"> a.j=1;</span><br><span class="line"> </span><br><span class="line"> int result = b.funB();</span><br><span class="line"> System.out.println(result);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class A&#123;</span><br><span class="line">int i;</span><br><span class="line">class B&#123;</span><br><span class="line"> int j;</span><br><span class="line"> int funB()&#123;</span><br><span class="line">  int result = A.this.i+this.j;</span><br><span class="line">  return result;</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="内部类"><a href="#内部类" class="headerlink" title="内部类"></a>内部类</h2><p>内部类有 非静态，静态，匿名类<br>语法: new 外部类().new 内部类()</p>
-<h2 id="匿名内部类"><a href="#匿名内部类" class="headerlink" title="匿名内部类"></a>匿名内部类</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">interfacce A&#123;</span><br><span class="line">public void doSomething();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class B&#123;</span><br><span class="line">public void fun(A a)&#123;</span><br><span class="line"> System.out.println(&quot;B函数&quot;);</span><br><span class="line"> a.doSomething();</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Work implements A&#123;</span><br><span class="line">public void doSomething()&#123;</span><br><span class="line"> System.out.println(&quot;doSomething&quot;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> Work work = new Work();</span><br><span class="line"> A a = work;</span><br><span class="line"></span><br><span class="line"> B b = new B();</span><br><span class="line"> b.fun(a);</span><br><span class="line"> &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Test&#123;</span><br><span class="line">public static void main(String args[])&#123;</span><br><span class="line"> B b = new B();</span><br><span class="line"> b.fun(new A()&#123;</span><br><span class="line">  public void doSomething()&#123;</span><br><span class="line">   System.out.println(&quot;匿名内部类&quot;);</span><br><span class="line">  &#125;</span><br><span class="line"> &#125;);</span><br><span class="line">&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>本文讲了详细讲解Java中的接口与继承，如果您还有更好地理解，欢迎沟通</li>
-<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
-</ul>
-          
-        
-      
-    </div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://huangguangda.github.io/2016/04/09/1/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="达叔小生">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/images/avatar.gif">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="达叔小生">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h2 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2016/04/09/1/" itemprop="url">深入浅出的排序算法-选择排序</a></h2>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2016-04-09T15:15:17+08:00">
-                2016-04-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/深入浅出的排序算法/" itemprop="url" rel="index">
-                    <span itemprop="name">深入浅出的排序算法</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  563
-                </span>
-              
-
-              
-                <span class="post-meta-divider">|</span>
-              
-
-              
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-clock-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
-                
-                <span title="阅读时长">
-                  3
-                </span>
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-        
-        
-          
-            <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>大家好，我是 <code>Vic</code>，今天给大家带来<code>选择排序</code>算法，希望你们喜欢</p>
-<h2 id="选择排序"><a href="#选择排序" class="headerlink" title="选择排序"></a>选择排序</h2><p>选择排序比冒泡排序快一些，现在讲的选择排序比冒泡排序快一些，也是常用的排序算法。</p>
-<p>选择排序是第一个人和后续排序的人进行比较，若第一个人大于第二个人，就进行交换，那么这时第一人就是最小的，然后这时的第一个人和第三个人进行比较，若这时的第一个人大于第三个人，就进行交换位置，这时第一个人又换人了，也变得更小了，就这样，把剩下的人以这种方法进行比较，直到最后，第一轮结束，在第一位的就是最小的值。</p>
-<p>这种就是排序算法，比如有6个人，第一轮要进行5次比较，不是。</p>
-<ul>
-<li><p>代码示例</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">//第一轮  </span><br><span class="line">for(int index=1;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  </span><br><span class="line">if(arr[0]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[0];  </span><br><span class="line">  arr[0] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  </span><br><span class="line">//第二轮  </span><br><span class="line">for(int index=2;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  </span><br><span class="line">if(arr[1]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[1];  </span><br><span class="line">  arr[1] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  </span><br><span class="line">//第三轮  </span><br><span class="line">for(int index=3;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  </span><br><span class="line">if(arr[2]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[2];  </span><br><span class="line">  arr[2] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line">&#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  </span><br><span class="line">//第四轮  </span><br><span class="line">for(int index=4;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  </span><br><span class="line">if(arr[3]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[3];  </span><br><span class="line">  arr[3] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  </span><br><span class="line">//第五轮  </span><br><span class="line">for(int index=5;index&lt;arr.length;index++)  </span><br><span class="line">&#123;  </span><br><span class="line">if(arr[4]&gt;arr[index])  </span><br><span class="line">&#123;  </span><br><span class="line">  int temp = arr[4];  </span><br><span class="line">  arr[3] = arr[index];  </span><br><span class="line">  arr[index] = temp;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">print(arr);  </span><br><span class="line">  </span><br><span class="line">//第六轮没有，我们arr.length=6举例  </span><br><span class="line">//int index = 6;index&lt;arr.length; false</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>优化</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">public static void selectionSort(int[] arr)  </span><br><span class="line">&#123;  </span><br><span class="line">for(int count=1;count&lt;arr.length;count++)  </span><br><span class="line">&#123;  </span><br><span class="line"> for(int index=count;index&lt;arr.length;index++)  </span><br><span class="line"> &#123;  </span><br><span class="line">  if(arr[count-1]&gt;arr[index])  </span><br><span class="line">  &#123;  </span><br><span class="line">    int temp = arr[count-1];  </span><br><span class="line">    arr[count-1] = arr[index];  </span><br><span class="line">    arr[index] = temp;  </span><br><span class="line">  &#125;  </span><br><span class="line"> &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
-<li>本文讲了选择排序，如果您还有更好地理解，欢迎沟通</li>
-<li>定位：分享 <code>Android</code>&amp;<code>Java</code>知识点，有兴趣可以继续关注</li>
-</ul>
-          
-        
-      
-    </div>
-    
-    
-    
-
-      <div>
-        
-      </div>
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -2434,7 +2384,7 @@ show_date_time();
               
                 <a href="/archives">
               
-                  <span class="site-state-item-count">92</span>
+                  <span class="site-state-item-count">94</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -2825,7 +2775,7 @@ show_date_time();
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">354.2k</span>
+    <span title="Site words total count">357.6k</span>
   
 </div>
 
@@ -2841,7 +2791,7 @@ show_date_time();
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">博客全站共354.2k字</span>
+  <span class="post-count">博客全站共357.6k字</span>
 </div>
 
 <div class="weixin-box">
